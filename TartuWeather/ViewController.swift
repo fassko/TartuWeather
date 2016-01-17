@@ -10,16 +10,41 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var temperatureLabel: UILabel!
+  @IBOutlet weak var windLabel: UILabel!
+  @IBOutlet weak var currentImage: UIImageView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    updateWeather()
+  
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateWeather", name: UIApplicationDidBecomeActiveNotification, object: nil)
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  
+  
+  func updateWeather() {
+    WeatherAPI.getTemperature({
+      (temperature) in
+        self.temperatureLabel.text = temperature
+    })
+    
+    WeatherAPI.getWind({
+      (wind) in
+        self.windLabel.text = wind
+    })
+    
+    WeatherAPI.getCurrentImage({
+      (image) in
+        self.currentImage.image = image
+    })
+    
   }
-
+  
+  
+  @IBAction func refresh(sender: AnyObject) {
+    updateWeather()
+  }
 
 }
 
