@@ -1,0 +1,48 @@
+default_platform :ios
+
+
+platform :ios do
+  before_all do
+
+  end
+
+  lane :travis do
+    carthage(
+      platform: "iOS"
+    )
+
+    build
+  end
+
+  lane :build do
+    xctool :clean, :build, [
+      "--project", "TartuWeather.xcodeproj",
+      "--scheme", "TartuWeather",
+      "--configuration", "Debug",
+      "CODE_SIGN_IDENTITY=\"\"",
+      "CODE_SIGNING_REQUIRED=NO"
+    ].join(" ")
+
+    xctool :clean, :build, [
+      "--project", "TartuWeather.xcodeproj",
+      "--scheme", "TartuWeatherWidget",
+      "--configuration", "Debug",
+      "CODE_SIGN_IDENTITY=\"\"",
+      "CODE_SIGNING_REQUIRED=NO"
+    ].join(" ")
+  end
+
+  lane :carthage do
+    carthage(
+      platform: "iOS"
+    )
+  end
+
+  after_all do |lane|
+
+  end
+
+  error do |lane, exception|
+
+  end
+end
