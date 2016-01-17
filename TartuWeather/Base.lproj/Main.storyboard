@@ -36,13 +36,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RKH-Az-PyL">
                                 <rect key="frame" x="150" y="8" width="300" height="38"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="W 20.4 m/s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yx-js-RES">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yx-js-RES">
                                         <rect key="frame" x="180" y="8" width="120" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDB-pk-APP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDB-pk-APP">
                                         <rect key="frame" x="0.0" y="8" width="120" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,13 +62,25 @@
                                     <constraint firstAttribute="height" constant="225" id="kiz-No-LJR"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do1-d2-P39">
+                                <rect key="frame" x="150" y="287" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Oyr-ek-EfL"/>
+                                    <constraint firstAttribute="width" constant="300" id="hyG-L5-73L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="RKH-Az-PyL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="BWi-Bi-vQa"/>
+                            <constraint firstItem="do1-d2-P39" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G4Q-hY-fjx"/>
                             <constraint firstItem="h6n-Ks-K15" firstAttribute="top" secondItem="RKH-Az-PyL" secondAttribute="bottom" constant="8" id="IGT-GM-LS7"/>
                             <constraint firstItem="RKH-Az-PyL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="STd-DW-x5M"/>
                             <constraint firstItem="h6n-Ks-K15" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SbC-fk-H48"/>
+                            <constraint firstItem="do1-d2-P39" firstAttribute="top" secondItem="h6n-Ks-K15" secondAttribute="bottom" constant="8" id="dgH-KQ-EPg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="bgt-2g-WOs">
@@ -81,12 +93,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="currentImage" destination="h6n-Ks-K15" id="vbd-dg-jE4"/>
+                        <outlet property="measuredTimeLabel" destination="do1-d2-P39" id="zeJ-Ko-IIL"/>
                         <outlet property="temperatureLabel" destination="oDB-pk-APP" id="Zav-fa-Dhl"/>
                         <outlet property="windLabel" destination="4yx-js-RES" id="ZVO-SH-h4d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="325" y="285"/>
         </scene>
     </scenes>
 </document>

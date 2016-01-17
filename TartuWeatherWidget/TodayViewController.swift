@@ -13,18 +13,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
   @IBOutlet weak var temperatureLabel: UILabel!
   @IBOutlet weak var windLabel: UILabel!
+  @IBOutlet weak var measuredTimeLabel: UILabel!
         
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    WeatherAPI.getTemperature({
-      (temperature) in
+    WeatherAPI.getData({
+      (temperature, wind, measuredTime) in
         self.temperatureLabel.text = temperature
-    })
-    
-    WeatherAPI.getWind({
-      (wind) in
         self.windLabel.text = wind
+        self.measuredTimeLabel.text = measuredTime
     })
   }
 
@@ -34,18 +32,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     // If an error is encountered, use NCUpdateResult.Failed
     // If there's no update required, use NCUpdateResult.NoData
     // If there's an update, use NCUpdateResult.NewData
-  
-    WeatherAPI.getTemperature({
-      (temperature) in
+    
+    WeatherAPI.getData({
+      (temperature, wind, measuredTime) in
         self.temperatureLabel.text = temperature
+        self.windLabel.text = wind
+        self.measuredTimeLabel.text = measuredTime
         completionHandler(NCUpdateResult.NewData)
     })
     
-    WeatherAPI.getWind({
-      (wind) in
-        self.windLabel.text = wind
-        completionHandler(NCUpdateResult.NewData)
-    })
   }
   
   

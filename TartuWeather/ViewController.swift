@@ -13,6 +13,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var temperatureLabel: UILabel!
   @IBOutlet weak var windLabel: UILabel!
   @IBOutlet weak var currentImage: UIImageView!
+  @IBOutlet weak var measuredTimeLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,21 +25,18 @@ class ViewController: UIViewController {
   
   
   func updateWeather() {
-    WeatherAPI.getTemperature({
-      (temperature) in
+    WeatherAPI.getData({
+      (temperature, wind, measuredTime) in
         self.temperatureLabel.text = temperature
-    })
-    
-    WeatherAPI.getWind({
-      (wind) in
         self.windLabel.text = wind
+        self.measuredTimeLabel.text = measuredTime
     })
     
     WeatherAPI.getCurrentImage({
       (image) in
         self.currentImage.image = image
     })
-    
+
   }
   
   

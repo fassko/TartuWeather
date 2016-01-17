@@ -38,6 +38,51 @@ class WeatherAPI {
     }
   }
   
+  class func getMeasuredTime(completion:(time:String) -> Void) {
+    
+    Alamofire.request(.GET, "http://meteo.physic.ut.ee/en/frontmain.php?m=2").responseString {
+      response in
+        if let doc = try? HTMLDocument(string: response.result.value!, encoding: NSUTF8StringEncoding) {
+        
+
+          if let measuredTime = doc.css("td > small > i").first {
+            print("getTemperature = \(measuredTime.stringValue)")
+            completion(time: measuredTime.stringValue)
+          }
+        }
+    }
+    
+  }
+  
+  class func getData(completion:(temperature:String, wind:String, measuredTime:String) -> Void) {
+    Alamofire.request(.GET, "http://meteo.physic.ut.ee/en/frontmain.php?m=2").responseString {
+      response in
+        if let doc = try? HTMLDocument(string: response.result.value!, encoding: NSUTF8StringEncoding) {
+          
+          var temperature = ""
+          var wind = ""
+          var measuredTime = ""
+          
+          if let val = doc.css("td > b").first {
+            print("\(val)")
+            temperature = val.stringValue
+          }
+          
+          if let val = doc.css("td > b")[3] {
+            print("\(val)")
+            wind = val.stringValue
+          }
+          
+          if let val = doc.css("td > small > i").first {
+            print("\(val)")
+            measuredTime = val.stringValue
+          }
+          
+          completion(temperature: temperature, wind: wind, measuredTime: measuredTime)
+        }
+    }
+  }
+  
   class func getCurrentImage(completion:(image:UIImage) -> Void) {
     Alamofire.request(.GET, "http://meteo.physic.ut.ee/webcam/praegu/small.jpg").responseImage { response in
 
