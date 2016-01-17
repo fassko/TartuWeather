@@ -48,8 +48,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     })
   }
   
-  func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> (UIEdgeInsets) {
-    return UIEdgeInsetsZero
+  
+  @IBAction func openApp(sender: AnyObject) {
+    self.extensionContext?.openURL(NSURL(string:"tartuweather://home")!, completionHandler: nil)
   }
-    
+  
+  func widgetMarginInsetsForProposedMarginInsets(var defaultMarginInsets: UIEdgeInsets) -> (UIEdgeInsets) {
+    defaultMarginInsets.bottom = 20;
+    return defaultMarginInsets
+  }
+  
 }
