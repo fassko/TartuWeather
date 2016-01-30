@@ -25,6 +25,9 @@
 		6348B1ED1C4BF6CE00199EE5 /* Fuzi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6348B1E31C4BF6C100199EE5 /* Fuzi.framework */; };
 		6348B1EF1C4BF6FD00199EE5 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6348B1EE1C4BF6FD00199EE5 /* WeatherAPI.swift */; };
 		6348B1F01C4BF6FD00199EE5 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6348B1EE1C4BF6FD00199EE5 /* WeatherAPI.swift */; };
+		63AFB7F71C5D3D93004A58E1 /* thermometer35.png in Resources */ = {isa = PBXBuildFile; fileRef = 63AFB7F41C5D3D93004A58E1 /* thermometer35.png */; };
+		63AFB7F81C5D3D93004A58E1 /* thermometer35@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63AFB7F51C5D3D93004A58E1 /* thermometer35@2x.png */; };
+		63AFB7F91C5D3D93004A58E1 /* thermometer35@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63AFB7F61C5D3D93004A58E1 /* thermometer35@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		6348B1E71C4BF6C900199EE5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		6348B1E81C4BF6C900199EE5 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		6348B1EE1C4BF6FD00199EE5 /* WeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		63AFB7F41C5D3D93004A58E1 /* thermometer35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thermometer35.png; sourceTree = SOURCE_ROOT; };
+		63AFB7F51C5D3D93004A58E1 /* thermometer35@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thermometer35@2x.png"; sourceTree = SOURCE_ROOT; };
+		63AFB7F61C5D3D93004A58E1 /* thermometer35@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thermometer35@3x.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,9 @@
 		6348B1BA1C4BF55300199EE5 /* TartuWeather */ = {
 			isa = PBXGroup;
 			children = (
+				63AFB7F41C5D3D93004A58E1 /* thermometer35.png */,
+				63AFB7F51C5D3D93004A58E1 /* thermometer35@2x.png */,
+				63AFB7F61C5D3D93004A58E1 /* thermometer35@3x.png */,
 				6348B1BB1C4BF55300199EE5 /* AppDelegate.swift */,
 				6348B1BD1C4BF55300199EE5 /* ViewController.swift */,
 				6348B1BF1C4BF55300199EE5 /* Main.storyboard */,
@@ -244,6 +253,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63AFB7F91C5D3D93004A58E1 /* thermometer35@3x.png in Resources */,
+				63AFB7F81C5D3D93004A58E1 /* thermometer35@2x.png in Resources */,
+				63AFB7F71C5D3D93004A58E1 /* thermometer35.png in Resources */,
 				6348B1C61C4BF55300199EE5 /* LaunchScreen.storyboard in Resources */,
 				6348B1C31C4BF55300199EE5 /* Assets.xcassets in Resources */,
 				6348B1C11C4BF55300199EE5 /* Main.storyboard in Resources */,
@@ -526,6 +538,7 @@
 				6348B1E01C4BF6AA00199EE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

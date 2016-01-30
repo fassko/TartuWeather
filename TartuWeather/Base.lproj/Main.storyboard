@@ -9,9 +9,14 @@
         <scene sceneID="rNb-3y-Tbw">
             <objects>
                 <navigationController id="YGe-cB-Pur" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="okf-LT-hAN">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="okf-LT-hAN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.17647059261798859" green="0.34509804844856262" blue="0.49803921580314636" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="L5Y-w1-lfz"/>
@@ -21,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-507" y="297"/>
         </scene>
-        <!--Title-->
+        <!--meteo Tartu-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TartuWeather" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,18 +77,30 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© University of Tartu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcX-Ej-g1C">
+                                <rect key="frame" x="221" y="316" width="159" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="5Wp-uN-wKY"/>
+                                    <constraint firstAttribute="width" constant="159" id="lYT-b9-Yzd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="RKH-Az-PyL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="BWi-Bi-vQa"/>
                             <constraint firstItem="do1-d2-P39" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G4Q-hY-fjx"/>
                             <constraint firstItem="h6n-Ks-K15" firstAttribute="top" secondItem="RKH-Az-PyL" secondAttribute="bottom" constant="8" id="IGT-GM-LS7"/>
+                            <constraint firstItem="IcX-Ej-g1C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PUC-es-Wuk"/>
                             <constraint firstItem="RKH-Az-PyL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="STd-DW-x5M"/>
                             <constraint firstItem="h6n-Ks-K15" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SbC-fk-H48"/>
+                            <constraint firstItem="IcX-Ej-g1C" firstAttribute="top" secondItem="do1-d2-P39" secondAttribute="bottom" constant="8" id="TOd-fa-VgA"/>
                             <constraint firstItem="do1-d2-P39" firstAttribute="top" secondItem="h6n-Ks-K15" secondAttribute="bottom" constant="8" id="dgH-KQ-EPg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="bgt-2g-WOs">
+                    <navigationItem key="navigationItem" title="meteo Tartu" id="bgt-2g-WOs">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="LE4-5T-NBF">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -91,6 +108,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="currentImage" destination="h6n-Ks-K15" id="vbd-dg-jE4"/>
                         <outlet property="measuredTimeLabel" destination="do1-d2-P39" id="zeJ-Ko-IIL"/>
