@@ -28,6 +28,8 @@
 		63AFB7F71C5D3D93004A58E1 /* thermometer35.png in Resources */ = {isa = PBXBuildFile; fileRef = 63AFB7F41C5D3D93004A58E1 /* thermometer35.png */; };
 		63AFB7F81C5D3D93004A58E1 /* thermometer35@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63AFB7F51C5D3D93004A58E1 /* thermometer35@2x.png */; };
 		63AFB7F91C5D3D93004A58E1 /* thermometer35@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63AFB7F61C5D3D93004A58E1 /* thermometer35@3x.png */; };
+		63AFB8061C5E452D004A58E1 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63AFB8041C5E452D004A58E1 /* Fabric.framework */; };
+		63AFB8071C5E452D004A58E1 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63AFB8051C5E452D004A58E1 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		63AFB7F41C5D3D93004A58E1 /* thermometer35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thermometer35.png; sourceTree = SOURCE_ROOT; };
 		63AFB7F51C5D3D93004A58E1 /* thermometer35@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thermometer35@2x.png"; sourceTree = SOURCE_ROOT; };
 		63AFB7F61C5D3D93004A58E1 /* thermometer35@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thermometer35@3x.png"; sourceTree = SOURCE_ROOT; };
+		63AFB8041C5E452D004A58E1 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		63AFB8051C5E452D004A58E1 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +97,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6348B1E41C4BF6C100199EE5 /* Fuzi.framework in Frameworks */,
+				63AFB8071C5E452D004A58E1 /* Crashlytics.framework in Frameworks */,
 				6348B1E91C4BF6C900199EE5 /* Alamofire.framework in Frameworks */,
 				6348B1EA1C4BF6C900199EE5 /* AlamofireImage.framework in Frameworks */,
+				63AFB8061C5E452D004A58E1 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +157,8 @@
 		6348B1D21C4BF6AA00199EE5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63AFB8041C5E452D004A58E1 /* Fabric.framework */,
+				63AFB8051C5E452D004A58E1 /* Crashlytics.framework */,
 				6348B1E71C4BF6C900199EE5 /* Alamofire.framework */,
 				6348B1E81C4BF6C900199EE5 /* AlamofireImage.framework */,
 				6348B1E31C4BF6C100199EE5 /* Fuzi.framework */,
@@ -182,6 +190,7 @@
 				6348B1E21C4BF6AA00199EE5 /* Embed App Extensions */,
 				6348B1E61C4BF6C100199EE5 /* Embed Frameworks */,
 				6348B1F11C4BF9DC00199EE5 /* ShellScript */,
+				63AFB8031C5E4517004A58E1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -304,6 +313,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		63AFB8031C5E4517004A58E1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 34be06edc6f733a743335744b07a23f6a3e5b344 a9207ff06b3417aa4bf8c6408432761ca87c5b52dca8f2365b133eea61d407cc";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -456,6 +478,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TartuWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -472,6 +495,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TartuWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
