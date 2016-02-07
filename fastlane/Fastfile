@@ -38,6 +38,30 @@ platform :ios do
     )
   end
 
+  lane :appstore do
+    cert
+    sigh
+
+    increment_build_number
+
+    gym(
+      project: "TartuWeather.xcodeproj",
+      scheme: "TartuWeather",
+      clean: true,
+      output_name: "TartuWeather.ipa",
+      include_symbols: true
+    )
+
+    dsym_zip
+
+    copy_artifacts(
+      target_path: 'artifacts',
+      artifacts: ['*.dSYM.zip']
+    )
+
+    deliver
+  end
+
   after_all do |lane|
 
   end
