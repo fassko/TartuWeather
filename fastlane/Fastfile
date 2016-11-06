@@ -26,8 +26,6 @@ platform :ios do
     
     clear_derived_data
     
-    unitTests
-    
     gym(
       workspace: "TartuWeather.xcworkspace",
       scheme: "TartuWeather",
@@ -66,11 +64,10 @@ platform :ios do
   end
   
   lane :unitTests do
-    ENV["FASTLANE_EXPLICIT_OPEN_SIMULATOR"] = "1"
-    
     scan(
       workspace: "TartuWeather.xcworkspace",
       scheme: "UnitTests",
+      device: "iPhone 7",
       configuration: "Debug"
     )
   end
