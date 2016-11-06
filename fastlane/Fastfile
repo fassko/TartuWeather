@@ -1,43 +1,52 @@
+update_fastlane
 default_platform :ios
-
 
 platform :ios do
   before_all do
-
+    cocoapods
+  end
+  
+  lane :certifiations do
+    match(type: "appstore")
+    match(type: "adhoc")
+    match(type: "development")
   end
 
   lane :travis do
-    cocoapods
-    
     build
   end
 
   lane :build do
-    xctool :build, [
-      "--workspace", "TartuWeather.xcworkspace",
-      "--scheme", "TartuWeather",
-      "--configuration", "Debug",
-      "CODE_SIGN_IDENTITY=\"\"",
-      "CODE_SIGNING_REQUIRED=NO"
-    ].join(" ")
-
-    xctool :build, [
-      "--workspace", "TartuWeather.xcworkspace",
-      "--scheme", "TartuWeatherWidget",
-      "--configuration", "Debug",
-      "CODE_SIGN_IDENTITY=\"\"",
-      "CODE_SIGNING_REQUIRED=NO"
-    ].join(" ")
+    certifiations
+    sigh
+    
+    increment_build_number(
+      build_number: Time.new.strftime("%Y%m%d.%H%M%S")
+    )
+    
+    clear_derived_data
+    
+    gym(
+      workspace: "TartuWeather.xcworkspace",
+      scheme: "TartuWeather",
+      clean: true,
+      output_name: "TartuWeather.ipa",
+      include_symbols: true
+    )
   end
 
   lane :release do
-    cert
+    certifiations
     sigh
 
-    increment_build_number
+    increment_build_number(
+      build_number: Time.new.strftime("%Y%m%d.%H%M%S")
+    )
+    
+    clear_derived_data
 
     gym(
-      project: "TartuWeather.xcodeproj",
+      workspace: "TartuWeather.xcworkspace",
       scheme: "TartuWeather",
       clean: true,
       output_name: "TartuWeather.ipa",
