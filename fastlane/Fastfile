@@ -69,7 +69,8 @@ platform :ios do
     scan(
       workspace: "TartuWeather.xcworkspace",
       scheme: "UnitTests",
-      device: "iPhone 7"
+      device: "iPhone 7",
+      configuration: "Debug"
     )
   end
 
