@@ -7,24 +7,22 @@ platform :ios do
   end
 
   lane :travis do
-    carthage(
-      platform: "iOS"
-    )
-
+    cocoapods
+    
     build
   end
 
   lane :build do
-    xctool :clean, :build, [
-      "--project", "TartuWeather.xcodeproj",
+    xctool :build, [
+      "--workspace", "TartuWeather.xcworkspace",
       "--scheme", "TartuWeather",
       "--configuration", "Debug",
       "CODE_SIGN_IDENTITY=\"\"",
       "CODE_SIGNING_REQUIRED=NO"
     ].join(" ")
 
-    xctool :clean, :build, [
-      "--project", "TartuWeather.xcodeproj",
+    xctool :build, [
+      "--workspace", "TartuWeather.xcworkspace",
       "--scheme", "TartuWeatherWidget",
       "--configuration", "Debug",
       "CODE_SIGN_IDENTITY=\"\"",
@@ -32,13 +30,7 @@ platform :ios do
     ].join(" ")
   end
 
-  lane :carthage do
-    carthage(
-      platform: "iOS"
-    )
-  end
-
-  lane :appstore do
+  lane :release do
     cert
     sigh
 

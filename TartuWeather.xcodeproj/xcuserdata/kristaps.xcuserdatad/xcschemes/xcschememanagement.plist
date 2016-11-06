@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>TartuWeatherTodayWidget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>TartuWeatherWidget.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +22,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>63330E9B1DCF4D07002194A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6348B1B71C4BF55300199EE5</key>
 		<dict>
 			<key>primary</key>

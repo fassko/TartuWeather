@@ -18,7 +18,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    WeatherAPI.getData({
+    WeatherAPI.getData(completion: {
       (temperature, wind, measuredTime) in
         self.temperatureLabel.text = temperature
         self.windLabel.text = wind
@@ -26,29 +26,30 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     })
   }
 
-  func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
+  func widgetPerformUpdateWithCompletionHandler(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
     // Perform any setup necessary in order to update the view.
 
     // If an error is encountered, use NCUpdateResult.Failed
     // If there's no update required, use NCUpdateResult.NoData
     // If there's an update, use NCUpdateResult.NewData
     
-    WeatherAPI.getData({
+    WeatherAPI.getData(completion: {
       (temperature, wind, measuredTime) in
         self.temperatureLabel.text = temperature
         self.windLabel.text = wind
         self.measuredTimeLabel.text = measuredTime
-        completionHandler(NCUpdateResult.NewData)
+        completionHandler(NCUpdateResult.newData)
     })
     
   }
   
   
   @IBAction func openApp(sender: AnyObject) {
-    self.extensionContext?.openURL(NSURL(string:"tartuweather://home")!, completionHandler: nil)
+    self.extensionContext?.open(NSURL(string:"tartuweather://home")! as URL, completionHandler: nil)
   }
   
-  func widgetMarginInsetsForProposedMarginInsets(var defaultMarginInsets: UIEdgeInsets) -> (UIEdgeInsets) {
+  func widgetMarginInsetsForProposedMarginInsets( defaultMarginInsets: UIEdgeInsets) -> (UIEdgeInsets) {
+    var defaultMarginInsets = defaultMarginInsets
     defaultMarginInsets.bottom = 20;
     return defaultMarginInsets
   }
