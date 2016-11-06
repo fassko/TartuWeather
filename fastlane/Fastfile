@@ -26,6 +26,8 @@ platform :ios do
     
     clear_derived_data
     
+    unitTests
+    
     gym(
       workspace: "TartuWeather.xcworkspace",
       scheme: "TartuWeather",
@@ -61,6 +63,14 @@ platform :ios do
     )
 
     deliver
+  end
+  
+  lane :unitTests do
+    scan(
+      workspace: "TartuWeather.xcworkspace",
+      scheme: "UnitTests",
+      device: "iPhone 7"
+    )
   end
 
   after_all do |lane|
