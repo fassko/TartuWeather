@@ -66,6 +66,8 @@ platform :ios do
   end
   
   lane :unitTests do
+    ENV["FASTLANE_EXPLICIT_OPEN_SIMULATOR"] = "1"
+    
     scan(
       workspace: "TartuWeather.xcworkspace",
       scheme: "UnitTests",
