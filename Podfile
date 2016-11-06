@@ -10,8 +10,6 @@ target 'TartuWeather' do
   pod 'AlamoFuzi'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'Quick'
-  pod 'Nimble'
 end
 
 target 'TartuWeatherWidget' do

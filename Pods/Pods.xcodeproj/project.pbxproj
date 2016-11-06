@@ -25,6 +25,7 @@
 		1C50F54510D5C2B2AD84D7B74A6EDEBB /* BeGreaterThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73EF82EB209210F35E1DE3A415FD733 /* BeGreaterThanOrEqualTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		1C7CA1FAFBF8B865596C739FEA39CDEE /* DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B8ED63ACDF60ABD327EAB189991E81 /* DSL.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		1CE03E6BD6654CD9B1B5D19D0341DC02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4ACAA0A3F6F5406AFE3DAD56C92E15A /* Foundation.framework */; };
+		1D2399A6012E657A0C70C8DDFFF7443A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4ACAA0A3F6F5406AFE3DAD56C92E15A /* Foundation.framework */; };
 		1E73E333A55CBC48CD54524EF1F4314C /* NodeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F0C437256373F8559203F21DD1A99A /* NodeSet.swift */; };
 		202822E4668C16D115A8F68F3ADF0E0F /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FFD5F496AC4EF233E8DB8AD541B4A8 /* ImageDownloader.swift */; };
 		204149AC1C6D96FCEF4C254BBFC1034A /* Quick.h in Headers */ = {isa = PBXBuildFile; fileRef = BA2E865E616D68A7E80E5CA2C5606B0A /* Quick.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -64,7 +65,6 @@
 		5470326F980012E693A3628E1A1AB4BE /* NSString+QCKSelectorName.h in Headers */ = {isa = PBXBuildFile; fileRef = 75A9FB4259E75A52218BE21169C287BC /* NSString+QCKSelectorName.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		551440A0F92574039C1D2EB39227D6B8 /* AsyncMatcherWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE615E7DD1D900B9F648E017C57646 /* AsyncMatcherWrapper.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		56AA746AED4EC43F77B1B0CD423FACCB /* QuickSelectedTestSuiteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77E1CC561573A0E70550F57C67D31A7 /* QuickSelectedTestSuiteBuilder.swift */; };
-		58FB228BAC8504F64800AA6058F68998 /* Pods-TartuWeather-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206C63160A131CF9B9660B06642FB28 /* Pods-TartuWeather-dummy.m */; };
 		599669823A2EED2928C77F301F6B0515 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4694231F23AC4EA51CA7F148F9E501F /* BeNil.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		5B253C9B9DED00AD9591B282C749C1D7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B4BF1623E7ADC5195C05CD59C24A6D /* Helpers.swift */; };
 		5D1EE2876094AEE3C783073F5E681D93 /* World+DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E00A6FA3066CFEDCCEAD4FF15F14E7 /* World+DSL.swift */; };
@@ -77,7 +77,6 @@
 		65F5217D44A557FC16218DE5DE348C35 /* CwlCatchBadInstruction.h in Headers */ = {isa = PBXBuildFile; fileRef = F362914B0EC65B3A67B8F688DE618AB8 /* CwlCatchBadInstruction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6791BB1FBA6E4120CD68BFAA3F6C0DB4 /* HooksPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC624E3AE04FB07AB3D2D28EBE5A03 /* HooksPhase.swift */; };
 		6B75A73FCC95D5A75E3CE9453DD28AD9 /* NSBundle+CurrentTestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49199744D3E06382D97D17584BB0082F /* NSBundle+CurrentTestBundle.swift */; };
-		6CB08EA535AE03B05E465B17A232508D /* Pods-TartuWeather-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E14532135CDD545EB67E9E761FA3C83 /* Pods-TartuWeather-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6CDBA48C3A8621E4EE1DAFFE240F0D82 /* CwlCatchBadInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8893F3D9E2AF8D1C9500C93BF78E21F6 /* CwlCatchBadInstruction.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		6E397D9FB11A47E48D70287D734B12B2 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A853FBD5AEEBD6D0F6102D612AB80F /* BeLessThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		73683511F9A3EB9087C873FA930EE369 /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 3851F29C9547182DBBC2BCDFABC48530 /* QuickSpec.m */; };
@@ -98,6 +97,7 @@
 		86FFB76B2EDCF4AE79CC4C0BD8A0FE9A /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BAA9AF884F296B36CD371F15F567E7 /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		87DD62F200DAB5E1D701AB9F94D1D422 /* CwlCatchException.h in Headers */ = {isa = PBXBuildFile; fileRef = 71F99E8326D91D900A2FE08B4C74CB4B /* CwlCatchException.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88F8D2A2A2A52636FA91803475D7A8ED /* Pods-meteoTartuUnitTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A8202DE84671BF2B782BEDC33361B057 /* Pods-meteoTartuUnitTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A8F55EB610377CDFB32F7792A4628DC /* Pods-TartuWeather-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206C63160A131CF9B9660B06642FB28 /* Pods-TartuWeather-dummy.m */; };
 		8C30EAD5FFD28B387099B41C74657A67 /* NMBExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7A806BB95D934AA5CEE1F455009532 /* NMBExpectation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		8EC5A1F52CA68703329758296D900A42 /* Queryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4492A44DBE356E3ECCB0EB4AD40A2F /* Queryable.swift */; };
 		8EF67A87EC630001AE63000DC039F540 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49447DB4B20C52AF20B3C05FE32233 /* Node.swift */; };
@@ -134,7 +134,6 @@
 		BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDAA62A0D4E4A7B448FCB70BB65A280 /* Validation.swift */; };
 		BE5C67A07E289FE1F9BE27335B159997 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAA1F30B718A11F7B5CF7240DFE8DA6 /* ParameterEncoding.swift */; };
 		BF3AF1D2B46E09E2B3DCC824E6C1F5AF /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C01AD551881D307C047A3E06E289FD /* Equal.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		BFAE4FE98D8E4B0BE3E23B31E1EE32E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4ACAA0A3F6F5406AFE3DAD56C92E15A /* Foundation.framework */; };
 		C38EA82EF9C5E6F48B6D26617484EA84 /* XCTestSuite+QuickTestSuiteBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C528695C569902AFE3241BA1D36DF2 /* XCTestSuite+QuickTestSuiteBuilder.m */; };
 		C73BF39A4CCC3E450E102C23027F8FF8 /* UIButton+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66EF22851FF5251F5EAC351A8036EAE /* UIButton+AlamofireImage.swift */; };
 		CB6D60925223897FFA2662667DF83E8A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009AE6B568EFF04B73B544F6329DD7BA /* Response.swift */; };
@@ -152,6 +151,7 @@
 		E16A0F6598FEC54B40E91DD9F328165E /* Fuzi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA2BC5E2939F4E8D715425DBD001708 /* Fuzi.framework */; };
 		E1FF4985892E23B75A3381EFF830DFD5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED7B087233E1A465429E7B8C219E410 /* Image.swift */; };
 		E5CCEF0B83F8272D10671C01AAE4FFA0 /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73B459448AA3BCAAD3226969F6E4292 /* NimbleXCTestHandler.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		EA628D816F40ABD47A8A40D2BFB4499B /* Pods-TartuWeather-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E14532135CDD545EB67E9E761FA3C83 /* Pods-TartuWeather-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBA52C16F42E42A1824D87C284F4A60C /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D033483AF6395CEA9CF58BD3E27BB0 /* PostNotification.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		EBB25CBB0D4056E28A35EA6EB8145E0A /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B09FC18682BE4248573F79A3D2E8390 /* DSL.swift */; };
 		EEEEB03A4FFEC475F5A67244D8F4FCFE /* Quick-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40CA234C3BFF1713CAC19A2C2B3DFCFD /* Quick-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -193,20 +193,6 @@
 			remoteGlobalIDString = F2FE7CF158399B85F69CE0F728E37A43;
 			remoteInfo = AlamoFuzi;
 		};
-		1DB7D5A1C260CC5A647EF293C3B3C903 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
-			remoteInfo = Alamofire;
-		};
-		282C7862941E180B5CD8B69AA2410B8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA0C956E9F6887516126415203D9440B;
-			remoteInfo = Quick;
-		};
 		3751584820905F77BA5C728E26703E11 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -221,6 +207,13 @@
 			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
 			remoteInfo = Alamofire;
 		};
+		67BD10BA63C6DB12088D1757084BBBA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 485AB79A2A727289E883DC336CA07C1F;
+			remoteInfo = Fuzi;
+		};
 		6D19D823EE1C6E82584956D22EF9EA0E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -228,19 +221,19 @@
 			remoteGlobalIDString = F2FE7CF158399B85F69CE0F728E37A43;
 			remoteInfo = AlamoFuzi;
 		};
-		7264D3E6A938D59461392487AB24F7BC /* PBXContainerItemProxy */ = {
+		7785C183ACE583897327F2C2267BF0F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 485AB79A2A727289E883DC336CA07C1F;
-			remoteInfo = Fuzi;
+			remoteGlobalIDString = 9EFE4C70245EE2857D336B8B9FA4E825;
+			remoteInfo = AlamofireImage;
 		};
-		977F95D240B03A48377B8AD174E73BF6 /* PBXContainerItemProxy */ = {
+		8CAFEBAFF347958A5966D866607BDE81 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1321E318D10CFDC9F5B93A7952492CCD;
-			remoteInfo = Nimble;
+			remoteGlobalIDString = F2FE7CF158399B85F69CE0F728E37A43;
+			remoteInfo = AlamoFuzi;
 		};
 		99938C8886F5281F3845D566791D9523 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -264,13 +257,6 @@
 			remoteInfo = Nimble;
 		};
 		B5C5E559F05E8FB622EBEAF315062694 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9EFE4C70245EE2857D336B8B9FA4E825;
-			remoteInfo = AlamofireImage;
-		};
-		BF214B37300C1F9B7F30ED14854DBC84 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -305,14 +291,14 @@
 			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
 			remoteInfo = Alamofire;
 		};
-		D15DEF9008FF0C76E04BDC3F9D930BD0 /* PBXContainerItemProxy */ = {
+		DE32B1050DEA158621B6594C99C0F954 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F2FE7CF158399B85F69CE0F728E37A43;
-			remoteInfo = AlamoFuzi;
+			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
+			remoteInfo = Alamofire;
 		};
-		DE32B1050DEA158621B6594C99C0F954 /* PBXContainerItemProxy */ = {
+		E7AF233E829024971353B40380BC1A66 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -568,14 +554,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		144190515E5F21D742AF6D5CA8B8A567 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BFAE4FE98D8E4B0BE3E23B31E1EE32E4 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1EBA08AF9816D1FAE220332D6F9A63C2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -614,6 +592,14 @@
 			files = (
 				613167D898FF421A6F75D1FE5D145B9B /* Alamofire.framework in Frameworks */,
 				245DAEE5793271CA5BECA7A816092142 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C49994DB784A0E82AB33BC3612CC7799 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D2399A6012E657A0C70C8DDFFF7443A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1111,14 +1097,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0695FA9272FAD51792E4EA013E28228D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6CB08EA535AE03B05E465B17A232508D /* Pods-TartuWeather-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0FA6F7760A66EFC386F758B73812BA2A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1163,6 +1141,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DC73D1732D9777C84248A2087067C72 /* AlamoFuzi-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		566785A6DFFBE6F2653D37701BB744B1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA628D816F40ABD47A8A40D2BFB4499B /* Pods-TartuWeather-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1264,29 +1250,6 @@
 			productReference = AEAD91E4B4EF3412FF75AEAB4FEE8ED0 /* Pods_meteoTartuUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7E10A6DA2DBE4E56098BB1C5BDB1E7BD /* Pods-TartuWeather */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2DCBEEEC9F2F5A6B6B1F0E79056C1F8A /* Build configuration list for PBXNativeTarget "Pods-TartuWeather" */;
-			buildPhases = (
-				A3207A16696A5AB77BB1CCBAE9EB517A /* Sources */,
-				144190515E5F21D742AF6D5CA8B8A567 /* Frameworks */,
-				0695FA9272FAD51792E4EA013E28228D /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7B7E785F2822D2DA556ECB03E8B5A7BF /* PBXTargetDependency */,
-				B38739874719A5FE55243A2EE33AD4AD /* PBXTargetDependency */,
-				52BF2DFDFC1C23760325B9E84EDB7977 /* PBXTargetDependency */,
-				A8DD7F8DA8F94B0494A70311945CD81C /* PBXTargetDependency */,
-				52C2F15ABED6FD57EFA750ED46361241 /* PBXTargetDependency */,
-				63D6856EEF4CDBE15836F53FB2144159 /* PBXTargetDependency */,
-			);
-			name = "Pods-TartuWeather";
-			productName = "Pods-TartuWeather";
-			productReference = 39072539CEE04E20A5387C29D07520A9 /* Pods_TartuWeather.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 419E5D95491847CD79841B971A8A3277 /* Build configuration list for PBXNativeTarget "Alamofire" */;
@@ -1385,6 +1348,27 @@
 			productReference = 10F727F98C6E4BF9CE687250D0F787FC /* Pods_meteoTartuUnitTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		F8A3F18BC81FBA815A741648A6A10E25 /* Pods-TartuWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9EB63C5DA24D3CB1E26B6618A2B1C65 /* Build configuration list for PBXNativeTarget "Pods-TartuWeather" */;
+			buildPhases = (
+				5A00384813BAC754BAB5D5AF782526A6 /* Sources */,
+				C49994DB784A0E82AB33BC3612CC7799 /* Frameworks */,
+				566785A6DFFBE6F2653D37701BB744B1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E900AD2462BC495B93EFAB02C0607590 /* PBXTargetDependency */,
+				05E89F52CAFC4870E3BCF367BB14391E /* PBXTargetDependency */,
+				4B2576C4B81AC4165A571E45A0082B7C /* PBXTargetDependency */,
+				48CBFFEF007ED77D5CE713A179F89CDD /* PBXTargetDependency */,
+			);
+			name = "Pods-TartuWeather";
+			productName = "Pods-TartuWeather";
+			productReference = 39072539CEE04E20A5387C29D07520A9 /* Pods_TartuWeather.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		FA0C956E9F6887516126415203D9440B /* Quick */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38677A2E999C675B6886CE2229ABAA68 /* Build configuration list for PBXNativeTarget "Quick" */;
@@ -1430,7 +1414,7 @@
 				1321E318D10CFDC9F5B93A7952492CCD /* Nimble */,
 				6CE7AA0A1A2044C0A64298D2E28E5F4E /* Pods-meteoTartuUITests */,
 				F507F51F2ED3E687657BFB7D0B834E2F /* Pods-meteoTartuUnitTests */,
-				7E10A6DA2DBE4E56098BB1C5BDB1E7BD /* Pods-TartuWeather */,
+				F8A3F18BC81FBA815A741648A6A10E25 /* Pods-TartuWeather */,
 				BFFBA47946D0EDB39FF5650F3E613BC1 /* Pods-TartuWeatherWidget */,
 				FA0C956E9F6887516126415203D9440B /* Quick */,
 			);
@@ -1552,19 +1536,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A00384813BAC754BAB5D5AF782526A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A8F55EB610377CDFB32F7792A4628DC /* Pods-TartuWeather-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1164FB29EF1DC3E89CF61529C9DEA9F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ADE1F96734866745A9BE683E313082CE /* Pods-meteoTartuUnitTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A3207A16696A5AB77BB1CCBAE9EB517A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				58FB228BAC8504F64800AA6058F68998 /* Pods-TartuWeather-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1634,6 +1618,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		05E89F52CAFC4870E3BCF367BB14391E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
+			targetProxy = E7AF233E829024971353B40380BC1A66 /* PBXContainerItemProxy */;
+		};
 		0A8A49467D7C49B04CC4775CF0FDEC80 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Quick;
@@ -1646,23 +1636,23 @@
 			target = 485AB79A2A727289E883DC336CA07C1F /* Fuzi */;
 			targetProxy = 1AAF4B261289EA337BEF63B2D1176FF5 /* PBXContainerItemProxy */;
 		};
+		48CBFFEF007ED77D5CE713A179F89CDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Fuzi;
+			target = 485AB79A2A727289E883DC336CA07C1F /* Fuzi */;
+			targetProxy = 67BD10BA63C6DB12088D1757084BBBA2 /* PBXContainerItemProxy */;
+		};
+		4B2576C4B81AC4165A571E45A0082B7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AlamofireImage;
+			target = 9EFE4C70245EE2857D336B8B9FA4E825 /* AlamofireImage */;
+			targetProxy = 7785C183ACE583897327F2C2267BF0F9 /* PBXContainerItemProxy */;
+		};
 		4E9AC6A915C662F5A80AB890982AE859 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Fuzi;
 			target = 485AB79A2A727289E883DC336CA07C1F /* Fuzi */;
 			targetProxy = C8A5F425B722A11E168BB83D7CE6340D /* PBXContainerItemProxy */;
-		};
-		52BF2DFDFC1C23760325B9E84EDB7977 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AlamofireImage;
-			target = 9EFE4C70245EE2857D336B8B9FA4E825 /* AlamofireImage */;
-			targetProxy = BF214B37300C1F9B7F30ED14854DBC84 /* PBXContainerItemProxy */;
-		};
-		52C2F15ABED6FD57EFA750ED46361241 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Nimble;
-			target = 1321E318D10CFDC9F5B93A7952492CCD /* Nimble */;
-			targetProxy = 977F95D240B03A48377B8AD174E73BF6 /* PBXContainerItemProxy */;
 		};
 		5DAE78AAEB546E2C08909C183B9D5A82 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1676,23 +1666,11 @@
 			target = 485AB79A2A727289E883DC336CA07C1F /* Fuzi */;
 			targetProxy = C8000710A211AD5D17A61DF482EC168B /* PBXContainerItemProxy */;
 		};
-		63D6856EEF4CDBE15836F53FB2144159 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Quick;
-			target = FA0C956E9F6887516126415203D9440B /* Quick */;
-			targetProxy = 282C7862941E180B5CD8B69AA2410B8E /* PBXContainerItemProxy */;
-		};
 		63FCC6668754C5437E8E2A88099AD5E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
 			targetProxy = F18C153276E189FE46EF866BC278BD2C /* PBXContainerItemProxy */;
-		};
-		7B7E785F2822D2DA556ECB03E8B5A7BF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AlamoFuzi;
-			target = F2FE7CF158399B85F69CE0F728E37A43 /* AlamoFuzi */;
-			targetProxy = D15DEF9008FF0C76E04BDC3F9D930BD0 /* PBXContainerItemProxy */;
 		};
 		8640EFCFF01FA7A21A83434BD2EC58D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1724,18 +1702,6 @@
 			target = F2FE7CF158399B85F69CE0F728E37A43 /* AlamoFuzi */;
 			targetProxy = 99938C8886F5281F3845D566791D9523 /* PBXContainerItemProxy */;
 		};
-		A8DD7F8DA8F94B0494A70311945CD81C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Fuzi;
-			target = 485AB79A2A727289E883DC336CA07C1F /* Fuzi */;
-			targetProxy = 7264D3E6A938D59461392487AB24F7BC /* PBXContainerItemProxy */;
-		};
-		B38739874719A5FE55243A2EE33AD4AD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
-			targetProxy = 1DB7D5A1C260CC5A647EF293C3B3C903 /* PBXContainerItemProxy */;
-		};
 		C205B993A144629466C777E5664E65D6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
@@ -1760,6 +1726,12 @@
 			target = 1321E318D10CFDC9F5B93A7952492CCD /* Nimble */;
 			targetProxy = B0FE1BB323C4DEDE933BE513529C8742 /* PBXContainerItemProxy */;
 		};
+		E900AD2462BC495B93EFAB02C0607590 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AlamoFuzi;
+			target = F2FE7CF158399B85F69CE0F728E37A43 /* AlamoFuzi */;
+			targetProxy = 8CAFEBAFF347958A5966D866607BDE81 /* PBXContainerItemProxy */;
+		};
 		EA90B4EA47830B6DBCC8FB1941936370 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AlamofireImage;
@@ -1775,15 +1747,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0E400012998FCE028AC31208AD9A1AB2 /* Debug */ = {
+		0A10A1A84372E619F20BB4302C5E7D97 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0E2D4869DBC075059264CDEB143C747 /* Pods-TartuWeather.debug.xcconfig */;
+			baseConfigurationReference = D6BE6958482F8D8142687B6BBD6F2512 /* Pods-TartuWeather.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1796,7 +1768,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-TartuWeather/Pods-TartuWeather.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1804,13 +1776,12 @@
 				PRODUCT_NAME = Pods_TartuWeather;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		118F9175EA86CD7F66CAF94A03227918 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1880,6 +1851,43 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		43716E9C3F1273052D44D7A4A114DB32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0E2D4869DBC075059264CDEB143C747 /* Pods-TartuWeather.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TartuWeather/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TartuWeather/Pods-TartuWeather.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TartuWeather;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		55329915DA3D79D5A58E4A692D2EE298 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2445,42 +2453,6 @@
 			};
 			name = Debug;
 		};
-		EB145E97764F9B355F19066AC9D0D8E6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6BE6958482F8D8142687B6BBD6F2512 /* Pods-TartuWeather.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TartuWeather/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TartuWeather/Pods-TartuWeather.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TartuWeather;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		EF4EE18D89051AF94E3D2C5F24AC1F69 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06C60AE91DF33EB1D567DCE57DA50CEC /* Pods-TartuWeatherWidget.release.xcconfig */;
@@ -2581,15 +2553,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2DCBEEEC9F2F5A6B6B1F0E79056C1F8A /* Build configuration list for PBXNativeTarget "Pods-TartuWeather" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0E400012998FCE028AC31208AD9A1AB2 /* Debug */,
-				EB145E97764F9B355F19066AC9D0D8E6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		38677A2E999C675B6886CE2229ABAA68 /* Build configuration list for PBXNativeTarget "Quick" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2631,6 +2594,15 @@
 			buildConfigurations = (
 				B758C4DDE742B317B24E1088AC362430 /* Debug */,
 				EF4EE18D89051AF94E3D2C5F24AC1F69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9EB63C5DA24D3CB1E26B6618A2B1C65 /* Build configuration list for PBXNativeTarget "Pods-TartuWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43716E9C3F1273052D44D7A4A114DB32 /* Debug */,
+				0A10A1A84372E619F20BB4302C5E7D97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
