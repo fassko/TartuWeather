@@ -5,6 +5,7 @@ before_install:
   - fastlane --version
   - gem cleanup
   - pod --version
+  - pod update
 language: objective-c
 osx_image: xcode8
 script:
