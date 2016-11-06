@@ -20,19 +20,19 @@ class ViewController: UIViewController {
     
     updateWeather()
   
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateWeather", name: UIApplicationDidBecomeActiveNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateWeather), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
   }
   
   
   func updateWeather() {
-    WeatherAPI.getData({
+    WeatherAPI.getData(completion: {
       (temperature, wind, measuredTime) in
         self.temperatureLabel.text = temperature
         self.windLabel.text = wind
         self.measuredTimeLabel.text = measuredTime
     })
     
-    WeatherAPI.getCurrentImage({
+    WeatherAPI.getCurrentImage(completion: {
       (image) in
         self.currentImage.image = image
     })

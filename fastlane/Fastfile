@@ -1,51 +1,54 @@
+update_fastlane
 default_platform :ios
-
 
 platform :ios do
   before_all do
-
+    # cocoapods
+  end
+  
+  lane :certifiations do
+    match(type: "appstore")
+    match(type: "adhoc")
+    match(type: "development")
   end
 
   lane :travis do
-    carthage(
-      platform: "iOS"
-    )
-
     build
   end
 
   lane :build do
-    xctool :clean, :build, [
-      "--project", "TartuWeather.xcodeproj",
-      "--scheme", "TartuWeather",
-      "--configuration", "Debug",
-      "CODE_SIGN_IDENTITY=\"\"",
-      "CODE_SIGNING_REQUIRED=NO"
-    ].join(" ")
-
-    xctool :clean, :build, [
-      "--project", "TartuWeather.xcodeproj",
-      "--scheme", "TartuWeatherWidget",
-      "--configuration", "Debug",
-      "CODE_SIGN_IDENTITY=\"\"",
-      "CODE_SIGNING_REQUIRED=NO"
-    ].join(" ")
-  end
-
-  lane :carthage do
-    carthage(
-      platform: "iOS"
+    certifiations
+    sigh
+    
+    increment_build_number(
+      build_number: Time.new.strftime("%Y%m%d.%H%M%S")
+    )
+    
+    clear_derived_data
+    
+    unitTests
+    
+    gym(
+      workspace: "TartuWeather.xcworkspace",
+      scheme: "TartuWeather",
+      clean: true,
+      output_name: "TartuWeather.ipa",
+      include_symbols: true
     )
   end
 
-  lane :appstore do
-    cert
+  lane :release do
+    certifiations
     sigh
 
-    increment_build_number
+    increment_build_number(
+      build_number: Time.new.strftime("%Y%m%d.%H%M%S")
+    )
+    
+    clear_derived_data
 
     gym(
-      project: "TartuWeather.xcodeproj",
+      workspace: "TartuWeather.xcworkspace",
       scheme: "TartuWeather",
       clean: true,
       output_name: "TartuWeather.ipa",
@@ -60,6 +63,14 @@ platform :ios do
     )
 
     deliver
+  end
+  
+  lane :unitTests do
+    scan(
+      workspace: "TartuWeather.xcworkspace",
+      scheme: "UnitTests",
+      device: "iPhone 7"
+    )
   end
 
   after_all do |lane|
