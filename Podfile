@@ -22,3 +22,13 @@ target 'TartuWeatherWidget' do
   pod 'Fabric'
   pod 'Crashlytics'
 end
+
+target 'meteoTartuUITests' do
+  use_frameworks!
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod 'Fuzi'
+  pod 'AlamoFuzi'
+  pod 'Fabric'
+  pod 'Crashlytics'
+end

@@ -43,13 +43,23 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "63330EB11DCF6FBF002194A3"
+               BuildableName = "meteoTartuUITests.xctest"
+               BlueprintName = "meteoTartuUITests"
+               ReferencedContainer = "container:TartuWeather.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6348B1D01C4BF6AA00199EE5"
-            BuildableName = "TartuWeatherWidget.appex"
-            BlueprintName = "TartuWeatherWidget"
+            BlueprintIdentifier = "6348B1B71C4BF55300199EE5"
+            BuildableName = "TartuWeather.app"
+            BlueprintName = "TartuWeather"
             ReferencedContainer = "container:TartuWeather.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
