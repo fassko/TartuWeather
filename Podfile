@@ -34,12 +34,12 @@ end
 
 target 'meteoTartuUnitTests' do
   use_frameworks!
+  
   pod 'Alamofire'
   pod 'AlamofireImage'
   pod 'Fuzi'
   pod 'AlamoFuzi'
-  pod 'Fabric'
-  pod 'Crashlytics'
+  
   pod 'Quick'
   pod 'Nimble'
 end
