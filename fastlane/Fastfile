@@ -34,6 +34,10 @@ platform :ios do
     
     clear_derived_data
     
+    unitTests
+    
+    interfaceTests
+    
     gym(
       workspace: "TartuWeather.xcworkspace",
       scheme: "TartuWeather",
