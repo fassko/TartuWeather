@@ -6,17 +6,26 @@ platform :ios do
     cocoapods
   end
   
-  lane :certifiations do
+  lane :certificates do
     match(type: "appstore")
     match(type: "development")
   end
 
   lane :travis do
     build
+    
+    changelog_from_git_commits
+    
+    if is_ci? && ENV["TRAVIS_PULL_REQUEST"] != "false"
+      testflight(
+        skip_waiting_for_build_processing: true,
+        changelog: last_git_commit["message"]
+      )
+    end
   end
 
   lane :build do
-    certifiations
+    certificates
     sigh
     
     increment_build_number(
@@ -34,7 +43,7 @@ platform :ios do
   end
 
   lane :release do
-    certifiations
+    certificates
     sigh
 
     increment_build_number(

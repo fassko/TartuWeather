@@ -6,9 +6,9 @@ sudo gem install fastlane
 ```
 # Available Actions
 ## iOS
-### ios certifiations
+### ios certificates
 ```
-fastlane ios certifiations
+fastlane ios certificates
 ```
 
 ### ios travis
