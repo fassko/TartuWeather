@@ -28,8 +28,13 @@ class ViewController: UIViewController {
     WeatherAPI.getData(completion: {
       (temperature, wind, measuredTime) in
         self.temperatureLabel.text = temperature
+        self.temperatureLabel.accessibilityLabel = temperature
+      
         self.windLabel.text = wind
+        self.windLabel.accessibilityLabel = wind
+      
         self.measuredTimeLabel.text = measuredTime
+        self.measuredTimeLabel.accessibilityLabel = measuredTime
     })
     
     WeatherAPI.getCurrentImage(completion: {

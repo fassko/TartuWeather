@@ -6,6 +6,7 @@
 //  Copyright © 2016 fassko. All rights reserved.
 //
 
+
 import XCTest
 
 class meteoTartuUITests: XCTestCase {
@@ -31,21 +32,21 @@ class meteoTartuUITests: XCTestCase {
     
     app.navigationBars["meteo Tartu"].buttons["Refresh"].tap()
     
-//    app.statusBars.otherElements["5:07 PM"].tap()
-//    
-//    XCUIDevice.shared().orientation = .portrait
-//    app.children(matching: .window).element(boundBy: 6).children(matching: .other).element.tap()
-//    
-//    let scrollViewsQuery = app.scrollViews
-//    scrollViewsQuery.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.swipeRight()
-//    scrollViewsQuery.otherElements.scrollViews.otherElements.buttons["Edit"].tap()
-//    app.tables.buttons["Insert meteo Tartu"].tap()
-//    app.navigationBars["UITableView"].buttons["Done"].tap()
-//    
-//    let page1Of2PageIndicator = app.pageIndicators["page 1 of 2"]
-//    page1Of2PageIndicator.swipeUp()
-//    XCUIDevice.shared().orientation = .portrait
-//    //    snapshot("Launch")
+    let tempLabel = app.staticTexts.element(matching: .any, identifier: "temp-label")
+    let windLabel = app.staticTexts.element(matching: .any, identifier: "wind-label")
+    let measuredTimeLabel = app.staticTexts.element(matching: .any, identifier: "measured-time-label")
+    
+    XCTAssertNotNil(tempLabel.label)
+    XCTAssert(tempLabel.label != "")
+
+    XCTAssertNotNil(windLabel.label)
+    XCTAssert(windLabel.label != "")
+    
+    XCTAssertNotNil(measuredTimeLabel.label)
+    XCTAssert(measuredTimeLabel.label != "")
+    
+    let image = app.images["Live weather"]
+    XCTAssert(image.exists)
   }
     
 }
