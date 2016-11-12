@@ -8,7 +8,6 @@ platform :ios do
   
   lane :certifiations do
     match(type: "appstore")
-    match(type: "adhoc")
     match(type: "development")
   end
 
@@ -30,8 +29,7 @@ platform :ios do
       workspace: "TartuWeather.xcworkspace",
       scheme: "TartuWeather",
       clean: true,
-      output_name: "TartuWeather.ipa",
-      include_symbols: true
+      output_name: "TartuWeather.ipa"
     )
   end
 
@@ -67,8 +65,15 @@ platform :ios do
     scan(
       workspace: "TartuWeather.xcworkspace",
       scheme: "UnitTests",
-      device: "iPhone 7",
-      configuration: "Debug"
+      device: "iPhone 7"
+    )
+  end
+  
+  lane :interfaceTests do
+    scan(
+      workspace: "TartuWeather.xcworkspace",
+      scheme: "UXTests",
+      device: "iPhone 7"
     )
   end
 

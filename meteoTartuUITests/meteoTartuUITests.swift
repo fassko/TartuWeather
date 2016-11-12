@@ -25,27 +25,27 @@ class meteoTartuUITests: XCTestCase {
   }
   
   func testLaunch() {
-//    sleep(5)
+    sleep(5)
     
     let app = XCUIApplication()
     
     app.navigationBars["meteo Tartu"].buttons["Refresh"].tap()
     
-    app.statusBars.otherElements["5:07 PM"].tap()
-    
-    XCUIDevice.shared().orientation = .portrait
-    app.children(matching: .window).element(boundBy: 6).children(matching: .other).element.tap()
-    
-    let scrollViewsQuery = app.scrollViews
-    scrollViewsQuery.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.swipeRight()
-    scrollViewsQuery.otherElements.scrollViews.otherElements.buttons["Edit"].tap()
-    app.tables.buttons["Insert meteo Tartu"].tap()
-    app.navigationBars["UITableView"].buttons["Done"].tap()
-    
-    let page1Of2PageIndicator = app.pageIndicators["page 1 of 2"]
-    page1Of2PageIndicator.swipeUp()
-    XCUIDevice.shared().orientation = .portrait
-    //    snapshot("Launch")
+//    app.statusBars.otherElements["5:07 PM"].tap()
+//    
+//    XCUIDevice.shared().orientation = .portrait
+//    app.children(matching: .window).element(boundBy: 6).children(matching: .other).element.tap()
+//    
+//    let scrollViewsQuery = app.scrollViews
+//    scrollViewsQuery.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.swipeRight()
+//    scrollViewsQuery.otherElements.scrollViews.otherElements.buttons["Edit"].tap()
+//    app.tables.buttons["Insert meteo Tartu"].tap()
+//    app.navigationBars["UITableView"].buttons["Done"].tap()
+//    
+//    let page1Of2PageIndicator = app.pageIndicators["page 1 of 2"]
+//    page1Of2PageIndicator.swipeUp()
+//    XCUIDevice.shared().orientation = .portrait
+//    //    snapshot("Launch")
   }
     
 }
