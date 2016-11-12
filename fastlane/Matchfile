@@ -1,0 +1,9 @@
+git_url "https://fassko@bitbucket.org/fassko/certificates"
+
+type "development" # The default type, can be: appstore, adhoc or development
+
+app_identifier ["com.fassko.TartuWeather", "com.fassko.TartuWeather.TartuWeatherWidget","com.fassko.meteoTartuUITests"]
+username "fassko@gmail.com" # Your Apple Developer Portal username
+
+# For all available options run `match --help`
+# Remove the # in the beginning of the line to enable the other options

@@ -1,0 +1,37 @@
+PODS:
+  - Alamofire (4.0.1)
+  - AlamofireImage (3.1.0):
+    - Alamofire (~> 4.0)
+  - AlamoFuzi (1.0.3):
+    - Alamofire (~> 4.0)
+    - Fuzi (~> 1.0)
+  - Crashlytics (3.8.3):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.11)
+  - Fuzi (1.0.1)
+  - Nimble (5.1.1)
+  - Quick (0.10.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - AlamoFuzi
+  - Crashlytics
+  - Fabric
+  - Fuzi
+  - Nimble
+  - Quick
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireImage: bb8c8351c51cb1633bb6be69b6dbbaff37ce65b7
+  AlamoFuzi: e85e4d715263f420f86f1cbae903d29c8d0b088d
+  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  Fuzi: 851403654bac55675aaeed815d0c8a1d3e3d3e8b
+  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
+  Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
+
+PODFILE CHECKSUM: 38d7e5e4a9d6005d8805a92a697d8d08ddf46dd4
+
+COCOAPODS: 1.1.1
