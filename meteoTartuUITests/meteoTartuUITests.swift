@@ -28,13 +28,15 @@ class meteoTartuUITests: XCTestCase {
   func testLaunch() {
     sleep(5)
     
+    snapshot("Launch")
+    
     let app = XCUIApplication()
     
     app.navigationBars["meteo Tartu"].buttons["Refresh"].tap()
     
-    let tempLabel = app.staticTexts.element(matching: .any, identifier: "temp-label")
-    let windLabel = app.staticTexts.element(matching: .any, identifier: "wind-label")
-    let measuredTimeLabel = app.staticTexts.element(matching: .any, identifier: "measured-time-label")
+    let tempLabel = app.staticTexts["temp-label"]
+    let windLabel = app.staticTexts["wind-label"]
+    let measuredTimeLabel = app.staticTexts["measured-time-label"]
     
     XCTAssertNotNil(tempLabel.label)
     XCTAssert(tempLabel.label != "")
@@ -45,7 +47,7 @@ class meteoTartuUITests: XCTestCase {
     XCTAssertNotNil(measuredTimeLabel.label)
     XCTAssert(measuredTimeLabel.label != "")
     
-    let image = app.images["Live weather"]
+    let image = app.images["live-weather"]
     XCTAssert(image.exists)
   }
     
