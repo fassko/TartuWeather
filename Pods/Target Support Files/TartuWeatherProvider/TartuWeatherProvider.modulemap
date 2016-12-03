@@ -1,0 +1,6 @@
+framework module TartuWeatherProvider {
+  umbrella header "TartuWeatherProvider-umbrella.h"
+
+  export *
+  module * { export * }
+}

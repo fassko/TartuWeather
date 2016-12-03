@@ -4,31 +4,24 @@ platform :ios, '9.0'
 target 'TartuWeather' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'Alamofire'
-  pod 'AlamofireImage'
-  pod 'Fuzi'
-  pod 'AlamoFuzi'
+  
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'TartuWeatherProvider'
 end
 
 target 'TartuWeatherWidget' do
   use_frameworks!
-  pod 'Alamofire'
-  pod 'AlamofireImage'
-  pod 'Fuzi'
-  pod 'AlamoFuzi'
+  
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'TartuWeatherProvider'
 end
 
 target 'meteoTartuUITests' do
   use_frameworks!
-  pod 'Alamofire'
-  pod 'AlamofireImage'
-  pod 'Fuzi'
-  pod 'AlamoFuzi'
   
+  pod 'TartuWeatherProvider'
   pod 'Quick'
   pod 'Nimble'
 end
@@ -36,19 +29,7 @@ end
 target 'meteoTartuUnitTests' do
   use_frameworks!
   
-  pod 'Alamofire'
-  pod 'AlamofireImage'
-  pod 'Fuzi'
-  pod 'AlamoFuzi'
-  
+  pod 'TartuWeatherProvider'
   pod 'Quick'
   pod 'Nimble'
-end
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['SWIFT_VERSION'] = '3.0'
-    end
-  end
 end
