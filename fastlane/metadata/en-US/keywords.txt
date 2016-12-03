@@ -1,1 +1,1 @@
-tartu,weather,estonia,meteo
+tartu,weather,estonia,meteo,ilm,ilmateenistus

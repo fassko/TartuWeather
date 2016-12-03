@@ -8,6 +8,8 @@
 
 import UIKit
 
+import TartuWeatherProvider
+
 class ViewController: UIViewController {
 
   @IBOutlet weak var temperatureLabel: UILabel!
@@ -25,7 +27,7 @@ class ViewController: UIViewController {
   
   
   func updateWeather() {
-    WeatherAPI.getData(completion: {
+    TartuWeatherProvider.getWeatherData(completion: {
       (temperature, wind, measuredTime) in
         self.temperatureLabel.text = temperature
         self.temperatureLabel.accessibilityLabel = temperature
@@ -37,7 +39,7 @@ class ViewController: UIViewController {
         self.measuredTimeLabel.accessibilityLabel = measuredTime
     })
     
-    WeatherAPI.getCurrentImage(completion: {
+    TartuWeatherProvider.getCurrentImage(completion: {
       (image) in
         self.currentImage.image = image
     })

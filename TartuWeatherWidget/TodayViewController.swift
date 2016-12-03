@@ -9,6 +9,8 @@
 import UIKit
 import NotificationCenter
 
+import TartuWeatherProvider
+
 class TodayViewController: UIViewController, NCWidgetProviding {
         
   @IBOutlet weak var temperatureLabel: UILabel!
@@ -18,7 +20,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    WeatherAPI.getData(completion: {
+    TartuWeatherProvider.getWeatherData(completion: {
       (temperature, wind, measuredTime) in
         self.temperatureLabel.text = temperature
         self.windLabel.text = wind
@@ -33,7 +35,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     // If there's no update required, use NCUpdateResult.NoData
     // If there's an update, use NCUpdateResult.NewData
     
-    WeatherAPI.getData(completion: {
+    TartuWeatherProvider.getWeatherData(completion: {
       (temperature, wind, measuredTime) in
         self.temperatureLabel.text = temperature
         self.windLabel.text = wind
