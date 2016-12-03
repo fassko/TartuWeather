@@ -25,11 +25,3 @@ target 'meteoTartuUITests' do
   pod 'Quick'
   pod 'Nimble'
 end
-
-target 'meteoTartuUnitTests' do
-  use_frameworks!
-  
-  pod 'TartuWeatherProvider'
-  pod 'Quick'
-  pod 'Nimble'
-end
