@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchApp" customModuleProvider="target">
+                    <items>
+                        <imageView width="1" alignment="center" id="wAJ-Fx-0HF"/>
+                        <label alignment="center" text="°C" id="vwX-nb-dvy">
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
+                        </label>
+                        <label alignment="center" text="m/s" id="daY-18-whh">
+                            <fontDescription key="font" type="system" weight="medium" pointSize="15"/>
+                        </label>
+                        <button width="0.90000000000000002" alignment="center" title="Reload" id="U1h-uY-gAS" userLabel="Reload">
+                            <color key="backgroundColor" red="0.1764705926" green="0.34509804840000002" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="reloadData" destination="AgC-eL-Hgc" id="tfO-18-NPk"/>
+                            </connections>
+                        </button>
+                        <label alignment="center" id="gsC-DO-Vdl">
+                            <fontDescription key="font" type="italicSystem" pointSize="12"/>
+                        </label>
+                        <separator alignment="left" id="YDw-Hp-EpQ">
+                            <color key="color" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </separator>
+                    </items>
+                    <connections>
+                        <outlet property="currentImage" destination="wAJ-Fx-0HF" id="ACB-6h-PXc"/>
+                        <outlet property="measuredLabel" destination="gsC-DO-Vdl" id="5rS-UD-Cdp"/>
+                        <outlet property="tempLabel" destination="vwX-nb-dvy" id="TUq-g8-YRT"/>
+                        <outlet property="windLabel" destination="daY-18-whh" id="en4-Am-ocm"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="213" y="285"/>
+        </scene>
+    </scenes>
+</document>
