@@ -48,6 +48,7 @@ class InterfaceController: WKInterfaceController {
     Reload data
   */
   @IBAction func reloadData() {
+    WKInterfaceDevice().play(.notification)
     self.loadTemperatureData()
   }
   

@@ -7,3 +7,6 @@ username "fassko@gmail.com" # Your Apple Developer Portal username
 
 # For all available options run `match --help`
 # Remove the # in the beginning of the line to enable the other options
+
+#@executable_path/Frameworks
+
