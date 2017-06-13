@@ -31,7 +31,7 @@ open class TartuWeatherProvider {
       - data: Weather data struct
    
   */
-  open class func getWeatherData(completion:@escaping (_ data:WeatherData?, _ error:Error?) -> Void) {
+  open class func getWeatherData(completion:@escaping (_ data: WeatherData?, _ error: Error?) -> Void) {
     Alamofire.request("http://meteo.physic.ut.ee/en/frontmain.php?m=2").responseString(completionHandler: {
       response in
       
@@ -40,6 +40,7 @@ open class TartuWeatherProvider {
           case .failure(let error):
           
             completion(nil, error)
+            break
         
           case .success:
           
@@ -54,6 +55,7 @@ open class TartuWeatherProvider {
               let data = WeatherData(temperature: temperature, humidity: humidity, airPressure: airPressure, wind: wind, precipitation: precipitation, irradiationFlux: irradiationFlux, measuredTime: measuredTime)
             
               completion(data, nil)
+              break
             }
         }
     })
@@ -67,11 +69,16 @@ open class TartuWeatherProvider {
       - image: UIImage with current webcam image
    
   */
-  open class func getCurrentImage(completion:@escaping (_ image:LiveImage) -> Void) {
+  open class func getCurrentImage(completion:@escaping (_ image: LiveImage?, _ error: Error?) -> Void) {
     Alamofire.request("http://meteo.physic.ut.ee/webcam/uus/suur.jpg").responseImage { response in
-
-      if let image = response.result.value {
-        completion(image)
+      
+      switch response.result {
+        case .failure(let error):
+          completion(nil, error)
+          break
+        case .success(let image):
+          completion(image, nil)
+          break
       }
     }
   }

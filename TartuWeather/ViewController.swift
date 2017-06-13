@@ -8,50 +8,59 @@
 
 import UIKit
 
-import TartuWeatherProvider
+import RxSwift
+import RxCocoa
+import NSObject_Rx
 
 class ViewController: UIViewController {
 
+  /// Temperature label
   @IBOutlet weak var temperatureLabel: UILabel!
+  
+  /// Wind label
   @IBOutlet weak var windLabel: UILabel!
+  
+  /// Current image label
   @IBOutlet weak var currentImage: UIImageView!
+  
+  /// Measured time label
   @IBOutlet weak var measuredTimeLabel: UILabel!
+  
+  /// Refresh label
+  @IBOutlet weak var refreshButton: UIBarButtonItem!
+  
+  /// View model
+  private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    updateWeather()
-  
-    NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateWeather), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-  }
-  
-  
-  func updateWeather() {
-  
-    TartuWeatherProvider.getWeatherData(completion: {data, error in
-      if error == nil {
-      
-        self.temperatureLabel.text = data?.temperature
-        self.temperatureLabel.accessibilityLabel = data?.temperature
-        
-        self.windLabel.text = data?.wind
-        self.windLabel.accessibilityLabel = data?.wind
-        
-        self.measuredTimeLabel.text = data?.measuredTime
-        self.measuredTimeLabel.accessibilityLabel = data?.measuredTime
-      }
-    })
+    // Set up labels bindings
+    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).addDisposableTo(rx_disposeBag)
+    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).addDisposableTo(rx_disposeBag)
+    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).addDisposableTo(rx_disposeBag)
     
-    TartuWeatherProvider.getCurrentImage(completion: {
-      (image) in
-        self.currentImage.image = image
-    })
-
-  }
-  
-  
-  @IBAction func refresh(sender: AnyObject) {
-    updateWeather()
+    /// Set up live image binding
+    tartuWeatherViewModel.liveImage.asObservable().bind(to: currentImage.rx.image).addDisposableTo(rx_disposeBag)
+   
+    
+    // Update weather data when application did become active
+    Observable.of(NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationDidBecomeActive), NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationWillEnterForeground))
+      .subscribe(onNext: {_ in
+        self.tartuWeatherViewModel.updateWeather()
+      })
+      .addDisposableTo(rx_disposeBag)
+   
+   
+    // Refresh button
+    let refresh = refreshButton.rx.tap
+    
+    refresh
+      .asObservable()
+      .subscribe(onNext: {
+        self.tartuWeatherViewModel.updateWeather()
+      })
+      .addDisposableTo(rx_disposeBag)
   }
 
 }

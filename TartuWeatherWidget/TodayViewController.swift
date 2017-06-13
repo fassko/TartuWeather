@@ -9,25 +9,31 @@
 import UIKit
 import NotificationCenter
 
-import TartuWeatherProvider
+import RxSwift
+import RxCocoa
+import NSObject_Rx
 
 class TodayViewController: UIViewController, NCWidgetProviding {
-        
+  
+  /// Temperature label
   @IBOutlet weak var temperatureLabel: UILabel!
+  
+  /// Wind label
   @IBOutlet weak var windLabel: UILabel!
+  
+  /// Measured time label
   @IBOutlet weak var measuredTimeLabel: UILabel!
+  
+  /// View model
+  private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
         
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    TartuWeatherProvider.getWeatherData(completion: {data, error in
-      if error == nil {
-      
-        self.temperatureLabel.text = data?.temperature
-        self.windLabel.text = data?.wind
-        self.measuredTimeLabel.text = data?.measuredTime
-      }
-    })
+    // Set up labels bindings
+    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).addDisposableTo(rx_disposeBag)
+    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).addDisposableTo(rx_disposeBag)
+    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).addDisposableTo(rx_disposeBag)
   }
 
   func widgetPerformUpdate(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
@@ -37,16 +43,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     // If there's no update required, use NCUpdateResult.NoData
     // If there's an update, use NCUpdateResult.NewData
     
-    TartuWeatherProvider.getWeatherData(completion: {data, error in
-      if error == nil {
-      
-        self.temperatureLabel.text = data?.temperature
-        self.windLabel.text = data?.wind
-        self.measuredTimeLabel.text = data?.measuredTime
-        
+    tartuWeatherViewModel.updateWeather()
+    
+    tartuWeatherViewModel.temperature
+      .asObservable()
+      .subscribe(onNext: {_ in
         completionHandler(NCUpdateResult.newData)
-      }
-    })
+      })
+      .addDisposableTo(rx_disposeBag)
   }
   
   
