@@ -14,8 +14,6 @@ before_install:
 language: objective-c
 osx_image: xcode8.3
 script:
-  - fastlane certificates
-  - "security set-key-partition-list -S apple-tool:,apple: -s -k keychainPass keychainName"
   - fastlane travis
 env:
   - FASTLANE_XCODE_LIST_TIMEOUT=120
