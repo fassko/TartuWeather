@@ -27,9 +27,9 @@ class InterfaceController: WKInterfaceController {
   /// Measured label
   @IBOutlet var measuredLabel: WKInterfaceLabel!
   
-  
   /// View model
   private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
+
 
   override func awake(withContext context: Any?) {
     super.awake(withContext: context)

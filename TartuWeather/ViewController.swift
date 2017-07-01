@@ -32,6 +32,7 @@ class ViewController: UIViewController {
   /// View model
   private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -62,6 +63,4 @@ class ViewController: UIViewController {
       })
       .addDisposableTo(rx_disposeBag)
   }
-
 }
-

@@ -15,15 +15,16 @@ import RxSwift
 class TartuWeatherViewModel {
   
   /// Temperature
-  var temperature = Variable<String?>("")
+  public var temperature = Variable<String?>("")
   
   /// Wind
-  var wind = Variable<String?>("")
+  public var wind = Variable<String?>("")
  
   /// Measured time
-  var measuredTime = Variable<String?>("")
+  public var measuredTime = Variable<String?>("")
   
-  var liveImage = Variable<UIImage?>(nil)
+  /// Live image
+  public var liveImage = Variable<UIImage?>(nil)
   
   init() {
     self.updateWeather()
@@ -34,23 +35,25 @@ class TartuWeatherViewModel {
   */
   func updateWeather() {
   
+    // Get weather data
     TartuWeatherProvider.getWeatherData(completion: {data, error in
       
-      guard let temp = data?.temperature, let w = data?.wind, let time = data?.measuredTime
+      guard let temp = data?.temperature, let wind = data?.wind , let time = data?.measuredTime
 , error == nil else {
-        debugPrint("Can't get weather data \(error)")
+        debugPrint("Can't get weather data \(String(describing: error))")
         return
       }
       
       self.temperature.value = temp
-      self.wind.value = w
+      self.wind.value = wind
       self.measuredTime.value = time
     })
     
+    // Get live image
     TartuWeatherProvider.getCurrentImage(completion: {image, error in
       
       guard let img = image, error == nil else {
-        debugPrint("Can't get live image \(error)")
+        debugPrint("Can't get live image \(String(describing: error))")
         return
       }
       

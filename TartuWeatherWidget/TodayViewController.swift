@@ -26,7 +26,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   
   /// View model
   private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
-        
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
