@@ -29,14 +29,6 @@ target 'meteoTartuUITests' do
   pod 'Nimble'
 end
 
-target 'meteoTartuTests' do
-  platform :ios, '9.0'
-  
-  pod 'TartuWeatherProvider'
-  pod 'Quick'
-  pod 'Nimble'
-end
-
 target 'WatchApp Extension' do
   platform :watchos, '3.0'
   
