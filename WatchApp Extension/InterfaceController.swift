@@ -9,8 +9,9 @@
 import WatchKit
 import Foundation
 
-import TartuWeatherProvider
-
+import RxSwift
+import RxCocoa
+import NSObject_Rx
 
 class InterfaceController: WKInterfaceController {
   
@@ -25,6 +26,10 @@ class InterfaceController: WKInterfaceController {
   
   /// Measured label
   @IBOutlet var measuredLabel: WKInterfaceLabel!
+  
+  /// View model
+  private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
+
 
   override func awake(withContext context: Any?) {
     super.awake(withContext: context)
@@ -36,7 +41,35 @@ class InterfaceController: WKInterfaceController {
     // This method is called when watch view controller is about to be visible to user
     super.willActivate()
     
-    self.loadTemperatureData()
+    // Set up labels bindings
+    tartuWeatherViewModel.temperature
+      .asObservable()
+      .subscribe(onNext: {temp in
+        self.tempLabel.setText(temp)
+      })
+      .addDisposableTo(rx_disposeBag)
+    
+    tartuWeatherViewModel.wind
+      .asObservable()
+      .subscribe(onNext: {wind in
+        self.windLabel.setText(wind)
+      })
+      .addDisposableTo(rx_disposeBag)
+    
+    tartuWeatherViewModel.measuredTime
+      .asObservable()
+      .subscribe(onNext: {time in
+        self.measuredLabel.setText(time)
+      })
+      .addDisposableTo(rx_disposeBag)
+    
+    /// Set up live image binding
+    tartuWeatherViewModel.liveImage
+      .asObservable()
+      .subscribe(onNext: {img in
+        self.currentImage.setImage(img)
+      })
+      .addDisposableTo(rx_disposeBag)
   }
   
   override func didDeactivate() {
@@ -49,27 +82,6 @@ class InterfaceController: WKInterfaceController {
   */
   @IBAction func reloadData() {
     WKInterfaceDevice().play(.notification)
-    self.loadTemperatureData()
-  }
-  
-  /**
-    Load temperature data
-  */
-  private func loadTemperatureData() {
-
-    TartuWeatherProvider.getWeatherData(completion: {data, error in
-    
-      guard let temp = data?.temperature, let wind = data?.wind, let measured = data?.measuredTime else {
-        return
-      }
-      
-      self.tempLabel.setText(temp)
-      self.windLabel.setText(wind)
-      self.measuredLabel.setText(measured)
-    })
-    
-    TartuWeatherProvider.getCurrentImage(completion: {image in
-      self.currentImage.setImage(image)
-    })
+    tartuWeatherViewModel.updateWeather()
   }
 }

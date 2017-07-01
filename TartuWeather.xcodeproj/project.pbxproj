@@ -14,6 +14,9 @@
 		6302763D1E787ED700A922B8 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6348B1D31C4BF6AA00199EE5 /* NotificationCenter.framework */; };
 		63330EB51DCF6FC0002194A3 /* meteoTartuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63330EB41DCF6FC0002194A3 /* meteoTartuUITests.swift */; };
 		63330EBD1DCF7142002194A3 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63330EBC1DCF7142002194A3 /* SnapshotHelper.swift */; };
+		6341EAC71EF07B8800C3E8EA /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
+		6341EACA1EF083C100C3E8EA /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
+		6341EACB1EF083C300C3E8EA /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
 		6348B1BC1C4BF55300199EE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6348B1BB1C4BF55300199EE5 /* AppDelegate.swift */; };
 		6348B1BE1C4BF55300199EE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6348B1BD1C4BF55300199EE5 /* ViewController.swift */; };
 		6348B1C11C4BF55300199EE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6348B1BF1C4BF55300199EE5 /* Main.storyboard */; };
@@ -115,12 +118,14 @@
 /* Begin PBXFileReference section */
 		0EA80CC296C2C4962EC68C3A /* Pods-TartuWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TartuWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TartuWeather/Pods-TartuWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		10E55C285629A36B7C18B5C3 /* Pods_meteoTartuUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meteoTartuUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3547597EAD461A69E82A64BE /* Pods_meteoTartuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meteoTartuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A42D570FFE24D6FF952945 /* Pods_WatchApp_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatchApp_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BBBA1784059F14EFEA9383C /* Pods-WatchApp Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchApp Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatchApp Extension/Pods-WatchApp Extension.release.xcconfig"; sourceTree = "<group>"; };
 		63330EB21DCF6FBF002194A3 /* meteoTartuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meteoTartuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63330EB41DCF6FC0002194A3 /* meteoTartuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meteoTartuUITests.swift; sourceTree = "<group>"; };
 		63330EB61DCF6FC0002194A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63330EBC1DCF7142002194A3 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TartuWeatherViewModel.swift; sourceTree = "<group>"; };
 		6348B1B81C4BF55300199EE5 /* TartuWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TartuWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6348B1BB1C4BF55300199EE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6348B1BD1C4BF55300199EE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +152,7 @@
 		63AFB7F51C5D3D93004A58E1 /* thermometer35@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thermometer35@2x.png"; sourceTree = SOURCE_ROOT; };
 		63AFB7F61C5D3D93004A58E1 /* thermometer35@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thermometer35@3x.png"; sourceTree = SOURCE_ROOT; };
 		6A1BFCB124EF3C8770B44A52 /* Pods-meteoTartuUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meteoTartuUnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meteoTartuUnitTests/Pods-meteoTartuUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		886D5F78B7F5294305D1ECB0 /* Pods-meteoTartuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meteoTartuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meteoTartuTests/Pods-meteoTartuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		88C813C3270B0B33D4BB36CE /* Pods_TartuWeatherWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TartuWeatherWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C9CD73F3BA5DCDFB6E994FF /* Pods-WatchApp Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchApp Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatchApp Extension/Pods-WatchApp Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		C2C750CDCFF981E9815828A7 /* Pods-meteoTartuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meteoTartuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meteoTartuUITests/Pods-meteoTartuUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 		CC696C8C5F6CEF1591E74F6B /* Pods-meteoTartuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meteoTartuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-meteoTartuUITests/Pods-meteoTartuUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E13A67CA751911AB6B77F3CF /* Pods-TartuWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TartuWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-TartuWeather/Pods-TartuWeather.release.xcconfig"; sourceTree = "<group>"; };
 		E25ADD877425D912A9D24323 /* Pods-TartuWeatherWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TartuWeatherWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TartuWeatherWidget/Pods-TartuWeatherWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		E7313C33835269BD06C24AE4 /* Pods-meteoTartuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meteoTartuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-meteoTartuTests/Pods-meteoTartuTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED0DE26BEB80F546F3C79906 /* Pods-TartuWeatherWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TartuWeatherWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TartuWeatherWidget/Pods-TartuWeatherWidget.release.xcconfig"; sourceTree = "<group>"; };
 		F0E690EF839D409767A8C3DF /* Pods_TartuWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TartuWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FE573D846FCB7E3E575D29 /* Pods_meteoTartuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meteoTartuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				6348B1BB1C4BF55300199EE5 /* AppDelegate.swift */,
+				6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */,
 				6348B1BD1C4BF55300199EE5 /* ViewController.swift */,
 			);
 			name = Classes;
@@ -289,6 +297,7 @@
 				F7FE573D846FCB7E3E575D29 /* Pods_meteoTartuUITests.framework */,
 				10E55C285629A36B7C18B5C3 /* Pods_meteoTartuUnitTests.framework */,
 				44A42D570FFE24D6FF952945 /* Pods_WatchApp_Extension.framework */,
+				3547597EAD461A69E82A64BE /* Pods_meteoTartuTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -346,6 +355,8 @@
 				C74825B2EE9B099F9B484021 /* Pods-meteoTartuUnitTests.release.xcconfig */,
 				9C9CD73F3BA5DCDFB6E994FF /* Pods-WatchApp Extension.debug.xcconfig */,
 				4BBBA1784059F14EFEA9383C /* Pods-WatchApp Extension.release.xcconfig */,
+				886D5F78B7F5294305D1ECB0 /* Pods-meteoTartuTests.debug.xcconfig */,
+				E7313C33835269BD06C24AE4 /* Pods-meteoTartuTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -463,7 +474,7 @@
 		6348B1B01C4BF55300199EE5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = fassko;
 				TargetAttributes = {
@@ -602,7 +613,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		3981B72F81878A09D74B0BF8 /* [CP] Embed Pods Frameworks */ = {
@@ -675,7 +686,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A121BB298F5E149A761AC7DE /* [CP] Check Pods Manifest.lock */ = {
@@ -690,7 +701,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A326AA853F95386A7E1C1E4D /* [CP] Embed Pods Frameworks */ = {
@@ -735,7 +746,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EF7A9EFFF07ECD1A18A86C27 /* [CP] Copy Pods Resources */ = {
@@ -771,6 +782,7 @@
 			files = (
 				6348B1BE1C4BF55300199EE5 /* ViewController.swift in Sources */,
 				6348B1BC1C4BF55300199EE5 /* AppDelegate.swift in Sources */,
+				6341EAC71EF07B8800C3E8EA /* TartuWeatherViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,6 +790,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6341EACB1EF083C300C3E8EA /* TartuWeatherViewModel.swift in Sources */,
 				6348B1D71C4BF6AA00199EE5 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -788,6 +801,7 @@
 			files = (
 				635860C01E4767D6006E394D /* ExtensionDelegate.swift in Sources */,
 				635860BE1E4767D6006E394D /* InterfaceController.swift in Sources */,
+				6341EACA1EF083C100C3E8EA /* TartuWeatherViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YGe-cB-Pur">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YGe-cB-Pur">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -114,15 +114,13 @@
                     <navigationItem key="navigationItem" title="meteo Tartu" id="bgt-2g-WOs">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="LE4-5T-NBF" userLabel="Refresh">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="refreshWithSender:" destination="BYZ-38-t0r" id="G1c-Eu-x48"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="currentImage" destination="h6n-Ks-K15" id="vbd-dg-jE4"/>
                         <outlet property="measuredTimeLabel" destination="do1-d2-P39" id="zeJ-Ko-IIL"/>
+                        <outlet property="refreshButton" destination="LE4-5T-NBF" id="6Zi-37-F41"/>
                         <outlet property="temperatureLabel" destination="oDB-pk-APP" id="Zav-fa-Dhl"/>
                         <outlet property="windLabel" destination="4yx-js-RES" id="ZVO-SH-h4d"/>
                     </connections>

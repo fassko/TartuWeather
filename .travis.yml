@@ -1,19 +1,21 @@
 before_install:
   - sudo systemsetup -settimezone Europe/Tallinn
   - echo -e "machine bitbucket.org\n  login fassko\n  password $CI_USER_PASSWORD" >> ~/.netrc
-  - gem update fastlane --no-document
-  - fastlane --version
-  - gem update xcodeproj --no-document
-  - gem install cocoapods
-  - gem cleanup
-  - gem list
+  # - gem update fastlane --no-document
+  # - fastlane --version
+  # - gem update xcodeproj --no-document
+  # - gem install cocoapods
+  # - gem cleanup
+  # - gem list
+  - bundle install
+  - bundle update
   - instruments -s devices
   - xcodebuild -showsdks
   - pod repo update --silent
   - pod --version
 language: objective-c
-osx_image: xcode8.1
+osx_image: xcode8.3
 script:
-  - fastlane travis
+  - bundle exec fastlane travis
 env:
   - FASTLANE_XCODE_LIST_TIMEOUT=120
