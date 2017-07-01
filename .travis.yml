@@ -16,6 +16,6 @@ before_install:
 language: objective-c
 osx_image: xcode8.3
 script:
-  - bundle fastlane travis
+  - bundle exec fastlane travis
 env:
   - FASTLANE_XCODE_LIST_TIMEOUT=120
