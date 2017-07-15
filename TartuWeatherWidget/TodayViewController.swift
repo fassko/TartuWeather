@@ -44,7 +44,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     // If there's no update required, use NCUpdateResult.NoData
     // If there's an update, use NCUpdateResult.NewData
     
-    tartuWeatherViewModel.updateWeather()
+    tartuWeatherViewModel.updateWeather(getLiveImage: false)
     
     tartuWeatherViewModel.temperature
       .asObservable()
