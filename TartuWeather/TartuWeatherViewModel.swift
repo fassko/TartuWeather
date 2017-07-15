@@ -33,7 +33,7 @@ class TartuWeatherViewModel {
   /**
     Update weather from API
   */
-  func updateWeather() {
+  func updateWeather(getLiveImage: Bool = true) {
   
     // Get weather data
     TartuWeatherProvider.getWeatherData(completion: {data, error in
@@ -49,16 +49,18 @@ class TartuWeatherViewModel {
       self.measuredTime.value = time
     })
     
-    // Get live image
-    TartuWeatherProvider.getCurrentImage(completion: {image, error in
-      
-      guard let img = image, error == nil else {
-        debugPrint("Can't get live image \(String(describing: error))")
-        return
-      }
-      
-      self.liveImage.value = img
-    })
+    if getLiveImage {
+      // Get live image
+      TartuWeatherProvider.getCurrentImage(completion: {image, error in
+        
+        guard let img = image, error == nil else {
+          debugPrint("Can't get live image \(String(describing: error))")
+          return
+        }
+        
+        self.liveImage.value = img
+      })
+    }
 
   }
 }

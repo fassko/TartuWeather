@@ -63,13 +63,15 @@ class InterfaceController: WKInterfaceController {
       })
       .addDisposableTo(rx_disposeBag)
     
-    /// Set up live image binding
+    // Set up live image binding
     tartuWeatherViewModel.liveImage
       .asObservable()
       .subscribe(onNext: {img in
         self.currentImage.setImage(img)
       })
       .addDisposableTo(rx_disposeBag)
+    
+    tartuWeatherViewModel.updateWeather()
   }
   
   override func didDeactivate() {

@@ -1,10 +1,10 @@
 PODS:
-  - Alamofire (4.4.0)
+  - Alamofire (4.5.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
-  - Crashlytics (3.8.4):
+  - Crashlytics (3.8.5):
     - Fabric (~> 1.6.3)
-  - Fabric (1.6.11)
+  - Fabric (1.6.12)
   - Nimble (7.0.1)
   - NSObject+Rx (2.3.0):
     - RxSwift (~> 3.0)
@@ -27,10 +27,10 @@ DEPENDENCIES:
   - TartuWeatherProvider
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
-  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
-  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
+  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
   Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
   NSObject+Rx: 38170f84b948152c05c57260cb853e387a5519d1
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
@@ -38,6 +38,6 @@ SPEC CHECKSUMS:
   RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
   TartuWeatherProvider: 2ace2cad410a26b0f814d299c778e7f6ca8e9962
 
-PODFILE CHECKSUM: 69402e58a1bcec27f6b8b1557e76707cdc2357f3
+PODFILE CHECKSUM: 948cc01a078785b9591daad01175079100a46607
 
 COCOAPODS: 1.2.1
