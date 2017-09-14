@@ -93,6 +93,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AlamofireImage-watchOS/AlamofireImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/NSObject+Rx-watchOS/NSObject_Rx.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxCocoa-watchOS/RxCocoa.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RxOptional-watchOS/RxOptional.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxSwift-watchOS/RxSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TartuWeatherProvider-watchOS/TartuWeatherProvider.framework"
 fi
@@ -101,6 +102,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AlamofireImage-watchOS/AlamofireImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/NSObject+Rx-watchOS/NSObject_Rx.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxCocoa-watchOS/RxCocoa.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RxOptional-watchOS/RxOptional.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxSwift-watchOS/RxSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TartuWeatherProvider-watchOS/TartuWeatherProvider.framework"
 fi

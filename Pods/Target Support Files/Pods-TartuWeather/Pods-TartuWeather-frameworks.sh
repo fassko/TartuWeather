@@ -93,6 +93,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AlamofireImage-iOS/AlamofireImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/NSObject+Rx-iOS/NSObject_Rx.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxCocoa-iOS/RxCocoa.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RxOptional-iOS/RxOptional.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxSwift-iOS/RxSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TartuWeatherProvider-iOS/TartuWeatherProvider.framework"
 fi
@@ -101,6 +102,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AlamofireImage-iOS/AlamofireImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/NSObject+Rx-iOS/NSObject_Rx.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxCocoa-iOS/RxCocoa.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RxOptional-iOS/RxOptional.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxSwift-iOS/RxSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TartuWeatherProvider-iOS/TartuWeatherProvider.framework"
 fi

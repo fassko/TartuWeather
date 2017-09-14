@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import QuartzCore
 
 import RxSwift
 import RxCocoa
 import NSObject_Rx
+import AlamofireImage
+import Alamofire
+import RxOptional
 
 class ViewController: UIViewController {
 
+  //MARK:- Interface
   /// Temperature label
   @IBOutlet weak var temperatureLabel: UILabel!
   
@@ -29,20 +34,37 @@ class ViewController: UIViewController {
   /// Refresh label
   @IBOutlet weak var refreshButton: UIBarButtonItem!
   
+  //MARK:- Class variables
   /// View model
   private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
   
   
+  //MARK:- View lifecycle methods
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // Live image styles
+    currentImage.layer.cornerRadius = 10.0
+    currentImage.layer.borderColor = #colorLiteral(red: 0.175999999, green: 0.3449999988, blue: 0.4979999959, alpha: 1)
+    currentImage.layer.borderWidth = 2.0
+    currentImage.layer.masksToBounds = true
+    
     // Set up labels bindings
-    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).addDisposableTo(rx_disposeBag)
-    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).addDisposableTo(rx_disposeBag)
-    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).addDisposableTo(rx_disposeBag)
+    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).addDisposableTo(rx.disposeBag)
+    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).addDisposableTo(rx.disposeBag)
+    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).addDisposableTo(rx.disposeBag)
     
     /// Set up live image binding
-    tartuWeatherViewModel.liveImage.asObservable().bind(to: currentImage.rx.image).addDisposableTo(rx_disposeBag)
+    tartuWeatherViewModel.largeImage.asObservable()
+      .filterNil()
+      .subscribe(onNext: {imageURL in
+        Alamofire.request(imageURL).responseImage { response in
+        
+          guard let image = response.result.value else { return }
+        
+          self.currentImage.image = image
+        }
+      }).addDisposableTo(rx.disposeBag)
    
     
     // Update weather data when application did become active
@@ -50,17 +72,16 @@ class ViewController: UIViewController {
       .subscribe(onNext: {_ in
         self.tartuWeatherViewModel.updateWeather()
       })
-      .addDisposableTo(rx_disposeBag)
+      .addDisposableTo(rx.disposeBag)
    
    
     // Refresh button
     let refresh = refreshButton.rx.tap
-    
     refresh
       .asObservable()
       .subscribe(onNext: {
         self.tartuWeatherViewModel.updateWeather()
       })
-      .addDisposableTo(rx_disposeBag)
+      .addDisposableTo(rx.disposeBag)
   }
 }

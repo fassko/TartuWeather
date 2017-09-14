@@ -23,8 +23,11 @@ class TartuWeatherViewModel {
   /// Measured time
   public var measuredTime = Variable<String?>("")
   
-  /// Live image
-  public var liveImage = Variable<UIImage?>(nil)
+  /// Live image large
+  public var largeImage = Variable<String?>(nil)
+  
+  /// Live image small
+  public var smallImage = Variable<String?>(nil)
   
   init() {
     self.updateWeather()
@@ -33,34 +36,24 @@ class TartuWeatherViewModel {
   /**
     Update weather from API
   */
-  func updateWeather(getLiveImage: Bool = true) {
+  func updateWeather() {
   
     // Get weather data
-    TartuWeatherProvider.getWeatherData(completion: {data, error in
-      
-      guard let temp = data?.temperature, let wind = data?.wind , let time = data?.measuredTime
-, error == nil else {
-        debugPrint("Can't get weather data \(String(describing: error))")
-        return
-      }
-      
-      self.temperature.value = temp
-      self.wind.value = wind
-      self.measuredTime.value = time
-    })
+    TartuWeatherProvider.getWeatherData(completion: {result in
     
-    if getLiveImage {
-      // Get live image
-      TartuWeatherProvider.getCurrentImage(completion: {image, error in
+      switch result {
+        case .failure(let error):
+          debugPrint("Can't get weather data \(String(describing: error))")
+          break
         
-        guard let img = image, error == nil else {
-          debugPrint("Can't get live image \(String(describing: error))")
-          return
-        }
+        case .success(let data):
+          self.temperature.value = data.temperature
+          self.wind.value = data.wind
+          self.measuredTime.value = data.measuredTime
         
-        self.liveImage.value = img
-      })
-    }
-
+          self.largeImage.value = data.liveImage.large
+          self.smallImage.value = data.liveImage.small
+      }
+    })
   }
 }

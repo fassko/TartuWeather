@@ -7,18 +7,7 @@
 //
 
 import Foundation
-
-#if os(OSX)
-    import AppKit
-    public typealias LiveImage = NSImage
-#else
-    import UIKit
-    public typealias LiveImage = UIImage
-#endif
-
 import Alamofire
-import AlamofireImage
-
 
 /// Tartu Weather Provider
 open class TartuWeatherProvider {
@@ -31,7 +20,7 @@ open class TartuWeatherProvider {
       - data: Weather data struct
    
   */
-  open class func getWeatherData(completion:@escaping (_ data: WeatherData?, _ error: Error?) -> Void) {
+  open class func getWeatherData(completion: @escaping (_ result: TartuWeatherResult<WeatherData>) -> Void) {
     Alamofire.request("http://meteo.physic.ut.ee/en/frontmain.php?m=2").responseString(completionHandler: {
       response in
       
@@ -39,47 +28,31 @@ open class TartuWeatherProvider {
           
           case .failure(let error):
           
-            completion(nil, error)
+            completion(TartuWeatherResult.failure(error))
             break
         
           case .success:
           
-            if let temperature = response.result.value?.components(separatedBy: "Temperature</A></TD><TD align=\"left\" width=\"45%\"><B>")[1].components(separatedBy: "</B>")[0].replacingOccurrences(of: "&deg;", with: "°"),
+            guard let temperature = response.result.value?.components(separatedBy: "Temperature</A></TD><TD align=\"left\" width=\"45%\"><B>")[1].components(separatedBy: "</B>")[0].replacingOccurrences(of: "&deg;", with: "°"),
               let humidity = response.result.value?.components(separatedBy: "Humidity</A></TD><TD align=\"left\" width=\"45%\"><B>")[1].components(separatedBy: "</B>")[0],
               let airPressure = response.result.value?.components(separatedBy: "Air pressure</A></TD><TD align=\"left\" width=\"45%\"><B>")[1].components(separatedBy: "</B>")[0],
               let wind = response.result.value?.components(separatedBy: "Wind</A></TD><TD align=\"left\" width=\"45%\"><B>")[1].components(separatedBy: "</B>")[0],
               let precipitation = response.result.value?.components(separatedBy: "Precipitation</A></TD><TD align=\"left\" width=\"45%\"><B>")[1].components(separatedBy: "</B>")[0],
               let irradiationFlux = response.result.value?.components(separatedBy: "Irradiation flux</A></TD><TD align=\"left\" width=\"45%\"><B>")[1].components(separatedBy: "</sup>")[0].replacingOccurrences(of: "<sup>", with: "^"),
               let measuredTime = response.result.value?.components(separatedBy: "Measured</SMALL></TD><TD colspan=\"2\"><SMALL><I>")[1].components(separatedBy: "</I>")[0]
-            {
-              let data = WeatherData(temperature: temperature, humidity: humidity, airPressure: airPressure, wind: wind, precipitation: precipitation, irradiationFlux: irradiationFlux, measuredTime: measuredTime)
-            
-              completion(data, nil)
-              break
+            else {
+              completion(TartuWeatherResult.failure(NSError(domain:"TartuWeatherProvider", code:400, userInfo:nil)))
+              return
             }
+   
+            let smallImageURL = "http://meteo.physic.ut.ee/webcam/uus/pisike.jpg"
+            let largeImageURL = "http://meteo.physic.ut.ee/webcam/uus/suur.jpg"
+          
+            let data = WeatherData(temperature: temperature, humidity: humidity, airPressure: airPressure, wind: wind, precipitation: precipitation, irradiationFlux: irradiationFlux, measuredTime: measuredTime, smallImageURL: smallImageURL, largeImageURL: largeImageURL)
+            
+            completion(TartuWeatherResult.success(data))
+            break
         }
     })
-  }
-
-  /**
-    Get current weather image from webcam
-    
-    - Parameters:
-      - completion: Callback block when data is retrieved from server
-      - image: UIImage with current webcam image
-   
-  */
-  open class func getCurrentImage(completion:@escaping (_ image: LiveImage?, _ error: Error?) -> Void) {
-    Alamofire.request("http://meteo.physic.ut.ee/webcam/uus/suur.jpg").responseImage { response in
-      
-      switch response.result {
-        case .failure(let error):
-          completion(nil, error)
-          break
-        case .success(let image):
-          completion(image, nil)
-          break
-      }
-    }
   }
 }

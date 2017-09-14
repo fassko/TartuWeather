@@ -90,14 +90,12 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire-iOS/Alamofire.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/AlamofireImage-iOS/AlamofireImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TartuWeatherProvider-iOS/TartuWeatherProvider.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Nimble/Nimble.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Quick/Quick.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire-iOS/Alamofire.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/AlamofireImage-iOS/AlamofireImage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/TartuWeatherProvider-iOS/TartuWeatherProvider.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Nimble/Nimble.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Quick/Quick.framework"

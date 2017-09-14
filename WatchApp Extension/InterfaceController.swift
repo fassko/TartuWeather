@@ -12,6 +12,9 @@ import Foundation
 import RxSwift
 import RxCocoa
 import NSObject_Rx
+import Alamofire
+import AlamofireImage
+import RxOptional
 
 class InterfaceController: WKInterfaceController {
   
@@ -28,7 +31,7 @@ class InterfaceController: WKInterfaceController {
   @IBOutlet var measuredLabel: WKInterfaceLabel!
   
   /// View model
-  private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
+  private var tartuWeatherViewModel = TartuWeatherViewModel()
 
 
   override func awake(withContext context: Any?) {
@@ -47,29 +50,35 @@ class InterfaceController: WKInterfaceController {
       .subscribe(onNext: {temp in
         self.tempLabel.setText(temp)
       })
-      .addDisposableTo(rx_disposeBag)
+      .addDisposableTo(rx.disposeBag)
     
     tartuWeatherViewModel.wind
       .asObservable()
       .subscribe(onNext: {wind in
         self.windLabel.setText(wind)
       })
-      .addDisposableTo(rx_disposeBag)
+      .addDisposableTo(rx.disposeBag)
     
     tartuWeatherViewModel.measuredTime
       .asObservable()
       .subscribe(onNext: {time in
         self.measuredLabel.setText(time)
       })
-      .addDisposableTo(rx_disposeBag)
+      .addDisposableTo(rx.disposeBag)
     
     // Set up live image binding
-    tartuWeatherViewModel.liveImage
+    tartuWeatherViewModel.smallImage
       .asObservable()
-      .subscribe(onNext: {img in
-        self.currentImage.setImage(img)
+      .filterNil()
+      .subscribe(onNext: {imgURL in
+        Alamofire.request(imgURL).responseImage { response in
+        
+          guard let image = response.result.value else { return }
+
+          self.currentImage.setImage(image)
+        }
       })
-      .addDisposableTo(rx_disposeBag)
+      .addDisposableTo(rx.disposeBag)
     
     tartuWeatherViewModel.updateWeather()
   }

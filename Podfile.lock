@@ -1,43 +1,48 @@
 PODS:
-  - Alamofire (4.5.0)
-  - AlamofireImage (3.2.0):
-    - Alamofire (~> 4.1)
-  - Crashlytics (3.8.5):
+  - Alamofire (4.5.1)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
+  - Crashlytics (3.8.6):
     - Fabric (~> 1.6.3)
-  - Fabric (1.6.12)
+  - Fabric (1.6.13)
   - Nimble (7.0.1)
-  - NSObject+Rx (2.3.0):
+  - NSObject+Rx (3.0.0):
     - RxSwift (~> 3.0)
   - Quick (1.1.0)
-  - RxCocoa (3.5.0):
-    - RxSwift (~> 3.4)
-  - RxSwift (3.5.0)
-  - TartuWeatherProvider (0.1.7):
-    - Alamofire (~> 4.4)
-    - AlamofireImage (~> 3.2)
+  - RxCocoa (3.6.1):
+    - RxSwift (~> 3.6)
+  - RxOptional (3.2.0):
+    - RxCocoa
+    - RxSwift
+  - RxSwift (3.6.1)
+  - TartuWeatherProvider (0.1.8):
+    - Alamofire (~> 4.5)
 
 DEPENDENCIES:
+  - AlamofireImage
   - Crashlytics
   - Fabric
   - Nimble
   - NSObject+Rx
   - Quick
   - RxCocoa
+  - RxOptional
   - RxSwift
   - TartuWeatherProvider
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
-  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
-  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  Crashlytics: 95d05f4e4c19a771250c4bd9ce344d996de32bbf
+  Fabric: 2fb5676bc811af011a04513451f463dac6803206
   Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
-  NSObject+Rx: 38170f84b948152c05c57260cb853e387a5519d1
+  NSObject+Rx: 9c60a6e602ca647c0b2b34403383c305b1c6edc5
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
-  RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
-  RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
-  TartuWeatherProvider: 2ace2cad410a26b0f814d299c778e7f6ca8e9962
+  RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
+  RxOptional: d2d6a68064bc16b4801332c40663967f481b0234
+  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  TartuWeatherProvider: 5134cb753c93189db4e0db4a744bdfeee07c3c28
 
-PODFILE CHECKSUM: 948cc01a078785b9591daad01175079100a46607
+PODFILE CHECKSUM: 93b8658b1683ea6128bc43cb2f7198d0d7e2506a
 
 COCOAPODS: 1.2.1
