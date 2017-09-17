@@ -31,6 +31,9 @@ public struct WeatherData {
   /// Measured time
   public var measuredTime:String
   
+  /// Live image
+  public var liveImage: LiveImage
+  
   /**
     Init method
     
@@ -43,7 +46,7 @@ public struct WeatherData {
       - irradiationFlux: Irradiation flux
       - measuredTime: Measured time
   */
-  init(temperature:String, humidity:String, airPressure:String, wind:String, precipitation:String, irradiationFlux:String, measuredTime:String) {
+  init(temperature:String, humidity:String, airPressure:String, wind:String, precipitation:String, irradiationFlux:String, measuredTime:String, smallImageURL: String, largeImageURL: String) {
     self.temperature = temperature
     self.humidity = humidity
     self.airPressure = airPressure
@@ -51,5 +54,7 @@ public struct WeatherData {
     self.precipitation = precipitation
     self.irradiationFlux = irradiationFlux
     self.measuredTime = measuredTime
+    
+    self.liveImage = LiveImage(small: smallImageURL, large: largeImageURL)
   }
 }

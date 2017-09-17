@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'TartuWeather' do
-  platform :ios, '9.0'
+  platform :ios, '10.0'
   
   pod 'Fabric'
   pod 'Crashlytics'
@@ -9,11 +9,15 @@ target 'TartuWeather' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'NSObject+Rx'
+  pod 'RxOptional'
+  pod 'AlamofireImage'
+  pod 'RxOptional'
+  pod 'SimpleImageViewer'
   
 end
 
 target 'TartuWeatherWidget' do
-  platform :ios, '9.0'
+  platform :ios, '10.0'
   
   pod 'TartuWeatherProvider'
   pod 'RxSwift'
@@ -22,7 +26,7 @@ target 'TartuWeatherWidget' do
 end
 
 target 'meteoTartuUITests' do
-  platform :ios, '9.0'
+  platform :ios, '10.0'
   
   pod 'TartuWeatherProvider'
   pod 'Quick'
@@ -36,4 +40,7 @@ target 'WatchApp Extension' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'NSObject+Rx'
+  pod 'RxOptional'
+  pod 'AlamofireImage'
+  pod 'RxOptional'
 end
