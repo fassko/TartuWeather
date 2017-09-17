@@ -107,7 +107,7 @@ class InterfaceController: WKInterfaceController {
     Long press on live image, reload
   */
   @IBAction func longPressOnImage(_ sender: Any) {
-    reload()
+    
   }
   
   /**

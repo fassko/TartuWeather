@@ -16,9 +16,9 @@
                     <items>
                         <imageView width="1" alignment="center" id="wAJ-Fx-0HF">
                             <gestureRecognizers>
-                                <longPressGestureRecognizer id="LVc-hv-zKj">
+                                <longPressGestureRecognizer id="fhK-YB-6FK">
                                     <connections>
-                                        <action selector="longPressOnImage:" destination="AgC-eL-Hgc" id="FaV-Ms-ZgB"/>
+                                        <action selector="longPressOnImage:" destination="AgC-eL-Hgc" id="Z0T-F1-tKj"/>
                                     </connections>
                                 </longPressGestureRecognizer>
                             </gestureRecognizers>
