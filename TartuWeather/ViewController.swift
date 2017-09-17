@@ -39,6 +39,9 @@ class ViewController: UIViewController {
   /// View model
   private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
   
+  /// Live image
+  var agrume: Agrume?
+  
   
   //MARK:- View lifecycle methods
   override func viewDidLoad() {
@@ -92,12 +95,7 @@ class ViewController: UIViewController {
    
   **/
   @IBAction func showImage(_ sender: UITapGestureRecognizer) {
-  
-    guard let liveImage = (sender.view as? UIImageView)?.image else { return }
-    
-    let agrume = Agrume(image: liveImage, backgroundColor: .black)
-    agrume.hideStatusBar = true
-    agrume.showFrom(self)
+    agrume?.showFrom(self)
   }
   
   //MARK: - Additional methods
@@ -112,6 +110,9 @@ class ViewController: UIViewController {
       guard let image = response.result.value else { return }
       
       self.currentImage.image = image
+      
+      self.agrume = Agrume(image: image, backgroundColor: .black)
+      self.agrume?.hideStatusBar = true
     }
   }
   
