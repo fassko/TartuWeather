@@ -72,6 +72,14 @@ class ViewController: UIViewController {
         self.tartuWeatherViewModel.updateWeather()
       })
       .addDisposableTo(rx.disposeBag)
+    
+    // Update weather data with timer
+    Observable<Int>
+      .interval(RxTimeInterval(30), scheduler: MainScheduler.instance)
+      .subscribe(onNext: {_ in
+        self.tartuWeatherViewModel.updateWeather()
+      })
+      .addDisposableTo(rx.disposeBag)
   }
   
   

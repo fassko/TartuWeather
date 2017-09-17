@@ -81,6 +81,14 @@ class InterfaceController: WKInterfaceController {
       .addDisposableTo(rx.disposeBag)
     
     tartuWeatherViewModel.updateWeather()
+    
+    // Update weather data with timer
+    Observable<Int>
+      .interval(RxTimeInterval(30), scheduler: MainScheduler.instance)
+      .subscribe(onNext: {_ in
+        self.tartuWeatherViewModel.updateWeather()
+      })
+      .addDisposableTo(rx.disposeBag)
   }
   
   override func didDeactivate() {

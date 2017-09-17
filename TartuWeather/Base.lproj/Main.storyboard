@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YGe-cB-Pur">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YGe-cB-Pur">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,10 +36,6 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TartuWeather" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="Hol-mT-ZDs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -116,9 +113,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="07D-jh-J4R" secondAttribute="bottom" id="DxE-kn-L2Z"/>
-                            <constraint firstItem="07D-jh-J4R" firstAttribute="centerX" secondItem="Hol-mT-ZDs" secondAttribute="centerX" id="QyV-fL-hjW"/>
+                            <constraint firstItem="07D-jh-J4R" firstAttribute="centerX" secondItem="haQ-dv-eyb" secondAttribute="centerX" id="QyV-fL-hjW"/>
                             <constraint firstItem="07D-jh-J4R" firstAttribute="top" secondItem="Hol-mT-ZDs" secondAttribute="top" constant="20" id="hOd-KG-TDZ"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="haQ-dv-eyb"/>
                     </scrollView>
                     <navigationItem key="navigationItem" title="meteo Tartu" id="bgt-2g-WOs">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="LE4-5T-NBF" userLabel="Refresh">
