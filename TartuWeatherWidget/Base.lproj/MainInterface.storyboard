@@ -14,7 +14,7 @@
         <!--Today View Controller-->
         <scene sceneID="cwh-vc-ff4">
             <objects>
-                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="TartuWeatherWidget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="TartuWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
@@ -46,9 +46,6 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLo-AH-Rn2">
                                 <rect key="frame" x="6" y="0.0" width="308" height="70"/>
-                                <connections>
-                                    <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="Rzv-vi-qyw"/>
-                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -86,5 +83,5 @@
             <point key="canvasLocation" x="516" y="284"/>
         </scene>
     </scenes>
-    <color key="tintColor" name="Blue"/>
+    <color key="tintColor" red="0.1764705882" green="0.34509803919999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
 </document>
