@@ -35,6 +35,10 @@ class ViewController: UIViewController {
   /// Refresh label
   @IBOutlet weak var refreshButton: UIBarButtonItem!
   
+  /// Share button
+  @IBOutlet var shareButton: UIBarButtonItem!
+  
+  
   //MARK:- Class variables
   /// View model
   private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
@@ -50,11 +54,15 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    shareButton.isEnabled = false
+    
     /// Set up live image binding
     tartuWeatherViewModel.largeImage.asObservable()
       .filterNil()
       .subscribe(onNext: {imageURL in
+        self.shareButton.isEnabled = true
         self.refreshControl.endRefreshing()
+        
         self.getLiveImage(imageURL)
       })
       .addDisposableTo(rx.disposeBag)
@@ -134,4 +142,13 @@ class ViewController: UIViewController {
     tartuWeatherViewModel.updateWeather()
   }
   
+  /**
+    Share temperature and wind
+  */
+  @IBAction func share(_ sender: Any) {
+    guard let temperature = tartuWeatherViewModel.temperature.value, let wind = tartuWeatherViewModel.wind.value else { return }
+  
+    let activityViewController = UIActivityViewController(activityItems: ["\(String(describing: temperature)), \(String(describing: wind))"], applicationActivities: nil)
+    navigationController?.present(activityViewController, animated: true, completion: {})
+  }
 }
