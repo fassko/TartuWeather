@@ -14,15 +14,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchApp" customModuleProvider="target">
                     <items>
-                        <imageView width="1" alignment="center" id="wAJ-Fx-0HF">
-                            <gestureRecognizers>
-                                <longPressGestureRecognizer id="fhK-YB-6FK">
-                                    <connections>
-                                        <action selector="longPressOnImage:" destination="AgC-eL-Hgc" id="Z0T-F1-tKj"/>
-                                    </connections>
-                                </longPressGestureRecognizer>
-                            </gestureRecognizers>
-                        </imageView>
+                        <imageView width="1" alignment="center" id="wAJ-Fx-0HF"/>
                         <label alignment="center" text="°C" id="vwX-nb-dvy">
                             <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
                         </label>
@@ -42,6 +34,15 @@
                             <color key="color" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </separator>
                     </items>
+                    <menu key="menu" id="bPP-sa-iBQ">
+                        <items>
+                            <menuItem title="Reload" icon="resume" id="DFS-3B-LRi">
+                                <connections>
+                                    <action selector="reloadFromMenu" destination="AgC-eL-Hgc" id="9J1-Yb-OKI"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="currentImage" destination="wAJ-Fx-0HF" id="ACB-6h-PXc"/>
                         <outlet property="measuredLabel" destination="gsC-DO-Vdl" id="5rS-UD-Cdp"/>

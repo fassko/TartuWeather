@@ -103,12 +103,10 @@ class InterfaceController: WKInterfaceController {
     reload()
   }
   
-  /**
-    Long press on live image, reload
-  */
-  @IBAction func longPressOnImage(_ sender: Any) {
-    
+  @IBAction func reloadFromMenu() {
+    reload()
   }
+  
   
   /**
    Relod data and create notification
