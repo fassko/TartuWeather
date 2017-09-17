@@ -15,7 +15,7 @@ import NSObject_Rx
 import AlamofireImage
 import Alamofire
 import RxOptional
-import SimpleImageViewer
+import Agrume
 
 class ViewController: UIViewController {
 
@@ -93,15 +93,11 @@ class ViewController: UIViewController {
   **/
   @IBAction func showImage(_ sender: UITapGestureRecognizer) {
   
-    guard let liveImageView = sender.view as? UIImageView else { return }
+    guard let liveImage = (sender.view as? UIImageView)?.image else { return }
     
-    let configuration = ImageViewerConfiguration { config in
-      config.imageView = liveImageView
-    }
-    
-    let imageViewerController = ImageViewerController(configuration: configuration)
-    
-    present(imageViewerController, animated: true)
+    let agrume = Agrume(image: liveImage, backgroundColor: .black)
+    agrume.hideStatusBar = true
+    agrume.showFrom(self)
   }
   
   //MARK: - Additional methods

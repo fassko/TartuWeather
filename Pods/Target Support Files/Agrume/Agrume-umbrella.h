@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double SimpleImageViewerVersionNumber;
-FOUNDATION_EXPORT const unsigned char SimpleImageViewerVersionString[];
+FOUNDATION_EXPORT double AgrumeVersionNumber;
+FOUNDATION_EXPORT const unsigned char AgrumeVersionString[];
 
