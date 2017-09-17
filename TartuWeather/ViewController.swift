@@ -15,6 +15,7 @@ import NSObject_Rx
 import AlamofireImage
 import Alamofire
 import RxOptional
+import SimpleImageViewer
 
 class ViewController: UIViewController {
 
@@ -43,12 +44,6 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Live image styles
-    currentImage.layer.cornerRadius = 10.0
-    currentImage.layer.borderColor = #colorLiteral(red: 0.175999999, green: 0.3449999988, blue: 0.4979999959, alpha: 1)
-    currentImage.layer.borderWidth = 2.0
-    currentImage.layer.masksToBounds = true
-    
     // Set up labels bindings
     tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).addDisposableTo(rx.disposeBag)
     tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).addDisposableTo(rx.disposeBag)
@@ -58,14 +53,9 @@ class ViewController: UIViewController {
     tartuWeatherViewModel.largeImage.asObservable()
       .filterNil()
       .subscribe(onNext: {imageURL in
-        Alamofire.request(imageURL).responseImage { response in
-        
-          guard let image = response.result.value else { return }
-        
-          self.currentImage.image = image
-        }
-      }).addDisposableTo(rx.disposeBag)
-   
+        self.getLiveImage(imageURL)
+      })
+      .addDisposableTo(rx.disposeBag)
     
     // Update weather data when application did become active
     Observable.of(NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationDidBecomeActive), NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationWillEnterForeground))
@@ -73,7 +63,6 @@ class ViewController: UIViewController {
         self.tartuWeatherViewModel.updateWeather()
       })
       .addDisposableTo(rx.disposeBag)
-   
    
     // Refresh button
     let refresh = refreshButton.rx.tap
@@ -84,4 +73,42 @@ class ViewController: UIViewController {
       })
       .addDisposableTo(rx.disposeBag)
   }
+  
+  
+  //MARK: - Actions
+  /**
+    Show live image
+   
+    - Parameters:
+      - sender: Tap recognizer of image
+   
+  **/
+  @IBAction func showImage(_ sender: UITapGestureRecognizer) {
+  
+    guard let liveImageView = sender.view as? UIImageView else { return }
+    
+    let configuration = ImageViewerConfiguration { config in
+      config.imageView = liveImageView
+    }
+    
+    let imageViewerController = ImageViewerController(configuration: configuration)
+    
+    present(imageViewerController, animated: true)
+  }
+  
+  //MARK: - Additional methods
+  /**
+    Get live image from Internet and update imageview
+   
+    - Parameters:
+      - imageURL: Image String URL
+  */
+  fileprivate func getLiveImage(_ imageURL: String) {
+    Alamofire.request(imageURL).responseImage { response in
+      guard let image = response.result.value else { return }
+      
+      self.currentImage.image = image
+    }
+  }
+  
 }

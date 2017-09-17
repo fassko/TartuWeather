@@ -15,6 +15,7 @@ PODS:
     - RxCocoa
     - RxSwift
   - RxSwift (3.6.1)
+  - SimpleImageViewer (1.0.1)
   - TartuWeatherProvider (0.1.8):
     - Alamofire (~> 4.5)
 
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxOptional
   - RxSwift
+  - SimpleImageViewer
   - TartuWeatherProvider
 
 SPEC CHECKSUMS:
@@ -41,8 +43,9 @@ SPEC CHECKSUMS:
   RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
   RxOptional: d2d6a68064bc16b4801332c40663967f481b0234
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  SimpleImageViewer: ab0deb97a2cbe008db5c60ea62a9431c2ce0c2e1
   TartuWeatherProvider: 5134cb753c93189db4e0db4a744bdfeee07c3c28
 
-PODFILE CHECKSUM: 93b8658b1683ea6128bc43cb2f7198d0d7e2506a
+PODFILE CHECKSUM: fb5bc958b892dc26bb5b52ce51d79b017bca0af0
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

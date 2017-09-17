@@ -12,6 +12,7 @@ target 'TartuWeather' do
   pod 'RxOptional'
   pod 'AlamofireImage'
   pod 'RxOptional'
+  pod 'SimpleImageViewer'
   
 end
 
