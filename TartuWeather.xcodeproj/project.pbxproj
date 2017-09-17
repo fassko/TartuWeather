@@ -14,6 +14,7 @@
 		6302763D1E787ED700A922B8 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6348B1D31C4BF6AA00199EE5 /* NotificationCenter.framework */; };
 		63330EB51DCF6FC0002194A3 /* meteoTartuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63330EB41DCF6FC0002194A3 /* meteoTartuUITests.swift */; };
 		63330EBD1DCF7142002194A3 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63330EBC1DCF7142002194A3 /* SnapshotHelper.swift */; };
+		633367DD1F6E78D8005AE02E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6348B1D81C4BF6AA00199EE5 /* MainInterface.storyboard */; };
 		6341EAC71EF07B8800C3E8EA /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
 		6341EACA1EF083C100C3E8EA /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
 		6341EACB1EF083C300C3E8EA /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
@@ -541,6 +542,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				633367DD1F6E78D8005AE02E /* MainInterface.storyboard in Resources */,
 				63AFB7F91C5D3D93004A58E1 /* thermometer35@3x.png in Resources */,
 				63AFB7F81C5D3D93004A58E1 /* thermometer35@2x.png in Resources */,
 				63AFB7F71C5D3D93004A58E1 /* thermometer35.png in Resources */,
