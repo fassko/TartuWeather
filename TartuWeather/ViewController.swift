@@ -42,23 +42,27 @@ class ViewController: UIViewController {
   /// Live image
   var agrume: Agrume?
   
+  /// Pull to refresh control
+  let refreshControl = UIRefreshControl()
+  
   
   //MARK:- View lifecycle methods
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Set up labels bindings
-    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).addDisposableTo(rx.disposeBag)
-    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).addDisposableTo(rx.disposeBag)
-    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).addDisposableTo(rx.disposeBag)
-    
     /// Set up live image binding
     tartuWeatherViewModel.largeImage.asObservable()
       .filterNil()
       .subscribe(onNext: {imageURL in
+        self.refreshControl.endRefreshing()
         self.getLiveImage(imageURL)
       })
       .addDisposableTo(rx.disposeBag)
+    
+    // Set up labels bindings
+    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).addDisposableTo(rx.disposeBag)
+    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).addDisposableTo(rx.disposeBag)
+    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).addDisposableTo(rx.disposeBag)
     
     // Update weather data when application did become active
     Observable.of(NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationDidBecomeActive), NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationWillEnterForeground))
@@ -83,8 +87,12 @@ class ViewController: UIViewController {
         self.tartuWeatherViewModel.updateWeather()
       })
       .addDisposableTo(rx.disposeBag)
+    
+    // Add pull to refresh
+    refreshControl.tintColor = UIColor(red:0.18, green:0.35, blue:0.50, alpha:1.0)
+    refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
+    (self.view as! UIScrollView).refreshControl = refreshControl
   }
-  
   
   //MARK: - Actions
   /**
@@ -114,6 +122,16 @@ class ViewController: UIViewController {
       self.agrume = Agrume(image: image, backgroundColor: .black)
       self.agrume?.hideStatusBar = true
     }
+  }
+  
+  /**
+    Pull to refresh data
+   
+    - Parameters:
+      - refreshControl: Refresh control
+  */
+ func pullToRefresh(_ refreshControl: UIRefreshControl) {
+    tartuWeatherViewModel.updateWeather()
   }
   
 }

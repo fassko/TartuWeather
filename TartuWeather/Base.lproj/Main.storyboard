@@ -129,7 +129,6 @@
                         <outlet property="refreshButton" destination="LE4-5T-NBF" id="6Zi-37-F41"/>
                         <outlet property="temperatureLabel" destination="7nT-2d-Fdg" id="KdJ-23-Ato"/>
                         <outlet property="windLabel" destination="cec-EC-zC0" id="YTS-i3-V11"/>
-                        <segue destination="2Gb-M0-68t" kind="presentation" identifier="showImage" id="AEp-kF-oqT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -140,34 +139,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="287" y="283"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="EIh-fr-O73">
-            <objects>
-                <viewController id="2Gb-M0-68t" sceneMemberID="viewController">
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="l2x-cA-UiW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kog-iK-FkC">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                            </imageView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="kog-iK-FkC" firstAttribute="bottom" secondItem="aqd-Wz-DhU" secondAttribute="bottom" id="5wh-It-svO"/>
-                            <constraint firstItem="kog-iK-FkC" firstAttribute="width" secondItem="l2x-cA-UiW" secondAttribute="width" id="8eJ-PF-c8E"/>
-                            <constraint firstItem="kog-iK-FkC" firstAttribute="leading" secondItem="aqd-Wz-DhU" secondAttribute="leading" id="HFN-56-cIT"/>
-                            <constraint firstItem="kog-iK-FkC" firstAttribute="top" secondItem="l2x-cA-UiW" secondAttribute="top" id="PgK-Qu-R5f"/>
-                            <constraint firstItem="aqd-Wz-DhU" firstAttribute="trailing" secondItem="kog-iK-FkC" secondAttribute="trailing" id="opz-IU-dOH"/>
-                            <constraint firstItem="kog-iK-FkC" firstAttribute="height" secondItem="l2x-cA-UiW" secondAttribute="height" id="pbc-8Q-EK6"/>
-                            <constraint firstItem="kog-iK-FkC" firstAttribute="trailing" secondItem="aqd-Wz-DhU" secondAttribute="trailing" id="tIZ-ED-wwt"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="aqd-Wz-DhU"/>
-                    </scrollView>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CHL-8N-sjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1194.375" y="296.25"/>
         </scene>
     </scenes>
 </document>
