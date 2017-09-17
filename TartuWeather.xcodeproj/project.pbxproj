@@ -29,7 +29,6 @@
 		635860AE1E4767D5006E394D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635860AC1E4767D5006E394D /* Interface.storyboard */; };
 		635860B01E4767D5006E394D /* AssetsWatch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635860AF1E4767D5006E394D /* AssetsWatch.xcassets */; };
 		635860B71E4767D6006E394D /* WatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 635860B61E4767D6006E394D /* WatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		635860BE1E4767D6006E394D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635860BD1E4767D6006E394D /* InterfaceController.swift */; };
 		635860C01E4767D6006E394D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635860BF1E4767D6006E394D /* ExtensionDelegate.swift */; };
 		635860C41E4767D6006E394D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635860C31E4767D6006E394D /* Assets.xcassets */; };
 		635860C81E4767D6006E394D /* WatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 635860AA1E4767D5006E394D /* WatchApp.app */; };
@@ -847,7 +846,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				635860C01E4767D6006E394D /* ExtensionDelegate.swift in Sources */,
-				635860BE1E4767D6006E394D /* InterfaceController.swift in Sources */,
 				6341EACA1EF083C100C3E8EA /* TartuWeatherViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

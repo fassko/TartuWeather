@@ -97,10 +97,25 @@ class InterfaceController: WKInterfaceController {
   }
   
   /**
-    Reload data
+    Reload data when button pressed
   */
   @IBAction func reloadData() {
+    reload()
+  }
+  
+  /**
+    Long press on live image, reload
+  */
+  @IBAction func longPressOnImage(_ sender: Any) {
+    reload()
+  }
+  
+  /**
+   Relod data and create notification
+  **/
+  fileprivate func reload() {
     WKInterfaceDevice().play(.notification)
     tartuWeatherViewModel.updateWeather()
   }
+  
 }
