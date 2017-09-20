@@ -15,7 +15,7 @@ import NSObject_Rx
 import AlamofireImage
 import Alamofire
 import RxOptional
-import SimpleImageViewer
+import Agrume
 
 class ViewController: UIViewController {
 
@@ -35,27 +35,42 @@ class ViewController: UIViewController {
   /// Refresh label
   @IBOutlet weak var refreshButton: UIBarButtonItem!
   
+  /// Share button
+  @IBOutlet var shareButton: UIBarButtonItem!
+  
+  
   //MARK:- Class variables
   /// View model
   private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
+  
+  /// Live image
+  var agrume: Agrume?
+  
+  /// Pull to refresh control
+  let refreshControl = UIRefreshControl()
   
   
   //MARK:- View lifecycle methods
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Set up labels bindings
-    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).addDisposableTo(rx.disposeBag)
-    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).addDisposableTo(rx.disposeBag)
-    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).addDisposableTo(rx.disposeBag)
+    shareButton.isEnabled = false
     
     /// Set up live image binding
     tartuWeatherViewModel.largeImage.asObservable()
       .filterNil()
       .subscribe(onNext: {imageURL in
+        self.shareButton.isEnabled = true
+        self.refreshControl.endRefreshing()
+        
         self.getLiveImage(imageURL)
       })
       .addDisposableTo(rx.disposeBag)
+    
+    // Set up labels bindings
+    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).addDisposableTo(rx.disposeBag)
+    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).addDisposableTo(rx.disposeBag)
+    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).addDisposableTo(rx.disposeBag)
     
     // Update weather data when application did become active
     Observable.of(NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationDidBecomeActive), NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationWillEnterForeground))
@@ -72,8 +87,20 @@ class ViewController: UIViewController {
         self.tartuWeatherViewModel.updateWeather()
       })
       .addDisposableTo(rx.disposeBag)
+    
+    // Update weather data with timer
+    Observable<Int>
+      .interval(RxTimeInterval(30), scheduler: MainScheduler.instance)
+      .subscribe(onNext: {_ in
+        self.tartuWeatherViewModel.updateWeather()
+      })
+      .addDisposableTo(rx.disposeBag)
+    
+    // Add pull to refresh
+    refreshControl.tintColor = UIColor(red:0.18, green:0.35, blue:0.50, alpha:1.0)
+    refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
+    (self.view as! UIScrollView).refreshControl = refreshControl
   }
-  
   
   //MARK: - Actions
   /**
@@ -84,16 +111,7 @@ class ViewController: UIViewController {
    
   **/
   @IBAction func showImage(_ sender: UITapGestureRecognizer) {
-  
-    guard let liveImageView = sender.view as? UIImageView else { return }
-    
-    let configuration = ImageViewerConfiguration { config in
-      config.imageView = liveImageView
-    }
-    
-    let imageViewerController = ImageViewerController(configuration: configuration)
-    
-    present(imageViewerController, animated: true)
+    agrume?.showFrom(self)
   }
   
   //MARK: - Additional methods
@@ -108,7 +126,29 @@ class ViewController: UIViewController {
       guard let image = response.result.value else { return }
       
       self.currentImage.image = image
+      
+      self.agrume = Agrume(image: image, backgroundColor: .black)
+      self.agrume?.hideStatusBar = true
     }
   }
   
+  /**
+    Pull to refresh data
+   
+    - Parameters:
+      - refreshControl: Refresh control
+  */
+ func pullToRefresh(_ refreshControl: UIRefreshControl) {
+    tartuWeatherViewModel.updateWeather()
+  }
+  
+  /**
+    Share temperature and wind
+  */
+  @IBAction func share(_ sender: Any) {
+    guard let temperature = tartuWeatherViewModel.temperature.value, let wind = tartuWeatherViewModel.wind.value else { return }
+  
+    let activityViewController = UIActivityViewController(activityItems: ["\(String(describing: temperature)), \(String(describing: wind))"], applicationActivities: nil)
+    navigationController?.present(activityViewController, animated: true, completion: {})
+  }
 }

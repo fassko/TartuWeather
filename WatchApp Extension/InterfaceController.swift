@@ -81,6 +81,14 @@ class InterfaceController: WKInterfaceController {
       .addDisposableTo(rx.disposeBag)
     
     tartuWeatherViewModel.updateWeather()
+    
+    // Update weather data with timer
+    Observable<Int>
+      .interval(RxTimeInterval(30), scheduler: MainScheduler.instance)
+      .subscribe(onNext: {_ in
+        self.tartuWeatherViewModel.updateWeather()
+      })
+      .addDisposableTo(rx.disposeBag)
   }
   
   override func didDeactivate() {
@@ -89,10 +97,23 @@ class InterfaceController: WKInterfaceController {
   }
   
   /**
-    Reload data
+    Reload data when button pressed
   */
   @IBAction func reloadData() {
+    reload()
+  }
+  
+  @IBAction func reloadFromMenu() {
+    reload()
+  }
+  
+  
+  /**
+   Relod data and create notification
+  **/
+  fileprivate func reload() {
     WKInterfaceDevice().play(.notification)
     tartuWeatherViewModel.updateWeather()
   }
+  
 }
