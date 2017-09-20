@@ -1,1 +1,3 @@
-iOS10 support and small fixes.
+* can see live image full screen preview
+* bug fixes and small improvements
+* sharing action
