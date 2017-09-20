@@ -15,8 +15,6 @@ class meteoTartuUITests: XCTestCase {
     super.setUp()
     
     continueAfterFailure = false
-    
-    
   }
   
   override func tearDown() {
@@ -28,6 +26,8 @@ class meteoTartuUITests: XCTestCase {
     let app = XCUIApplication()
     setupSnapshot(app)
     app.launch()
+    
+    sleep(1)
     
     app.navigationBars["meteo Tartu"].buttons["Refresh"].tap()
     
@@ -51,6 +51,13 @@ class meteoTartuUITests: XCTestCase {
     XCTAssert(measuredTimeLabel.label != "")
     
     snapshot("AppLaunched")
+    
+    image.tap()
+    
+    sleep(1)
+    
+    snapshot("LiveImage")
+    
   }
     
 }
