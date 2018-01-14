@@ -1,6 +1,0 @@
-framework module RxOptional {
-  umbrella header "RxOptional-watchOS-umbrella.h"
-
-  export *
-  module * { export * }
-}
