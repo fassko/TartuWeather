@@ -43,6 +43,11 @@ Travis lane
 fastlane ios release
 ```
 
+### ios dsyms
+```
+fastlane ios dsyms
+```
+Download dSYMs and upload to Testflight
 
 ----
 
