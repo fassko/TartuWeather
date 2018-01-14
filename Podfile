@@ -12,7 +12,7 @@ target 'TartuWeather' do
   pod 'RxOptional'
   pod 'AlamofireImage'
   pod 'RxOptional'
-  pod 'Agrume'
+  pod 'Lightbox'
   
 end
 

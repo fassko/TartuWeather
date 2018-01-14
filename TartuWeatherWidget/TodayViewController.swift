@@ -32,9 +32,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     super.viewDidLoad()
     
     // Set up labels bindings
-    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).addDisposableTo(rx.disposeBag)
-    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).addDisposableTo(rx.disposeBag)
-    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).addDisposableTo(rx.disposeBag)
+    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).disposed(by: rx.disposeBag)
+    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).disposed(by: rx.disposeBag)
+    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).disposed(by: rx.disposeBag)
   }
 
   func widgetPerformUpdate(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
@@ -51,7 +51,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
       .subscribe(onNext: {_ in
         completionHandler(NCUpdateResult.newData)
       })
-      .addDisposableTo(rx.disposeBag)
+      .disposed(by: rx.disposeBag)
   }
   
   

@@ -15,7 +15,7 @@ import NSObject_Rx
 import AlamofireImage
 import Alamofire
 import RxOptional
-import Agrume
+import Lightbox
 
 class ViewController: UIViewController {
 
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
   private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
   
   /// Live image
-  var agrume: Agrume?
+  var lightboxController: LightboxController?
   
   /// Pull to refresh control
   let refreshControl = UIRefreshControl()
@@ -65,19 +65,19 @@ class ViewController: UIViewController {
         
         self.getLiveImage(imageURL)
       })
-      .addDisposableTo(rx.disposeBag)
+      .disposed(by: rx.disposeBag)
     
     // Set up labels bindings
-    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).addDisposableTo(rx.disposeBag)
-    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).addDisposableTo(rx.disposeBag)
-    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).addDisposableTo(rx.disposeBag)
+    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).disposed(by: rx.disposeBag)
+    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).disposed(by: rx.disposeBag)
+    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).disposed(by: rx.disposeBag)
     
     // Update weather data when application did become active
     Observable.of(NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationDidBecomeActive), NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationWillEnterForeground))
       .subscribe(onNext: {_ in
         self.tartuWeatherViewModel.updateWeather()
       })
-      .addDisposableTo(rx.disposeBag)
+      .disposed(by: rx.disposeBag)
    
     // Refresh button
     let refresh = refreshButton.rx.tap
@@ -86,7 +86,7 @@ class ViewController: UIViewController {
       .subscribe(onNext: {
         self.tartuWeatherViewModel.updateWeather()
       })
-      .addDisposableTo(rx.disposeBag)
+      .disposed(by: rx.disposeBag)
     
     // Update weather data with timer
     Observable<Int>
@@ -94,12 +94,12 @@ class ViewController: UIViewController {
       .subscribe(onNext: {_ in
         self.tartuWeatherViewModel.updateWeather()
       })
-      .addDisposableTo(rx.disposeBag)
+      .disposed(by: rx.disposeBag)
     
     // Add pull to refresh
     refreshControl.tintColor = UIColor(red:0.18, green:0.35, blue:0.50, alpha:1.0)
     refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
-    (self.view as! UIScrollView).refreshControl = refreshControl
+    (view as! UIScrollView).refreshControl = refreshControl
   }
   
   //MARK: - Actions
@@ -111,7 +111,8 @@ class ViewController: UIViewController {
    
   **/
   @IBAction func showImage(_ sender: UITapGestureRecognizer) {
-    agrume?.showFrom(self)
+    guard let lightbox = lightboxController else { return }
+    present(lightbox, animated: true, completion: nil)
   }
   
   //MARK: - Additional methods
@@ -127,8 +128,9 @@ class ViewController: UIViewController {
       
       self.currentImage.image = image
       
-      self.agrume = Agrume(image: image, backgroundColor: .black)
-      self.agrume?.hideStatusBar = true
+      self.lightboxController = LightboxController(images: [LightboxImage(image: image)])
+      self.lightboxController?.dynamicBackground = true
+      self.lightboxController?.pageDelegate = nil
     }
   }
   
@@ -138,7 +140,7 @@ class ViewController: UIViewController {
     - Parameters:
       - refreshControl: Refresh control
   */
- func pullToRefresh(_ refreshControl: UIRefreshControl) {
+  @objc func pullToRefresh(_ refreshControl: UIRefreshControl) {
     tartuWeatherViewModel.updateWeather()
   }
   
