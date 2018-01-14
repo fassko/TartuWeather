@@ -1,111 +1,44 @@
-update_fastlane
+update_fastlane(nightly: false)
 default_platform :ios
 
 platform :ios do
-  before_all do
-    # cocoapods
+  
+  desc "Certs"
+  lane :certificates do
+    match(type: "appstore")
+    match(type: "development")
   end
   
-  lane :certificates do
-    
-    create_keychain(
-      name: ENV["MATCH_KEYCHAIN_NAME"],
-      password: ENV["MATCH_PASSWORD"],
-      default_keychain: true,
-      unlock: true,
-      timeout: 3600,
-      add_to_search_list: true
-    )
-    
-    match(
-      type: "appstore",
-      keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
-      keychain_password: ENV["MATCH_PASSWORD"]
-    )
-    
-    match(
-      type: "development",
-      keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
-      keychain_password: ENV["MATCH_PASSWORD"]
-    )
-  end
-
-  lane :travis do
+  desc "CI build"
+  lane :ci_build do
     certificates
     
-    build
-    
-    changelog_from_git_commits
-    
-    if is_ci? && ENV["TRAVIS_PULL_REQUEST"] != "false"
-      testflight(
-        skip_waiting_for_build_processing: true,
-        changelog: last_git_commit["message"]
-      )
-    end
+    # Test
+    scan(
+      workspace: "TartuWeather.xcworkspace",
+			scheme: "TartuWeather",
+			clean: true,
+      device: "iPhone X"
+    ) 
+  end
+  
+  desc "Circle CI lane"
+  lane :circleci do
+    setup_circle_ci
+    ci_build
   end
 
-  lane :build do
-    sigh
-    
-    increment_build_number(
-      build_number: Time.new.strftime("%Y%m%d.%H%M%S")
-    )
-    
-    clear_derived_data
-    
-    interfaceTests
-    
-    gym(
-      workspace: "TartuWeather.xcworkspace",
-      scheme: "TartuWeather",
-      clean: true,
-      output_name: "TartuWeather.ipa"
-    )
+  desc "Travis lane"
+  lane :travis do
+    setup_travis
+    ci_build
   end
 
   lane :release do
-    # certificates
-    # sigh
+    increment_build_number build_number: get_version_number + "." + Time.new.strftime("%y%m%d.%H%M")
 
-    increment_build_number(
-      build_number: Time.new.strftime("%Y%m%d.%H%M%S")
-    )
-    
     clear_derived_data
 
-    gym(
-      workspace: "TartuWeather.xcworkspace",
-      scheme: "TartuWeather",
-      clean: true,
-      output_name: "TartuWeather.ipa",
-      include_symbols: true
-    )
-
-    dsym_zip
-
-    copy_artifacts(
-      target_path: 'artifacts',
-      artifacts: ['*.dSYM.zip']
-    )
-
-    testflight(
-      skip_waiting_for_build_processing: true
-    )
-    # appstore
-  end
-  
-  lane :bump_version do
-    increment_build_number(
-      build_number: Time.new.strftime("%Y%m%d.%H%M%S")
-    )
-  end
-  
-  lane :beta do
-    bump_version
-    
-    clear_derived_data
-    
     gym(
       workspace: "TartuWeather.xcworkspace",
       scheme: "TartuWeather",
@@ -118,18 +51,7 @@ platform :ios do
       skip_waiting_for_build_processing: true
     )
   end
-  
-  lane :interfaceTests do
-    scan(
-      workspace: "TartuWeather.xcworkspace",
-      scheme: "UXTests",
-      device: "iPhone 7"
-    )
-  end
 
-  after_all do |lane|
-
-  end
 
   error do |lane, exception|
 

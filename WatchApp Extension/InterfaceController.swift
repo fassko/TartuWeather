@@ -50,21 +50,21 @@ class InterfaceController: WKInterfaceController {
       .subscribe(onNext: {temp in
         self.tempLabel.setText(temp)
       })
-      .addDisposableTo(rx.disposeBag)
+      .disposed(by: rx.disposeBag)
     
     tartuWeatherViewModel.wind
       .asObservable()
       .subscribe(onNext: {wind in
         self.windLabel.setText(wind)
       })
-      .addDisposableTo(rx.disposeBag)
+      .disposed(by: rx.disposeBag)
     
     tartuWeatherViewModel.measuredTime
       .asObservable()
       .subscribe(onNext: {time in
         self.measuredLabel.setText(time)
       })
-      .addDisposableTo(rx.disposeBag)
+      .disposed(by: rx.disposeBag)
     
     // Set up live image binding
     tartuWeatherViewModel.smallImage
@@ -78,7 +78,7 @@ class InterfaceController: WKInterfaceController {
           self.currentImage.setImage(image)
         }
       })
-      .addDisposableTo(rx.disposeBag)
+      .disposed(by: rx.disposeBag)
     
     tartuWeatherViewModel.updateWeather()
     
@@ -88,7 +88,7 @@ class InterfaceController: WKInterfaceController {
       .subscribe(onNext: {_ in
         self.tartuWeatherViewModel.updateWeather()
       })
-      .addDisposableTo(rx.disposeBag)
+      .disposed(by: rx.disposeBag)
   }
   
   override func didDeactivate() {
