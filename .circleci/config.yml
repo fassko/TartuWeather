@@ -21,14 +21,11 @@ jobs:
             export LANG=en_US.UTF-8
             echo -e "machine bitbucket.org\n  login fassko\n  password $CI_USER_PASSWORD" >> ~/.netrc 
           
-      # Install CocoaPods
       - run:
-          name: Fetch CocoaPods Specs
+          name: Cocoapods
           command: |
             curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
-      - run:
-          name: Install CocoaPods
-          command: pod install
+            pod install --repo-update
           
       - run:
           name: Install
