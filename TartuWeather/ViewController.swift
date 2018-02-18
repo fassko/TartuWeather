@@ -11,10 +11,6 @@ import QuartzCore
 
 import RxSwift
 import RxCocoa
-import NSObject_Rx
-import AlamofireImage
-import Alamofire
-import RxOptional
 import Lightbox
 
 class ViewController: UIViewController {
@@ -49,6 +45,7 @@ class ViewController: UIViewController {
   /// Pull to refresh control
   let refreshControl = UIRefreshControl()
   
+  private let disposeBag = DisposeBag()
   
   //MARK:- View lifecycle methods
   override func viewDidLoad() {
@@ -58,26 +55,26 @@ class ViewController: UIViewController {
     
     /// Set up live image binding
     tartuWeatherViewModel.largeImage.asObservable()
-      .filterNil()
+      .flatMap({ $0.map { Observable.just($0) } ?? Observable.empty() })
       .subscribe(onNext: {imageURL in
         self.shareButton.isEnabled = true
         self.refreshControl.endRefreshing()
         
         self.getLiveImage(imageURL)
       })
-      .disposed(by: rx.disposeBag)
+      .disposed(by: disposeBag)
     
     // Set up labels bindings
-    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).disposed(by: rx.disposeBag)
-    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).disposed(by: rx.disposeBag)
-    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).disposed(by: rx.disposeBag)
+    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).disposed(by: disposeBag)
+    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).disposed(by: disposeBag)
+    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).disposed(by: disposeBag)
     
     // Update weather data when application did become active
     Observable.of(NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationDidBecomeActive), NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationWillEnterForeground))
       .subscribe(onNext: {_ in
         self.tartuWeatherViewModel.updateWeather()
       })
-      .disposed(by: rx.disposeBag)
+      .disposed(by: disposeBag)
    
     // Refresh button
     let refresh = refreshButton.rx.tap
@@ -86,7 +83,7 @@ class ViewController: UIViewController {
       .subscribe(onNext: {
         self.tartuWeatherViewModel.updateWeather()
       })
-      .disposed(by: rx.disposeBag)
+      .disposed(by: disposeBag)
     
     // Update weather data with timer
     Observable<Int>
@@ -94,7 +91,7 @@ class ViewController: UIViewController {
       .subscribe(onNext: {_ in
         self.tartuWeatherViewModel.updateWeather()
       })
-      .disposed(by: rx.disposeBag)
+      .disposed(by: disposeBag)
     
     // Add pull to refresh
     refreshControl.tintColor = UIColor(red:0.18, green:0.35, blue:0.50, alpha:1.0)
@@ -123,15 +120,19 @@ class ViewController: UIViewController {
       - imageURL: Image String URL
   */
   fileprivate func getLiveImage(_ imageURL: String) {
-    Alamofire.request(imageURL).responseImage { response in
-      guard let image = response.result.value else { return }
-      
-      self.currentImage.image = image
-      
-      self.lightboxController = LightboxController(images: [LightboxImage(image: image)])
-      self.lightboxController?.dynamicBackground = true
-      self.lightboxController?.pageDelegate = nil
-    }
+  
+    URLSession.shared.dataTask(with: URL(string: imageURL)!) { data, response, error in
+      DispatchQueue.main.async {
+        if let data = data {
+          guard let image = UIImage(data: data) else { return }
+          self.currentImage.image = image
+        
+          self.lightboxController = LightboxController(images: [LightboxImage(image: image)])
+          self.lightboxController?.dynamicBackground = true
+          self.lightboxController?.pageDelegate = nil
+        }
+      }
+      }.resume()
   }
   
   /**

@@ -11,10 +11,6 @@ import Foundation
 
 import RxSwift
 import RxCocoa
-import NSObject_Rx
-import Alamofire
-import AlamofireImage
-import RxOptional
 
 class InterfaceController: WKInterfaceController {
   
@@ -32,6 +28,8 @@ class InterfaceController: WKInterfaceController {
   
   /// View model
   private var tartuWeatherViewModel = TartuWeatherViewModel()
+  
+  private let disposeBag = DisposeBag()
 
 
   override func awake(withContext context: Any?) {
@@ -50,35 +48,47 @@ class InterfaceController: WKInterfaceController {
       .subscribe(onNext: {temp in
         self.tempLabel.setText(temp)
       })
-      .disposed(by: rx.disposeBag)
+      .disposed(by: disposeBag)
     
     tartuWeatherViewModel.wind
       .asObservable()
       .subscribe(onNext: {wind in
         self.windLabel.setText(wind)
       })
-      .disposed(by: rx.disposeBag)
+      .disposed(by: disposeBag)
     
     tartuWeatherViewModel.measuredTime
       .asObservable()
       .subscribe(onNext: {time in
         self.measuredLabel.setText(time)
       })
-      .disposed(by: rx.disposeBag)
+      .disposed(by: disposeBag)
     
     // Set up live image binding
     tartuWeatherViewModel.smallImage
       .asObservable()
-      .filterNil()
-      .subscribe(onNext: {imgURL in
-        Alamofire.request(imgURL).responseImage { response in
-        
-          guard let image = response.result.value else { return }
-
-          self.currentImage.setImage(image)
-        }
+      .flatMap({ $0.map { Observable.just($0) } ?? Observable.empty()  })
+      .flatMap({ imageURL in
+        Observable<UIImage?>.create({ observer in
+          URLSession.shared.dataTask(with: URL(string: imageURL)!) { data, response, error in
+            DispatchQueue.main.async {
+              if let error = error {
+                observer.onError(error)
+              } else if let data = data {
+                let image = UIImage(data: data)
+                observer.onNext(image)
+              }
+              observer.onCompleted()
+            }
+          }.resume()
+  
+          return Disposables.create()
+        })
       })
-      .disposed(by: rx.disposeBag)
+      .subscribe(onNext: { image in
+        self.currentImage.setImage(image)
+      })
+      .disposed(by: disposeBag)
     
     tartuWeatherViewModel.updateWeather()
     
@@ -88,7 +98,7 @@ class InterfaceController: WKInterfaceController {
       .subscribe(onNext: {_ in
         self.tartuWeatherViewModel.updateWeather()
       })
-      .disposed(by: rx.disposeBag)
+      .disposed(by: disposeBag)
   }
   
   override func didDeactivate() {

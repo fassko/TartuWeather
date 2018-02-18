@@ -11,7 +11,6 @@ import NotificationCenter
 
 import RxSwift
 import RxCocoa
-import NSObject_Rx
 
 class TodayViewController: UIViewController, NCWidgetProviding {
   
@@ -27,14 +26,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   /// View model
   private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
   
+  private let disposeBag = DisposeBag()
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // Set up labels bindings
-    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).disposed(by: rx.disposeBag)
-    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).disposed(by: rx.disposeBag)
-    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).disposed(by: rx.disposeBag)
+    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).disposed(by: disposeBag)
+    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).disposed(by: disposeBag)
+    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).disposed(by: disposeBag)
   }
 
   func widgetPerformUpdate(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
@@ -51,7 +52,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
       .subscribe(onNext: {_ in
         completionHandler(NCUpdateResult.newData)
       })
-      .disposed(by: rx.disposeBag)
+      .disposed(by: disposeBag)
   }
   
   

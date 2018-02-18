@@ -8,10 +8,6 @@ target 'TartuWeather' do
   pod 'TartuWeatherProvider'
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'NSObject+Rx'
-  pod 'RxOptional'
-  pod 'AlamofireImage'
-  pod 'RxOptional'
   pod 'Lightbox'
   
 end
@@ -22,15 +18,12 @@ target 'TartuWeatherWidget' do
   pod 'TartuWeatherProvider'
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'NSObject+Rx'
 end
 
 target 'meteoTartuUITests' do
   platform :ios, '10.0'
   
   pod 'TartuWeatherProvider'
-  pod 'Quick'
-  pod 'Nimble'
 end
 
 target 'WatchApp Extension' do
@@ -39,8 +32,4 @@ target 'WatchApp Extension' do
   pod 'TartuWeatherProvider'
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'NSObject+Rx'
-  pod 'RxOptional'
-  pod 'AlamofireImage'
-  pod 'RxOptional'
 end
