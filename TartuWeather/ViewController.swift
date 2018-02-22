@@ -56,11 +56,11 @@ class ViewController: UIViewController {
     /// Set up live image binding
     tartuWeatherViewModel.largeImage.asObservable()
       .flatMap({ $0.map { Observable.just($0) } ?? Observable.empty() })
-      .subscribe(onNext: {imageURL in
-        self.shareButton.isEnabled = true
-        self.refreshControl.endRefreshing()
+      .subscribe(onNext: {[weak self] imageURL in
+        self?.refreshControl.endRefreshing()
+        self?.shareButton.isEnabled = true
         
-        self.getLiveImage(imageURL)
+        self?.getLiveImage(imageURL)
       })
       .disposed(by: disposeBag)
     
@@ -71,8 +71,8 @@ class ViewController: UIViewController {
     
     // Update weather data when application did become active
     Observable.of(NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationDidBecomeActive), NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationWillEnterForeground))
-      .subscribe(onNext: {_ in
-        self.tartuWeatherViewModel.updateWeather()
+      .subscribe(onNext: {[weak self] _ in
+        self?.tartuWeatherViewModel.updateWeather()
       })
       .disposed(by: disposeBag)
    
@@ -80,16 +80,16 @@ class ViewController: UIViewController {
     let refresh = refreshButton.rx.tap
     refresh
       .asObservable()
-      .subscribe(onNext: {
-        self.tartuWeatherViewModel.updateWeather()
+      .subscribe(onNext: {[weak self] _ in
+        self?.tartuWeatherViewModel.updateWeather()
       })
       .disposed(by: disposeBag)
     
     // Update weather data with timer
     Observable<Int>
       .interval(RxTimeInterval(30), scheduler: MainScheduler.instance)
-      .subscribe(onNext: {_ in
-        self.tartuWeatherViewModel.updateWeather()
+      .subscribe(onNext: {[weak self] _ in
+        self?.tartuWeatherViewModel.updateWeather()
       })
       .disposed(by: disposeBag)
     
@@ -121,15 +121,15 @@ class ViewController: UIViewController {
   */
   fileprivate func getLiveImage(_ imageURL: String) {
   
-    URLSession.shared.dataTask(with: URL(string: imageURL)!) { data, response, error in
+    URLSession.shared.dataTask(with: URL(string: imageURL)!) {[weak self] data, response, error in
       DispatchQueue.main.async {
         if let data = data {
           guard let image = UIImage(data: data) else { return }
-          self.currentImage.image = image
+          self?.currentImage.image = image
         
-          self.lightboxController = LightboxController(images: [LightboxImage(image: image)])
-          self.lightboxController?.dynamicBackground = true
-          self.lightboxController?.pageDelegate = nil
+          self?.lightboxController = LightboxController(images: [LightboxImage(image: image)])
+          self?.lightboxController?.dynamicBackground = true
+          self?.lightboxController?.pageDelegate = nil
         }
       }
       }.resume()

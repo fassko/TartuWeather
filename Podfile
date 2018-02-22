@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'TartuWeather' do
-  platform :ios, '10.0'
+  platform :ios, '11.0'
   
   pod 'Fabric'
   pod 'Crashlytics'
@@ -9,11 +9,12 @@ target 'TartuWeather' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Lightbox'
+  pod 'Charts'
   
 end
 
 target 'TartuWeatherWidget' do
-  platform :ios, '10.0'
+  platform :ios, '11.0'
   
   pod 'TartuWeatherProvider'
   pod 'RxSwift'
@@ -21,7 +22,7 @@ target 'TartuWeatherWidget' do
 end
 
 target 'meteoTartuUITests' do
-  platform :ios, '10.0'
+  platform :ios, '11.0'
   
   pod 'TartuWeatherProvider'
 end

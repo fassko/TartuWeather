@@ -1,5 +1,8 @@
 PODS:
   - Cache (4.1.2)
+  - Charts (3.0.5):
+    - Charts/Core (= 3.0.5)
+  - Charts/Core (3.0.5)
   - Crashlytics (3.10.0):
     - Fabric (~> 1.7.3)
   - Fabric (1.7.3)
@@ -13,19 +16,25 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
   - SwiftSoup (1.6.1)
-  - TartuWeatherProvider (0.2.0):
+  - TartuWeatherProvider (0.3.0):
     - SwiftSoup (~> 1.6)
 
 DEPENDENCIES:
+  - Charts
   - Crashlytics
   - Fabric
   - Lightbox
   - RxCocoa
   - RxSwift
-  - TartuWeatherProvider
+  - TartuWeatherProvider (from `/Users/kristaps/Documents/iOS_dev/TartuWeatherProvider`)
+
+EXTERNAL SOURCES:
+  TartuWeatherProvider:
+    :path: /Users/kristaps/Documents/iOS_dev/TartuWeatherProvider
 
 SPEC CHECKSUMS:
   Cache: bd0233fc688b5e83a27bcd87807db7e6f23adcc5
+  Charts: 45cdc985b764c838b35ee47eb1365d15735f6d1a
   Crashlytics: a989ef242b66605577a425733797f810bd2725eb
   Fabric: bb495bb9a7a7677c6d03a1f8b83d95bc49b47e41
   Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
@@ -34,8 +43,8 @@ SPEC CHECKSUMS:
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SwiftSoup: 1eedf56f751b36035ae6c95562f86944c9cfafee
-  TartuWeatherProvider: 41d7d69294c6da0eb3336ccb897a90d9844c98b0
+  TartuWeatherProvider: 459120545a479af7e3d98af86f2768eca231f537
 
-PODFILE CHECKSUM: 47d9d25e530455e1aa8d66596168f5ba92db8161
+PODFILE CHECKSUM: 585105d4522ba9cf413b6d28695e7b60c60a8a38
 
 COCOAPODS: 1.4.0
