@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,43 +22,52 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="thermometer35.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Nv-bD-Bi1">
-                                <rect key="frame" x="147.5" y="222.5" width="80" height="222"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJ9-aB-ktS">
+                                <rect key="frame" x="105" y="262" width="165" height="288"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Thermometer" translatesAutoresizingMaskIntoConstraints="NO" id="aBV-uL-eWi">
+                                        <rect key="frame" x="34" y="0.0" width="97" height="240"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meteo Tartu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvU-bL-3jk">
+                                        <rect key="frame" x="0.0" y="248" width="165" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="w3N-lA-ygU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
+                                        <color key="textColor" red="0.99215686274509807" green="0.74509803921568629" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="1K6-gx-xwd"/>
-                                    <constraint firstAttribute="height" constant="222" id="lki-By-MvD"/>
+                                    <constraint firstItem="aBV-uL-eWi" firstAttribute="centerX" secondItem="CJ9-aB-ktS" secondAttribute="centerX" id="9Te-ZI-fMg"/>
+                                    <constraint firstItem="fvU-bL-3jk" firstAttribute="leading" secondItem="CJ9-aB-ktS" secondAttribute="leading" id="BgS-nz-PDd"/>
+                                    <constraint firstAttribute="trailing" secondItem="fvU-bL-3jk" secondAttribute="trailing" id="CF6-CL-UNt"/>
+                                    <constraint firstItem="aBV-uL-eWi" firstAttribute="top" secondItem="CJ9-aB-ktS" secondAttribute="top" id="MZn-Ec-k9W"/>
+                                    <constraint firstAttribute="width" constant="165" id="Tr3-PO-inI"/>
+                                    <constraint firstAttribute="height" constant="288" id="UzD-wx-ZEk"/>
+                                    <constraint firstAttribute="bottom" secondItem="fvU-bL-3jk" secondAttribute="bottom" id="sHE-U7-42n"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meteo Tartu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvU-bL-3jk">
-                                <rect key="frame" x="105" y="465.5" width="165" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="w3N-lA-ygU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" red="0.99215686274509807" green="0.74509803921568629" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1764705926" green="0.34509804840000002" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fvU-bL-3jk" firstAttribute="top" secondItem="6Nv-bD-Bi1" secondAttribute="bottom" constant="21" id="54L-aM-w5J"/>
-                            <constraint firstItem="6Nv-bD-Bi1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Ikf-ks-OVm"/>
-                            <constraint firstItem="fvU-bL-3jk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OF0-fJ-T7s"/>
-                            <constraint firstItem="6Nv-bD-Bi1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="r0p-FV-Shr"/>
+                            <constraint firstItem="CJ9-aB-ktS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eoL-3E-DFe"/>
+                            <constraint firstItem="CJ9-aB-ktS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="jkd-f3-dp7"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.463054187192121" y="373.60000000000002"/>
         </scene>
     </scenes>
     <resources>
-        <image name="thermometer35.png" width="80" height="222"/>
+        <image name="Thermometer" width="97" height="240"/>
     </resources>
 </document>

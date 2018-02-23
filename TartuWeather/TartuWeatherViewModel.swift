@@ -12,7 +12,7 @@ import UIKit
 import TartuWeatherProvider
 import RxSwift
 
-class TartuWeatherViewModel {
+struct TartuWeatherViewModel {
   
   /// Temperature
   public var temperature = Variable<String?>("")
@@ -39,7 +39,7 @@ class TartuWeatherViewModel {
   func updateWeather() {
   
     // Get weather data
-    TartuWeatherProvider.getWeatherData(completion: {[weak self] result in
+    TartuWeatherProvider.getWeatherData(completion: { result in
     
       switch result {
         case .failure(let error):
@@ -47,12 +47,12 @@ class TartuWeatherViewModel {
           break
         
         case .success(let data):
-          self?.temperature.value = data.temperature
-          self?.wind.value = "\(data.windDirection) \(data.wind)"
-          self?.measuredTime.value = data.measuredTime
+          self.temperature.value = data.temperature
+          self.wind.value = "\(data.windDirection) \(data.wind)"
+          self.measuredTime.value = data.measuredTime
         
-          self?.largeImage.value = data.liveImage.large
-          self?.smallImage.value = data.liveImage.small
+          self.largeImage.value = data.liveImage.large
+          self.smallImage.value = data.liveImage.small
       }
     })
   }

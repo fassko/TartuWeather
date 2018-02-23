@@ -13,6 +13,8 @@
 		6302763C1E787CE000A922B8 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6348B1D31C4BF6AA00199EE5 /* NotificationCenter.framework */; };
 		6302763D1E787ED700A922B8 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6348B1D31C4BF6AA00199EE5 /* NotificationCenter.framework */; };
 		63293720203F57CD00B83743 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6329371F203F57CD00B83743 /* HistoryViewController.swift */; };
+		63293724203F6D8D00B83743 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63293723203F6D8D00B83743 /* DateFormatter.swift */; };
+		632965872040AC4D00F81E83 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632965862040AC4D00F81E83 /* HistoryViewModel.swift */; };
 		63330EB51DCF6FC0002194A3 /* meteoTartuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63330EB41DCF6FC0002194A3 /* meteoTartuUITests.swift */; };
 		63330EBD1DCF7142002194A3 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63330EBC1DCF7142002194A3 /* SnapshotHelper.swift */; };
 		633367DD1F6E78D8005AE02E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6348B1D81C4BF6AA00199EE5 /* MainInterface.storyboard */; };
@@ -37,9 +39,9 @@
 		63A8D3F91F6EF37D007480CC /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A8D3F81F6EF37D007480CC /* ShareViewController.swift */; };
 		63A8D4001F6EF37D007480CC /* TartuWeatherShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 63A8D3F61F6EF37D007480CC /* TartuWeatherShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		63AC5BAE1F6EF7E700701514 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AC5BAD1F6EF7DD00701514 /* MainInterface.storyboard */; };
-		63AFB7F71C5D3D93004A58E1 /* thermometer35.png in Resources */ = {isa = PBXBuildFile; fileRef = 63AFB7F41C5D3D93004A58E1 /* thermometer35.png */; };
-		63AFB7F81C5D3D93004A58E1 /* thermometer35@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63AFB7F51C5D3D93004A58E1 /* thermometer35@2x.png */; };
-		63AFB7F91C5D3D93004A58E1 /* thermometer35@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63AFB7F61C5D3D93004A58E1 /* thermometer35@3x.png */; };
+		63CD39422040A3D2000A7334 /* thermometer@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CD393F2040A3D2000A7334 /* thermometer@3x.png */; };
+		63CD39432040A3D2000A7334 /* thermometer.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CD39402040A3D2000A7334 /* thermometer.png */; };
+		63CD39442040A3D2000A7334 /* thermometer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CD39412040A3D2000A7334 /* thermometer@2x.png */; };
 		CBAF194F880473B9448FA75F /* Pods_meteoTartuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7FE573D846FCB7E3E575D29 /* Pods_meteoTartuUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +137,8 @@
 		44A42D570FFE24D6FF952945 /* Pods_WatchApp_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatchApp_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BBBA1784059F14EFEA9383C /* Pods-WatchApp Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchApp Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatchApp Extension/Pods-WatchApp Extension.release.xcconfig"; sourceTree = "<group>"; };
 		6329371F203F57CD00B83743 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		63293723203F6D8D00B83743 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		632965862040AC4D00F81E83 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		63330EB21DCF6FBF002194A3 /* meteoTartuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meteoTartuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63330EB41DCF6FC0002194A3 /* meteoTartuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meteoTartuUITests.swift; sourceTree = "<group>"; };
 		63330EB61DCF6FC0002194A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -166,9 +170,9 @@
 		63A8D3F81F6EF37D007480CC /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		63A8D3FD1F6EF37D007480CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63AC5BAD1F6EF7DD00701514 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
-		63AFB7F41C5D3D93004A58E1 /* thermometer35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thermometer35.png; sourceTree = SOURCE_ROOT; };
-		63AFB7F51C5D3D93004A58E1 /* thermometer35@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thermometer35@2x.png"; sourceTree = SOURCE_ROOT; };
-		63AFB7F61C5D3D93004A58E1 /* thermometer35@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thermometer35@3x.png"; sourceTree = SOURCE_ROOT; };
+		63CD393F2040A3D2000A7334 /* thermometer@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thermometer@3x.png"; sourceTree = SOURCE_ROOT; };
+		63CD39402040A3D2000A7334 /* thermometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thermometer.png; sourceTree = SOURCE_ROOT; };
+		63CD39412040A3D2000A7334 /* thermometer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thermometer@2x.png"; sourceTree = SOURCE_ROOT; };
 		88C813C3270B0B33D4BB36CE /* Pods_TartuWeatherWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TartuWeatherWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C9CD73F3BA5DCDFB6E994FF /* Pods-WatchApp Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchApp Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatchApp Extension/Pods-WatchApp Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		C2C750CDCFF981E9815828A7 /* Pods-meteoTartuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meteoTartuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meteoTartuUITests/Pods-meteoTartuUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -245,9 +249,9 @@
 		63330ECE1DCFB2C4002194A3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				63AFB7F41C5D3D93004A58E1 /* thermometer35.png */,
-				63AFB7F51C5D3D93004A58E1 /* thermometer35@2x.png */,
-				63AFB7F61C5D3D93004A58E1 /* thermometer35@3x.png */,
+				63CD39402040A3D2000A7334 /* thermometer.png */,
+				63CD39412040A3D2000A7334 /* thermometer@2x.png */,
+				63CD393F2040A3D2000A7334 /* thermometer@3x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -258,7 +262,9 @@
 				6348B1BB1C4BF55300199EE5 /* AppDelegate.swift */,
 				6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */,
 				6348B1BD1C4BF55300199EE5 /* ViewController.swift */,
+				632965862040AC4D00F81E83 /* HistoryViewModel.swift */,
 				6329371F203F57CD00B83743 /* HistoryViewController.swift */,
+				63293723203F6D8D00B83743 /* DateFormatter.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -603,11 +609,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				633367DD1F6E78D8005AE02E /* MainInterface.storyboard in Resources */,
-				63AFB7F91C5D3D93004A58E1 /* thermometer35@3x.png in Resources */,
-				63AFB7F81C5D3D93004A58E1 /* thermometer35@2x.png in Resources */,
-				63AFB7F71C5D3D93004A58E1 /* thermometer35.png in Resources */,
 				6348B1C61C4BF55300199EE5 /* LaunchScreen.storyboard in Resources */,
+				63CD39432040A3D2000A7334 /* thermometer.png in Resources */,
 				6348B1C31C4BF55300199EE5 /* Assets.xcassets in Resources */,
+				63CD39422040A3D2000A7334 /* thermometer@3x.png in Resources */,
+				63CD39442040A3D2000A7334 /* thermometer@2x.png in Resources */,
 				6348B1C11C4BF55300199EE5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -891,9 +897,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6348B1BE1C4BF55300199EE5 /* ViewController.swift in Sources */,
+				632965872040AC4D00F81E83 /* HistoryViewModel.swift in Sources */,
 				6348B1BC1C4BF55300199EE5 /* AppDelegate.swift in Sources */,
 				6341EAC71EF07B8800C3E8EA /* TartuWeatherViewModel.swift in Sources */,
 				63293720203F57CD00B83743 /* HistoryViewController.swift in Sources */,
+				63293724203F6D8D00B83743 /* DateFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

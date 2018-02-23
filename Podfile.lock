@@ -16,7 +16,7 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
   - SwiftSoup (1.6.1)
-  - TartuWeatherProvider (0.3.0):
+  - TartuWeatherProvider (0.3.2):
     - SwiftSoup (~> 1.6)
 
 DEPENDENCIES:
@@ -26,11 +26,7 @@ DEPENDENCIES:
   - Lightbox
   - RxCocoa
   - RxSwift
-  - TartuWeatherProvider (from `/Users/kristaps/Documents/iOS_dev/TartuWeatherProvider`)
-
-EXTERNAL SOURCES:
-  TartuWeatherProvider:
-    :path: /Users/kristaps/Documents/iOS_dev/TartuWeatherProvider
+  - TartuWeatherProvider
 
 SPEC CHECKSUMS:
   Cache: bd0233fc688b5e83a27bcd87807db7e6f23adcc5
@@ -43,8 +39,8 @@ SPEC CHECKSUMS:
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SwiftSoup: 1eedf56f751b36035ae6c95562f86944c9cfafee
-  TartuWeatherProvider: 459120545a479af7e3d98af86f2768eca231f537
+  TartuWeatherProvider: 0b8aaf7f7d380c926bc76319cf6fd50dfb24179d
 
-PODFILE CHECKSUM: 585105d4522ba9cf413b6d28695e7b60c60a8a38
+PODFILE CHECKSUM: 2a29af4f85081f14a2f644e62524dcf0cd36abb6
 
 COCOAPODS: 1.4.0

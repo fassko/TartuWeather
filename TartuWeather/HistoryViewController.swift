@@ -10,47 +10,89 @@ import UIKit
 
 import Charts
 import TartuWeatherProvider
+import RxSwift
+import RxCocoa
 
 class HistoryViewController: UIViewController {
 
+  @IBOutlet weak var dataTypeSegmentedControl: UISegmentedControl!
+
   @IBOutlet weak var chartView: LineChartView!
+  
+  let disposeBag = DisposeBag()
+  
+  let viewModel = HistoryViewModel()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let ll2 = ChartLimitLine(limit: 40, label: "Lower Limit")
-    ll2.lineWidth = 4
-    ll2.lineDashLengths = [5,5]
-    ll2.labelPosition = .rightBottom
-    ll2.valueFont = .systemFont(ofSize: 10)
+    chartView.rightAxis.enabled = false
+    chartView.chartDescription?.enabled = false
+    chartView.legend.enabled = false
     
-    TartuWeatherProvider.getArchiveData(.today) { result in
-      switch result {
-      case let .success(value):
-        var lineChartEntry = [ChartDataEntry]()
+    let xAxis = chartView.xAxis
+    xAxis.labelPosition = .topInside
+    xAxis.labelFont = .systemFont(ofSize: 10, weight: .light)
+    xAxis.drawAxisLineEnabled = false
+    xAxis.drawGridLinesEnabled = true
+    xAxis.centerAxisLabelsEnabled = true
+    xAxis.granularity = 5 * 60
+    xAxis.labelCount = 24
+    xAxis.valueFormatter = DateValueFormatter()
+    
+    let leftAxisFormatter = NumberFormatter()
+    leftAxisFormatter.minimumFractionDigits = 0
+    leftAxisFormatter.maximumFractionDigits = 2
+    leftAxisFormatter.negativeSuffix = " °C"
+    leftAxisFormatter.positiveSuffix = " °C"
+    
+    let leftAxis = chartView.leftAxis
+    leftAxis.labelFont = .systemFont(ofSize: 10)
+    leftAxis.labelCount = 10
+    leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: leftAxisFormatter)
+    leftAxis.labelPosition = .outsideChart
+    leftAxis.spaceTop = 0.15
+    leftAxis.spaceBottom = 0.15
+    
+    viewModel.chartData.asObservable()
+      .skipWhile({
+        $0.isEmpty
+      })
+      .flatMap({ chartData -> Observable<[ChartDataEntry]> in
+        Observable.just(chartData.map({
+          ChartDataEntry(x: $0, y: $1)
+        }))
+      })
+      .subscribe(onNext: { chartData in
         
-        value.enumerated().forEach { index, data in
-          if let temperature = Double(data.temperature) {
-            let value = ChartDataEntry(x: Double(index), y: temperature)
-            lineChartEntry.append(value)
-          }
-        }
-        
-        let line1 = LineChartDataSet(values: lineChartEntry, label: "Temperature")
-        line1.colors = [NSUIColor.blue]
+        let line1 = LineChartDataSet(values: chartData, label: "Temperature")
+        line1.axisDependency = .left
+        line1.setColor(.black)
+        line1.setCircleColor(.blue)
+        line1.lineWidth = 2
+        line1.circleRadius = 3
+//        line1.fillAlpha = 65/255
+//        line1.fillColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
+//        line1.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        line1.drawCircleHoleEnabled = false
         
         let data = LineChartData()
         data.addDataSet(line1)
+        
         self.chartView.data = data
         self.chartView.setNeedsDisplay()
-        
-      case let .failure(error):
-        print("Can't get history data \(error)")
-      }
-    }
-    
-    
-  }
-  
+      })
+      .disposed(by: disposeBag)
 
+    viewModel.updateChartData(.yesterday)
+    
+    dataTypeSegmentedControl.rx.value.asObservable()
+      .flatMap({ selectedItem -> Observable<QueryDataType> in
+        Observable.just(selectedItem == 0 ? .yesterday : .today)
+      })
+      .subscribe(onNext: {[weak self] value in
+        self?.viewModel.updateChartData(value)
+      })
+      .disposed(by: disposeBag)
+  }
 }

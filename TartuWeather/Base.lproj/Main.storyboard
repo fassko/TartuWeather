@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -43,15 +42,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7JP-8P-Vpv" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="649"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6CQ-T7-Mxq">
+                                <rect key="frame" x="56.333333333333343" y="44" width="262.33333333333326" height="29"/>
+                                <segments>
+                                    <segment title="Yestreday"/>
+                                    <segment title="Today"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7JP-8P-Vpv" firstAttribute="bottom" secondItem="xZN-Cx-kly" secondAttribute="bottom" id="1xt-c2-365"/>
-                            <constraint firstItem="7JP-8P-Vpv" firstAttribute="top" secondItem="xZN-Cx-kly" secondAttribute="top" id="Cd8-Xd-W8o"/>
+                            <constraint firstItem="6CQ-T7-Mxq" firstAttribute="top" secondItem="xZN-Cx-kly" secondAttribute="top" id="8YM-ee-kls">
+                                <variation key="heightClass=compact" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="7JP-8P-Vpv" firstAttribute="top" secondItem="6CQ-T7-Mxq" secondAttribute="bottom" constant="8" id="BAn-ak-3qf"/>
+                            <constraint firstItem="6CQ-T7-Mxq" firstAttribute="width" secondItem="xZN-Cx-kly" secondAttribute="width" multiplier="0.7" id="V7l-nc-gf5"/>
                             <constraint firstItem="7JP-8P-Vpv" firstAttribute="leading" secondItem="xZN-Cx-kly" secondAttribute="leading" id="n7N-gC-fKi"/>
+                            <constraint firstItem="6CQ-T7-Mxq" firstAttribute="centerX" secondItem="CwH-P3-wPb" secondAttribute="centerX" id="p2b-7y-UHn"/>
                             <constraint firstItem="7JP-8P-Vpv" firstAttribute="trailing" secondItem="xZN-Cx-kly" secondAttribute="trailing" id="ztU-FM-Aok"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xZN-Cx-kly"/>
@@ -59,11 +70,12 @@
                     <tabBarItem key="tabBarItem" title="History" image="History" id="9Ha-uv-7PJ"/>
                     <connections>
                         <outlet property="chartView" destination="7JP-8P-Vpv" id="Qiz-LV-g58"/>
+                        <outlet property="dataTypeSegmentedControl" destination="6CQ-T7-Mxq" id="Zk4-02-BaU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXQ-xB-g1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="273" y="1016"/>
+            <point key="canvasLocation" x="272.66009852216752" y="1015.2"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bCR-PX-AZD">
