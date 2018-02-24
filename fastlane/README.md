@@ -36,6 +36,11 @@ Circle CI lane
 fastlane ios travis
 ```
 Travis lane
+### ios build
+```
+fastlane ios build
+```
+Build
 ### ios release
 ```
 fastlane ios release
