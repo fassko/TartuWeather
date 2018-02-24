@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 import TartuWeatherProvider
 
-class meteoTartuUnitTests: XCTestCase {
+class MeteoTartuUnitTests: XCTestCase {
 
   let disposeBag = DisposeBag()
 
@@ -83,7 +83,7 @@ class meteoTartuUnitTests: XCTestCase {
     XCTAssertNotNil(chartData)
     
     guard let firstItem = chartData?.first else {
-      XCTFail()
+      XCTFail("Failed to get first history item")
       return
     }
     

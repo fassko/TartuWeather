@@ -42,17 +42,16 @@ struct TartuWeatherViewModel {
     TartuWeatherProvider.getWeatherData(completion: { result in
     
       switch result {
-        case .failure(let error):
-          debugPrint("Can't get weather data \(String(describing: error))")
-          break
+      case .failure(let error):
+        debugPrint("Can't get weather data \(String(describing: error))")
         
-        case .success(let data):
-          self.temperature.value = data.temperature
-          self.wind.value = "\(data.windDirection) \(data.wind)"
-          self.measuredTime.value = data.measuredTime
+      case .success(let data):
+        self.temperature.value = data.temperature
+        self.wind.value = "\(data.windDirection) \(data.wind)"
+        self.measuredTime.value = data.measuredTime
         
-          self.largeImage.value = data.liveImage.large
-          self.smallImage.value = data.liveImage.small
+        self.largeImage.value = data.liveImage.large
+        self.smallImage.value = data.liveImage.small
       }
     })
   }

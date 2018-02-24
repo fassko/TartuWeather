@@ -15,7 +15,7 @@ import Lightbox
 
 class ViewController: UIViewController {
 
-  //MARK:- Interface
+  // MARK: - Interface
   /// Temperature label
   @IBOutlet weak var temperatureLabel: UILabel!
   
@@ -34,8 +34,7 @@ class ViewController: UIViewController {
   /// Share button
   @IBOutlet var shareButton: UIBarButtonItem!
   
-  
-  //MARK:- Class variables
+  // MARK: - Class variables
   /// View model
   private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
   
@@ -47,7 +46,7 @@ class ViewController: UIViewController {
   
   private let disposeBag = DisposeBag()
   
-  //MARK:- View lifecycle methods
+  // MARK: - View lifecycle methods
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -70,7 +69,8 @@ class ViewController: UIViewController {
     tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).disposed(by: disposeBag)
     
     // Update weather data when application did become active
-    Observable.of(NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationDidBecomeActive), NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationWillEnterForeground))
+    Observable.of(NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationDidBecomeActive),
+      NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationWillEnterForeground))
       .subscribe(onNext: {[weak self] _ in
         self?.tartuWeatherViewModel.updateWeather()
       })
@@ -94,12 +94,13 @@ class ViewController: UIViewController {
       .disposed(by: disposeBag)
     
     // Add pull to refresh
-    refreshControl.tintColor = UIColor(red:0.18, green:0.35, blue:0.50, alpha:1.0)
+    refreshControl.tintColor = UIColor(red: 0.18, green: 0.35, blue: 0.50, alpha: 1.0)
     refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
-    (view as! UIScrollView).refreshControl = refreshControl
+    guard let scrollView = view as? UIScrollView else { return }
+    scrollView.refreshControl = refreshControl
   }
   
-  //MARK: - Actions
+  // MARK: - Actions
   /**
     Show live image
    
@@ -112,7 +113,7 @@ class ViewController: UIViewController {
     present(lightbox, animated: true, completion: nil)
   }
   
-  //MARK: - Additional methods
+  // MARK: - Additional methods
   /**
     Get live image from Internet and update imageview
    
@@ -121,7 +122,7 @@ class ViewController: UIViewController {
   */
   fileprivate func getLiveImage(_ imageURL: String) {
   
-    URLSession.shared.dataTask(with: URL(string: imageURL)!) {[weak self] data, response, error in
+    URLSession.shared.dataTask(with: URL(string: imageURL)!) {[weak self] data, _, _ in
       DispatchQueue.main.async {
         if let data = data {
           guard let image = UIImage(data: data) else { return }

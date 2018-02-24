@@ -6,10 +6,9 @@
 //  Copyright © 2016 fassko. All rights reserved.
 //
 
-
 import XCTest
 
-class meteoTartuUITests: XCTestCase {
+class MeteoTartuUITests: XCTestCase {
         
   override func setUp() {
     super.setUp()

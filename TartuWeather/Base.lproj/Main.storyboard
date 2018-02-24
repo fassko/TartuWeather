@@ -45,7 +45,7 @@
                                 <rect key="frame" x="0.0" y="80" width="375" height="649"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="6CQ-T7-Mxq">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="6CQ-T7-Mxq">
                                 <rect key="frame" x="56.333333333333343" y="44" width="262.33333333333326" height="29"/>
                                 <segments>
                                     <segment title="Yesterday"/>
@@ -184,7 +184,7 @@
                         <viewLayoutGuide key="safeArea" id="haQ-dv-eyb"/>
                     </scrollView>
                     <navigationItem key="navigationItem" title="meteo Tartu" id="bgt-2g-WOs">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="action" id="CtU-pY-Ldn">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="CtU-pY-Ldn">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="share:" destination="BYZ-38-t0r" id="pte-dz-Fhh"/>

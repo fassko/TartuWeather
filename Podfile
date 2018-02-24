@@ -10,6 +10,7 @@ target 'TartuWeather' do
   pod 'RxCocoa'
   pod 'Lightbox'
   pod 'Charts'
+  pod "SwiftLint"
 end
 
 target 'TartuWeatherWidget' do
