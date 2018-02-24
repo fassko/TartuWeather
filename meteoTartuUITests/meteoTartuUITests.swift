@@ -64,13 +64,13 @@ class meteoTartuUITests: XCTestCase {
     
     app.tabBars.buttons["History"].tap()
     
-    snapshot("History_Yesterday")
+    snapshot("History_Today")
     
     sleep(1)
 
-    app.segmentedControls.buttons["Today"].tap()
+    app.segmentedControls.buttons["Yesterday"].tap()
     
-    snapshot("History_Today")
+    snapshot("History_Yesterday")
     
     sleep(1)
     
