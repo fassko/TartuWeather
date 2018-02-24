@@ -104,22 +104,22 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="07D-jh-J4R">
-                                <rect key="frame" x="18.666666666666657" y="10" width="337.66666666666674" height="389"/>
+                                <rect key="frame" x="18.666666666666657" y="10" width="337.66666666666674" height="384.33333333333331"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wE8-S4-DaG">
-                                        <rect key="frame" x="0.0" y="0.0" width="337.66666666666669" height="56"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="337.66666666666669" height="51.333333333333336"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7nT-2d-Fdg">
-                                                <rect key="frame" x="8" y="10" width="156" height="36"/>
+                                                <rect key="frame" x="8" y="9.9999999999999982" width="156" height="31.333333333333329"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="wind-label" label="Wind"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cec-EC-zC0">
-                                                <rect key="frame" x="174" y="10" width="155.66666666666663" height="36"/>
+                                                <rect key="frame" x="174" y="9.9999999999999982" width="155.66666666666663" height="31.333333333333329"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="temp-label" label="Temperature"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -127,7 +127,7 @@
                                         <edgeInsets key="layoutMargins" top="10" left="8" bottom="10" right="8"/>
                                     </stackView>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lEa-9M-ajb">
-                                        <rect key="frame" x="0.0" y="66" width="337.66666666666669" height="276.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="61.333333333333343" width="337.66666666666669" height="276.66666666666663"/>
                                         <accessibility key="accessibilityConfiguration" identifier="live-weather" label="Live weather">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -146,7 +146,7 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Nmg-eJ-aTO">
-                                        <rect key="frame" x="0.0" y="352.66666666666669" width="337.66666666666669" height="36.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="348" width="337.66666666666669" height="36.333333333333314"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWR-UX-Cvy">
                                                 <rect key="frame" x="0.0" y="0.0" width="337.66666666666669" height="17"/>

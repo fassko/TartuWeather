@@ -105,6 +105,6 @@ class MeteoTartuUITests: XCTestCase {
  
   fileprivate func takeScreenShot(_ name: String) {
     snapshot("\(String(format: "%02d", counter))_\(name)")
-    counter = counter + 1
+    counter += 1
   }
 }
