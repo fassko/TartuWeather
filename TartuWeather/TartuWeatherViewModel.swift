@@ -30,7 +30,7 @@ struct TartuWeatherViewModel {
   public var smallImage = Variable<String?>(nil)
   
   init() {
-    self.updateWeather()
+    updateWeather()
   }
   
   /**

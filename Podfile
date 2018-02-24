@@ -10,7 +10,6 @@ target 'TartuWeather' do
   pod 'RxCocoa'
   pod 'Lightbox'
   pod 'Charts'
-  
 end
 
 target 'TartuWeatherWidget' do
@@ -21,9 +20,13 @@ target 'TartuWeatherWidget' do
   pod 'RxCocoa'
 end
 
+target 'meteoTartuUnitTests' do
+  pod 'TartuWeatherProvider'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+end
+
 target 'meteoTartuUITests' do
-  platform :ios, '11.0'
-  
   pod 'TartuWeatherProvider'
 end
 

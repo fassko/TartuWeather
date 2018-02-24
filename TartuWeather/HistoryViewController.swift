@@ -84,7 +84,7 @@ class HistoryViewController: UIViewController {
       })
       .disposed(by: disposeBag)
 
-    viewModel.updateChartData(.yesterday)
+    viewModel.updateChartData(.today)
     
     dataTypeSegmentedControl.rx.value.asObservable()
       .flatMap({ selectedItem -> Observable<QueryDataType> in

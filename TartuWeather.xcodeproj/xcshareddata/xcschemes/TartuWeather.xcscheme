@@ -39,6 +39,16 @@
                ReferencedContainer = "container:TartuWeather.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6329658B2041633700F81E83"
+               BuildableName = "meteoTartuUnitTests.xctest"
+               BlueprintName = "meteoTartuUnitTests"
+               ReferencedContainer = "container:TartuWeather.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
