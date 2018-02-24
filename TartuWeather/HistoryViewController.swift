@@ -71,21 +71,18 @@ class HistoryViewController: UIViewController {
         line1.setCircleColor(.blue)
         line1.lineWidth = 2
         line1.circleRadius = 3
-//        line1.fillAlpha = 65/255
-//        line1.fillColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
-//        line1.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        line1.mode = .horizontalBezier
+        line1.highlightColor = .red
         line1.drawCircleHoleEnabled = false
         
         let data = LineChartData()
         data.addDataSet(line1)
         
         self.chartView.data = data
-        self.chartView.setNeedsDisplay()
+        self.chartView.animate(xAxisDuration: 2)
       })
       .disposed(by: disposeBag)
 
-    viewModel.updateChartData(.today)
-    
     dataTypeSegmentedControl.rx.value.asObservable()
       .flatMap({ selectedItem -> Observable<QueryDataType> in
         Observable.just(selectedItem == 0 ? .yesterday : .today)
