@@ -9,6 +9,8 @@
 import XCTest
 
 class MeteoTartuUITests: XCTestCase {
+
+  var counter = 0
         
   override func setUp() {
     super.setUp()
@@ -53,13 +55,13 @@ class MeteoTartuUITests: XCTestCase {
     XCTAssertNotNil(measuredTimeLabel.label)
     XCTAssert(measuredTimeLabel.label != "")
 
-    snapshot("Now")
+    takeScreenShot("Now")
 
     image.tap()
 
     sleep(1)
 
-    snapshot("LiveImage")
+    takeScreenShot("LiveImage")
 
     app.buttons["Close"].tap()
 
@@ -69,7 +71,7 @@ class MeteoTartuUITests: XCTestCase {
     
     sleep(1)
     
-    snapshot("Now_Landscape")
+    takeScreenShot("Now_Landscape")
     
     XCUIDevice.shared.orientation = .portrait
     
@@ -80,24 +82,28 @@ class MeteoTartuUITests: XCTestCase {
     
     sleep(3)
 
-    snapshot("History_Today")
+    takeScreenShot("History_Today")
 
     app.segmentedControls.buttons["Yesterday"].tap()
     
     sleep(3)
 
-    snapshot("History_Yesterday")
+    takeScreenShot("History_Yesterday")
     
     XCUIDevice.shared.orientation = .landscapeLeft
     
     sleep(1)
     
-    snapshot("History_Yesterday_Landscape")
+    takeScreenShot("History_Yesterday_Landscape")
     
     app.segmentedControls.buttons["Today"].tap()
     
     sleep(3)
     
-    snapshot("History_Today_Landscape")
+    takeScreenShot("History_Today_Landscape")
+  }
+ 
+  fileprivate func takeScreenShot(_ name: String) {
+    snapshot("\(String(format: "%02d", counter))_\(name)")
   }
 }
