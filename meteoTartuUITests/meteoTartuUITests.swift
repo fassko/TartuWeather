@@ -26,8 +26,12 @@ class MeteoTartuUITests: XCTestCase {
     setupSnapshot(app)
     app.launch()
     
-    sleep(1)
+    XCUIDevice.shared.orientation = .portrait
     
+    sleep(1)
+
+    // MARK: - Now
+
     app.navigationBars["meteo Tartu"].buttons["Refresh"].tap()
 
     let tempLabel = app.staticTexts["temp-label"]
@@ -49,30 +53,51 @@ class MeteoTartuUITests: XCTestCase {
     XCTAssertNotNil(measuredTimeLabel.label)
     XCTAssert(measuredTimeLabel.label != "")
 
-    snapshot("AppLaunched")
+    snapshot("Now")
 
     image.tap()
 
     sleep(1)
 
     snapshot("LiveImage")
-    
+
     app.buttons["Close"].tap()
+
+    sleep(1)
+    
+    XCUIDevice.shared.orientation = .landscapeLeft
     
     sleep(1)
     
+    snapshot("Now_Landscape")
+    
+    XCUIDevice.shared.orientation = .portrait
+    
+    sleep(1)
+    
+    // MARK: - History
     app.tabBars.buttons["History"].tap()
     
+    sleep(3)
+
     snapshot("History_Today")
-    
-    sleep(1)
 
     app.segmentedControls.buttons["Yesterday"].tap()
     
+    sleep(3)
+
     snapshot("History_Yesterday")
+    
+    XCUIDevice.shared.orientation = .landscapeLeft
     
     sleep(1)
     
-  }
+    snapshot("History_Yesterday_Landscape")
     
+    app.segmentedControls.buttons["Today"].tap()
+    
+    sleep(3)
+    
+    snapshot("History_Today_Landscape")
+  }
 }
