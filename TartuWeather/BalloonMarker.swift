@@ -163,7 +163,7 @@ public class BalloonMarker: MarkerImage {
   }
   
   public override func refreshContent(entry: ChartDataEntry, highlight: Highlight) {
-    setLabel(String(entry.y.rounded(toPlaces: 1)))
+    setLabel(String(entry.y.rounded(toPlaces: 1)) + " °C")
   }
   
   public func setLabel(_ newLabel: String) {

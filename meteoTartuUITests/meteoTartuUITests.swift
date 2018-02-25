@@ -11,7 +11,6 @@ import XCTest
 class MeteoTartuUITests: XCTestCase {
 
   var counter = 0
-  let app = XCUIApplication()
         
   override func setUp() {
     super.setUp()
@@ -24,18 +23,19 @@ class MeteoTartuUITests: XCTestCase {
   }
   
   func testLaunch() {
+    let app = XCUIApplication()
     setupSnapshot(app)
     app.launch()
     
     XCUIDevice.shared.orientation = .portrait
     
     sleep(1)
-
-    now()
-    history()
+    
+    now(app)
+    history(app)
   }
   
-  fileprivate func now() {
+  fileprivate func now(_ app: XCUIApplication) {
     app.navigationBars["meteo Tartu"].buttons["Refresh"].tap()
 
     let tempLabel = app.staticTexts["temp-label"]
@@ -80,7 +80,7 @@ class MeteoTartuUITests: XCTestCase {
     sleep(1)
   }
   
-  fileprivate func history() {
+  fileprivate func history(_ app: XCUIApplication) {
     app.tabBars.buttons["History"].tap()
     
     sleep(3)
@@ -99,11 +99,24 @@ class MeteoTartuUITests: XCTestCase {
     
     takeScreenShot("History_Yesterday_Landscape")
     
+    sleep(1)
+    
     app.segmentedControls.buttons["Today"].tap()
     
     sleep(3)
     
     takeScreenShot("History_Today_Landscape")
+    
+    sleep(1)
+    
+    let chartView = app.otherElements["TemperatureChart"]
+    let normalized = chartView.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
+    let coordinate = normalized.withOffset(CGVector(dx: 200, dy: 150))
+    coordinate.tap()
+    
+    sleep(1)
+    
+    takeScreenShot("History_Today_Landscape_Marker")
   }
  
   fileprivate func takeScreenShot(_ name: String) {

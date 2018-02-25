@@ -26,6 +26,8 @@ class HistoryViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    setUpChart()
+    
     viewModel.chartData.asObservable()
       .skipWhile({
         $0.isEmpty
