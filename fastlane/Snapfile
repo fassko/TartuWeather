@@ -10,7 +10,7 @@ devices([
 ])
 
 languages([
-  "lv-LV"
+  "en-US"
 ])
 
 # The name of the scheme which contains the UI Tests
