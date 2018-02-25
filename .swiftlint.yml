@@ -1,0 +1,20 @@
+included:
+  - TartuWeather
+  - meteoTartuUITests
+  - meteoTartuUnitTests
+  - TartuWeatherWidget
+  - WatchApp Extension
+  - TartuWeatherShareExtension
+excluded:
+  - Pods
+  - meteoTartuUITests/SnapshotHelper.swift
+  
+disabled_rules:
+  - trailing_whitespace
+
+identifier_name:
+  excluded:
+    - id
+    - URL
+
+reporter: "xcode"

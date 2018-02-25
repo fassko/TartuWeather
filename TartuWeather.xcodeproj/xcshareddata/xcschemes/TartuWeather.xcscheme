@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0720"
+   LastUpgradeVersion = "0920"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -36,6 +36,16 @@
                BlueprintIdentifier = "63330EB11DCF6FBF002194A3"
                BuildableName = "meteoTartuUITests.xctest"
                BlueprintName = "meteoTartuUITests"
+               ReferencedContainer = "container:TartuWeather.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6329658B2041633700F81E83"
+               BuildableName = "meteoTartuUnitTests.xctest"
+               BlueprintName = "meteoTartuUnitTests"
                ReferencedContainer = "container:TartuWeather.xcodeproj">
             </BuildableReference>
          </TestableReference>

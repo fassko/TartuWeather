@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0720"
+   LastUpgradeVersion = "0920"
    wasCreatedForAppExtension = "YES"
    version = "2.0">
    <BuildAction
@@ -54,13 +54,23 @@
                ReferencedContainer = "container:TartuWeather.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6329658B2041633700F81E83"
+               BuildableName = "meteoTartuUnitTests.xctest"
+               BlueprintName = "meteoTartuUnitTests"
+               ReferencedContainer = "container:TartuWeather.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6348B1B71C4BF55300199EE5"
-            BuildableName = "TartuWeather.app"
-            BlueprintName = "TartuWeather"
+            BlueprintIdentifier = "6348B1D01C4BF6AA00199EE5"
+            BuildableName = "TartuWeatherWidget.appex"
+            BlueprintName = "TartuWeatherWidget"
             ReferencedContainer = "container:TartuWeather.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

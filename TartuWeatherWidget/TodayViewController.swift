@@ -28,7 +28,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   
   private let disposeBag = DisposeBag()
   
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -55,14 +54,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
       .disposed(by: disposeBag)
   }
   
-  
   @IBAction func openApp(_ sender: AnyObject) {
-    self.extensionContext?.open(URL(string:"tartuweather://home")! as URL, completionHandler: nil)
+    self.extensionContext?.open(URL(string: "tartuweather://home")! as URL, completionHandler: nil)
   }
   
   func widgetMarginInsets( forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> (UIEdgeInsets) {
     var defaultMarginInsets = defaultMarginInsets
-    defaultMarginInsets.bottom = 20;
+    defaultMarginInsets.bottom = 20
     return defaultMarginInsets
   }
   

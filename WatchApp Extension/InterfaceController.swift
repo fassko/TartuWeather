@@ -31,7 +31,6 @@ class InterfaceController: WKInterfaceController {
   
   private let disposeBag = DisposeBag()
 
-
   override func awake(withContext context: Any?) {
     super.awake(withContext: context)
     
@@ -70,7 +69,7 @@ class InterfaceController: WKInterfaceController {
       .flatMap({ $0.map { Observable.just($0) } ?? Observable.empty()  })
       .flatMap({ imageURL in
         Observable<UIImage?>.create({ observer in
-          URLSession.shared.dataTask(with: URL(string: imageURL)!) { data, response, error in
+          URLSession.shared.dataTask(with: URL(string: imageURL)!) { data, _, error in
             DispatchQueue.main.async {
               if let error = error {
                 observer.onError(error)
@@ -116,7 +115,6 @@ class InterfaceController: WKInterfaceController {
   @IBAction func reloadFromMenu() {
     reload()
   }
-  
   
   /**
    Relod data and create notification

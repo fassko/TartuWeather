@@ -22,18 +22,18 @@ jobs:
             echo -e "machine bitbucket.org\n  login fassko\n  password $CI_USER_PASSWORD" >> ~/.netrc 
           
       - run:
-          name: Cocoapods
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
-            pod install --repo-update
-          
-      - run:
           name: Install
           command: |
             sudo gem install fastlane --no-doc
+            sudo gem install cocoapods --no-doc
             sudo gem cleanup
+            
+      - run:
+          name: Cocoapods
+          command: |
+            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+            pod install
 
-      # Build the app and run tests
       - run:
           name: Build and run tests
           command: fastlane circleci

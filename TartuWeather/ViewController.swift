@@ -15,7 +15,7 @@ import Lightbox
 
 class ViewController: UIViewController {
 
-  //MARK:- Interface
+  // MARK: - Interface
   /// Temperature label
   @IBOutlet weak var temperatureLabel: UILabel!
   
@@ -34,8 +34,7 @@ class ViewController: UIViewController {
   /// Share button
   @IBOutlet var shareButton: UIBarButtonItem!
   
-  
-  //MARK:- Class variables
+  // MARK: - Class variables
   /// View model
   private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
   
@@ -47,7 +46,7 @@ class ViewController: UIViewController {
   
   private let disposeBag = DisposeBag()
   
-  //MARK:- View lifecycle methods
+  // MARK: - View lifecycle methods
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -56,11 +55,11 @@ class ViewController: UIViewController {
     /// Set up live image binding
     tartuWeatherViewModel.largeImage.asObservable()
       .flatMap({ $0.map { Observable.just($0) } ?? Observable.empty() })
-      .subscribe(onNext: {imageURL in
-        self.shareButton.isEnabled = true
-        self.refreshControl.endRefreshing()
+      .subscribe(onNext: {[weak self] imageURL in
+        self?.refreshControl.endRefreshing()
+        self?.shareButton.isEnabled = true
         
-        self.getLiveImage(imageURL)
+        self?.getLiveImage(imageURL)
       })
       .disposed(by: disposeBag)
     
@@ -70,9 +69,10 @@ class ViewController: UIViewController {
     tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).disposed(by: disposeBag)
     
     // Update weather data when application did become active
-    Observable.of(NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationDidBecomeActive), NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationWillEnterForeground))
-      .subscribe(onNext: {_ in
-        self.tartuWeatherViewModel.updateWeather()
+    Observable.of(NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationDidBecomeActive),
+      NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationWillEnterForeground))
+      .subscribe(onNext: {[weak self] _ in
+        self?.tartuWeatherViewModel.updateWeather()
       })
       .disposed(by: disposeBag)
    
@@ -80,26 +80,27 @@ class ViewController: UIViewController {
     let refresh = refreshButton.rx.tap
     refresh
       .asObservable()
-      .subscribe(onNext: {
-        self.tartuWeatherViewModel.updateWeather()
+      .subscribe(onNext: {[weak self] _ in
+        self?.tartuWeatherViewModel.updateWeather()
       })
       .disposed(by: disposeBag)
     
     // Update weather data with timer
     Observable<Int>
       .interval(RxTimeInterval(30), scheduler: MainScheduler.instance)
-      .subscribe(onNext: {_ in
-        self.tartuWeatherViewModel.updateWeather()
+      .subscribe(onNext: {[weak self] _ in
+        self?.tartuWeatherViewModel.updateWeather()
       })
       .disposed(by: disposeBag)
     
     // Add pull to refresh
-    refreshControl.tintColor = UIColor(red:0.18, green:0.35, blue:0.50, alpha:1.0)
+    refreshControl.tintColor = UIColor(red: 0.18, green: 0.35, blue: 0.50, alpha: 1.0)
     refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
-    (view as! UIScrollView).refreshControl = refreshControl
+    guard let scrollView = view as? UIScrollView else { return }
+    scrollView.refreshControl = refreshControl
   }
   
-  //MARK: - Actions
+  // MARK: - Actions
   /**
     Show live image
    
@@ -112,7 +113,7 @@ class ViewController: UIViewController {
     present(lightbox, animated: true, completion: nil)
   }
   
-  //MARK: - Additional methods
+  // MARK: - Additional methods
   /**
     Get live image from Internet and update imageview
    
@@ -121,15 +122,15 @@ class ViewController: UIViewController {
   */
   fileprivate func getLiveImage(_ imageURL: String) {
   
-    URLSession.shared.dataTask(with: URL(string: imageURL)!) { data, response, error in
+    URLSession.shared.dataTask(with: URL(string: imageURL)!) {[weak self] data, _, _ in
       DispatchQueue.main.async {
         if let data = data {
           guard let image = UIImage(data: data) else { return }
-          self.currentImage.image = image
+          self?.currentImage.image = image
         
-          self.lightboxController = LightboxController(images: [LightboxImage(image: image)])
-          self.lightboxController?.dynamicBackground = true
-          self.lightboxController?.pageDelegate = nil
+          self?.lightboxController = LightboxController(images: [LightboxImage(image: image)])
+          self?.lightboxController?.dynamicBackground = true
+          self?.lightboxController?.pageDelegate = nil
         }
       }
       }.resume()
@@ -149,9 +150,13 @@ class ViewController: UIViewController {
     Share temperature and wind
   */
   @IBAction func share(_ sender: Any) {
-    guard let temperature = tartuWeatherViewModel.temperature.value, let wind = tartuWeatherViewModel.wind.value else { return }
+    guard let temperature = tartuWeatherViewModel.temperature.value,
+      let wind = tartuWeatherViewModel.wind.value else {
+        return
+    }
   
-    let activityViewController = UIActivityViewController(activityItems: ["\(String(describing: temperature)), \(String(describing: wind))"], applicationActivities: nil)
+    let activityViewController = UIActivityViewController(activityItems:
+      ["\(String(describing: temperature)), \(String(describing: wind))"], applicationActivities: nil)
     navigationController?.present(activityViewController, animated: true, completion: {})
   }
 }
