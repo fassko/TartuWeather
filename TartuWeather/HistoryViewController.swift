@@ -82,7 +82,13 @@ class HistoryViewController: UIViewController {
         self.chartView.animate(xAxisDuration: 2)
       })
       .disposed(by: disposeBag)
-
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    dataTypeSegmentedControl.selectedSegmentIndex = 1
+    
     dataTypeSegmentedControl.rx.value.asObservable()
       .flatMap({ selectedItem -> Observable<QueryDataType> in
         Observable.just(selectedItem == 0 ? .yesterday : .today)
