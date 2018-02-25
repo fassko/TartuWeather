@@ -11,6 +11,7 @@ import XCTest
 class MeteoTartuUITests: XCTestCase {
 
   var counter = 0
+  let app = XCUIApplication()
         
   override func setUp() {
     super.setUp()
@@ -23,8 +24,6 @@ class MeteoTartuUITests: XCTestCase {
   }
   
   func testLaunch() {
-    
-    let app = XCUIApplication()
     setupSnapshot(app)
     app.launch()
     
