@@ -26,16 +26,26 @@ struct HistoryViewModel {
   
   /// Update chart data
   func updateChartData(_ dataType: QueryDataType) {
-    TartuWeatherProvider.getArchiveData(dataType) { result in
-      switch result {
-      case let .success(value):
-        self.chartData.value = value.map({
-          ChartDataItem(($0.measuredDate?.timeIntervalSince1970)!, Double($0.temperature)!)
-        })
-        
-      case let .failure(error):
-        print("Can't get history data \(error)")
-      }
+    TartuWeatherProvider.getArchiveData(dataType) {
+      self.convertHistoryResult(result: $0)
+    }
+  }
+  
+  /**
+    Convert history data result
+   
+    - Parameters:
+      - result: History data result
+  */
+  fileprivate func convertHistoryResult(result: TartuWeatherResult<[QueryData]>) {
+    switch result {
+    case let .success(value):
+      self.chartData.value = value.map({
+        ChartDataItem(($0.measuredDate?.timeIntervalSince1970)!, Double($0.temperature)!)
+      })
+      
+    case let .failure(error):
+      print("Can't get history data \(error)")
     }
   }
 }

@@ -32,8 +32,11 @@ class MeteoTartuUITests: XCTestCase {
     
     sleep(1)
 
-    // MARK: - Now
-
+    now()
+    history()
+  }
+  
+  fileprivate func now() {
     app.navigationBars["meteo Tartu"].buttons["Refresh"].tap()
 
     let tempLabel = app.staticTexts["temp-label"]
@@ -76,8 +79,9 @@ class MeteoTartuUITests: XCTestCase {
     XCUIDevice.shared.orientation = .portrait
     
     sleep(1)
-    
-    // MARK: - History
+  }
+  
+  fileprivate func history() {
     app.tabBars.buttons["History"].tap()
     
     sleep(3)

@@ -7,24 +7,10 @@ included:
   - TartuWeatherShareExtension
 excluded:
   - Pods
+  - meteoTartuUITests/SnapshotHelper.swift
+  
 disabled_rules:
   - trailing_whitespace
-  - private_over_fileprivate
-
-line_length: 180
-
-function_parameter_count: 8
-function_body_length: 250
-
-cyclomatic_complexity: 20
-
-type_body_length:
-  warning: 300
-  errror: 400
-
-file_length:
-  warning: 500
-  error: 1200
 
 identifier_name:
   excluded:

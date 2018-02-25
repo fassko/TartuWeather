@@ -150,9 +150,13 @@ class ViewController: UIViewController {
     Share temperature and wind
   */
   @IBAction func share(_ sender: Any) {
-    guard let temperature = tartuWeatherViewModel.temperature.value, let wind = tartuWeatherViewModel.wind.value else { return }
+    guard let temperature = tartuWeatherViewModel.temperature.value,
+      let wind = tartuWeatherViewModel.wind.value else {
+        return
+    }
   
-    let activityViewController = UIActivityViewController(activityItems: ["\(String(describing: temperature)), \(String(describing: wind))"], applicationActivities: nil)
+    let activityViewController = UIActivityViewController(activityItems:
+      ["\(String(describing: temperature)), \(String(describing: wind))"], applicationActivities: nil)
     navigationController?.present(activityViewController, animated: true, completion: {})
   }
 }

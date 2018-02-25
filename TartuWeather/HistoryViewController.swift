@@ -26,9 +26,48 @@ class HistoryViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    viewModel.chartData.asObservable()
+      .skipWhile({
+        $0.isEmpty
+      })
+      .flatMap({ chartData -> Observable<[ChartDataEntry]> in
+        Observable.just(chartData.map({
+          ChartDataEntry(x: $0, y: $1)
+        }))
+      })
+      .subscribe(onNext: { chartData in
+        
+        let line1 = LineChartDataSet(values: chartData, label: "Temperature")
+        line1.axisDependency = .left
+        line1.setColor(.black)
+        line1.setCircleColor(#colorLiteral(red: 0.175999999, green: 0.3449999988, blue: 0.4979999959, alpha: 1))
+        line1.lineWidth = 2
+        line1.circleRadius = 3
+        line1.mode = .horizontalBezier
+        line1.highlightColor = .red
+        line1.drawCircleHoleEnabled = false
+        
+        let data = LineChartData()
+        data.addDataSet(line1)
+        
+        self.chartView.data = data
+        self.chartView.animate(xAxisDuration: 2)
+      })
+      .disposed(by: disposeBag)
+  }
+  
+  func setUpChart() {
     chartView.rightAxis.enabled = false
     chartView.chartDescription?.enabled = false
     chartView.legend.enabled = false
+    
+    let marker = BalloonMarker(color: #colorLiteral(red: 0.9919999838, green: 0.7450000048, blue: 0.1570000052, alpha: 1),
+                               font: .systemFont(ofSize: 12),
+                               textColor: #colorLiteral(red: 0.175999999, green: 0.3449999988, blue: 0.4979999959, alpha: 1),
+                               insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
+    marker.chartView = chartView
+    marker.minimumSize = CGSize(width: 80, height: 40)
+    chartView.marker = marker
     
     let xAxis = chartView.xAxis
     xAxis.labelPosition = .topInside
@@ -53,35 +92,6 @@ class HistoryViewController: UIViewController {
     leftAxis.labelPosition = .outsideChart
     leftAxis.spaceTop = 0.15
     leftAxis.spaceBottom = 0.15
-    
-    viewModel.chartData.asObservable()
-      .skipWhile({
-        $0.isEmpty
-      })
-      .flatMap({ chartData -> Observable<[ChartDataEntry]> in
-        Observable.just(chartData.map({
-          ChartDataEntry(x: $0, y: $1)
-        }))
-      })
-      .subscribe(onNext: { chartData in
-        
-        let line1 = LineChartDataSet(values: chartData, label: "Temperature")
-        line1.axisDependency = .left
-        line1.setColor(.black)
-        line1.setCircleColor(.blue)
-        line1.lineWidth = 2
-        line1.circleRadius = 3
-        line1.mode = .horizontalBezier
-        line1.highlightColor = .red
-        line1.drawCircleHoleEnabled = false
-        
-        let data = LineChartData()
-        data.addDataSet(line1)
-        
-        self.chartView.data = data
-        self.chartView.animate(xAxisDuration: 2)
-      })
-      .disposed(by: disposeBag)
   }
   
   override func viewDidAppear(_ animated: Bool) {
