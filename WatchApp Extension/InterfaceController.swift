@@ -70,7 +70,6 @@ class InterfaceController: WKInterfaceController {
       .flatMap({ imageURL in
         Observable<UIImage?>.create({ observer in
           URLSession.shared.dataTask(with: URL(string: imageURL)!) { data, _, error in
-            DispatchQueue.main.async {
               if let error = error {
                 observer.onError(error)
               } else if let data = data {
@@ -78,14 +77,15 @@ class InterfaceController: WKInterfaceController {
                 observer.onNext(image)
               }
               observer.onCompleted()
-            }
           }.resume()
   
           return Disposables.create()
         })
       })
       .subscribe(onNext: { image in
-        self.currentImage.setImage(image)
+        DispatchQueue.main.async {
+          self.currentImage.setImage(image)
+        }
       })
       .disposed(by: disposeBag)
     

@@ -19,9 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
     
     Fabric.with([Crashlytics.self])
-    
     UINavigationBar.appearance().barStyle = .black
-    
     return true
   }
 
