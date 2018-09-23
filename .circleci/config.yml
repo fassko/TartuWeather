@@ -1,33 +1,29 @@
-# iOS CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/ios-migrating-from-1-2/ for more details
-#
 version: 2
 jobs:
   build:
 
     # Specify the Xcode version to use
     macos:
-      xcode: "9.2.0"
+      xcode: "10.0.0"
 
     steps:
       - checkout
-      
+
       - run:
           name: Before Install
           command: |
             sudo systemsetup -settimezone Europe/Tallinn
             export LC_ALL=en_US.UTF-8
             export LANG=en_US.UTF-8
-            echo -e "machine bitbucket.org\n  login fassko\n  password $CI_USER_PASSWORD" >> ~/.netrc 
-          
+            echo -e "machine bitbucket.org\n  login fassko\n  password $CI_USER_PASSWORD" >> ~/.netrc
+
       - run:
           name: Install
           command: |
             sudo gem install fastlane --no-doc
             sudo gem install cocoapods --no-doc
             sudo gem cleanup
-            
+
       - run:
           name: Cocoapods
           command: |

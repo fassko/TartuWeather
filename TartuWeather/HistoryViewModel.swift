@@ -37,7 +37,7 @@ struct HistoryViewModel {
     - Parameters:
       - result: History data result
   */
-  fileprivate func convertHistoryResult(result: TartuWeatherResult<[QueryData]>) {
+  fileprivate func convertHistoryResult(result: TartuWeatherResult<[QueryData], TartuWeatherError>) {
     switch result {
     case let .success(value):
       self.chartData.value = value.map({
