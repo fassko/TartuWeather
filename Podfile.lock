@@ -1,23 +1,21 @@
 PODS:
-  - Cache (4.2.0)
+  - Cache (5.2.0)
   - Charts (3.2.0):
     - Charts/Core (= 3.2.0)
   - Charts/Core (3.2.0)
-  - Crashlytics (3.10.7):
-    - Fabric (~> 1.7.11)
-  - Fabric (1.7.11)
-  - Hue (3.0.1)
-  - Imaginary (3.0.3):
-    - Cache (~> 4.0)
-  - Lightbox (2.1.2):
-    - Hue (~> 3.0)
-    - Imaginary (~> 3.0)
+  - Crashlytics (3.10.8):
+    - Fabric (~> 1.7.12)
+  - Fabric (1.7.12)
+  - Imaginary (4.2.0):
+    - Cache (~> 5.0)
+  - Lightbox (2.3.0):
+    - Imaginary (~> 4.0)
   - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
   - SwiftLint (0.27.0)
-  - SwiftSoup (1.7.2)
-  - TartuWeatherProvider (0.4.0):
+  - SwiftSoup (1.7.4)
+  - TartuWeatherProvider (0.4.1):
     - SwiftSoup (~> 1.7)
 
 DEPENDENCIES:
@@ -36,7 +34,6 @@ SPEC REPOS:
     - Charts
     - Crashlytics
     - Fabric
-    - Hue
     - Imaginary
     - Lightbox
     - RxCocoa
@@ -46,18 +43,17 @@ SPEC REPOS:
     - TartuWeatherProvider
 
 SPEC CHECKSUMS:
-  Cache: f28f8dd64b632155aabf9b3906b036a659048251
+  Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   Charts: 680c8328bd5e90cb14f67e00d2176f3113d19141
-  Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
-  Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
-  Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
-  Imaginary: 9b45836a5af881f452a86e0a1215772ae4712d00
-  Lightbox: 2dc267df8be2285bc7724cb11cbbf4aaaf59dced
+  Crashlytics: 058dc1ba579f6c100bc60a6878703779bff383c4
+  Fabric: d7387db9a31aadff63b147a4b91d982c53afaa4f
+  Imaginary: dae33d06dbc2ada22f98afef5eb45cc061311a2c
+  Lightbox: d317750e4132bfb871a5307cfe0a2c7d6a583c65
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
-  SwiftSoup: e5f61d37e3d802a4b5db81b4945de3da9bfdf115
-  TartuWeatherProvider: 0b1ba689c747ddcfaca6a146d6fe1c5d3b969eff
+  SwiftSoup: 92f5b348c131aed8af04f4326db1579ab19fa08c
+  TartuWeatherProvider: 3225f3aa3aed2ea4b8871277b623250f6a0498a3
 
 PODFILE CHECKSUM: 2c8763f9426e10e92a6a3d1931920b56dd151d10
 
