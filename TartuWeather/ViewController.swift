@@ -69,8 +69,8 @@ class ViewController: UIViewController {
     tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).disposed(by: disposeBag)
     
     // Update weather data when application did become active
-    Observable.of(NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationDidBecomeActive),
-      NotificationCenter.default.rx.notification(NSNotification.Name.UIApplicationWillEnterForeground))
+    Observable.of(NotificationCenter.default.rx.notification(UIApplication.didBecomeActiveNotification),
+                  NotificationCenter.default.rx.notification(UIApplication.willEnterForegroundNotification))
       .subscribe(onNext: {[weak self] _ in
         self?.tartuWeatherViewModel.updateWeather()
       })
