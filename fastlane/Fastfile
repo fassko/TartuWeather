@@ -2,26 +2,26 @@ update_fastlane(nightly: true)
 default_platform :ios
 
 platform :ios do
-  
+
   desc "Certs"
   lane :certificates do
     match(type: "appstore")
     match(type: "development")
   end
-  
+
   desc "CI build"
   lane :ci_build do
     certificates
-    
+
     # Test
     scan(
       workspace: "TartuWeather.xcworkspace",
 			scheme: "TartuWeather",
 			clean: true,
       device: "iPhone X"
-    ) 
+    )
   end
-  
+
   desc "Circle CI lane"
   lane :circleci do
     setup_circle_ci
@@ -33,11 +33,11 @@ platform :ios do
     setup_travis
     ci_build
   end
-  
+
   desc "Build"
   lane :build do
     clear_derived_data
-    
+
     gym(
       workspace: "TartuWeather.xcworkspace",
       scheme: "TartuWeather",
@@ -48,9 +48,9 @@ platform :ios do
   end
 
   lane :release do
-    
+
     precheck
-    
+
     increment_build_number build_number: get_version_number + "." + Time.new.strftime("%y%m%d.%H%M")
 
     clear_derived_data
@@ -62,12 +62,28 @@ platform :ios do
       output_name: "TartuWeather.ipa",
       include_symbols: true
     )
-    
+
     testflight(
       skip_waiting_for_build_processing: true
     )
   end
-  
+
+  lane :github_release do
+    ensure_git_branch
+    version = get_version_number
+    changelog = prompt(text: "Changelog: ", multi_line_end_keyword: "END")
+
+    github_release = set_github_release(
+      repository_name: "Qminder/qminder-tv",
+      api_token: ENV['GITHUB_TOKEN'],
+      name: version,
+      tag_name: version,
+      description: changelog,
+      commitish: "master"
+    )
+    sh("git fetch --tags")
+  end
+
   desc "Download dSYMs and upload to Testflight"
   lane :dsyms do
     download_dsyms(
@@ -77,10 +93,5 @@ platform :ios do
       api_token: "e8586ed0363ddcd4fc38b8f3aff4d3e095de5f07"
     )
     clean_build_artifacts
-  end
-
-
-  error do |lane, exception|
-
   end
 end

@@ -1,11 +1,11 @@
 PODS:
   - Cache (5.2.0)
-  - Charts (3.2.0):
-    - Charts/Core (= 3.2.0)
-  - Charts/Core (3.2.0)
-  - Crashlytics (3.10.8):
-    - Fabric (~> 1.7.12)
-  - Fabric (1.7.12)
+  - Charts (3.2.1):
+    - Charts/Core (= 3.2.1)
+  - Charts/Core (3.2.1)
+  - Crashlytics (3.11.0):
+    - Fabric (~> 1.8.0)
+  - Fabric (1.8.0)
   - Imaginary (4.2.0):
     - Cache (~> 5.0)
   - Lightbox (2.3.0):
@@ -15,7 +15,7 @@ PODS:
   - RxSwift (4.3.1)
   - SwiftLint (0.27.0)
   - SwiftSoup (1.7.4)
-  - TartuWeatherProvider (0.4.1):
+  - TartuWeatherProvider (0.4.3):
     - SwiftSoup (~> 1.7)
 
 DEPENDENCIES:
@@ -44,17 +44,17 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
-  Charts: 680c8328bd5e90cb14f67e00d2176f3113d19141
-  Crashlytics: 058dc1ba579f6c100bc60a6878703779bff383c4
-  Fabric: d7387db9a31aadff63b147a4b91d982c53afaa4f
+  Charts: f122fb70b19847fa5817d018b77d6c5a2296ab25
+  Crashlytics: 1448070c1d2731ab71ea7c3faf84ac0f69657287
+  Fabric: 4ac1cdfef3004ccd83ce0959b91eda8a6e37df72
   Imaginary: dae33d06dbc2ada22f98afef5eb45cc061311a2c
   Lightbox: d317750e4132bfb871a5307cfe0a2c7d6a583c65
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   SwiftSoup: 92f5b348c131aed8af04f4326db1579ab19fa08c
-  TartuWeatherProvider: 3225f3aa3aed2ea4b8871277b623250f6a0498a3
+  TartuWeatherProvider: 65696ac35e326d388fad60ab2858c7f0e699931f
 
-PODFILE CHECKSUM: 2c8763f9426e10e92a6a3d1931920b56dd151d10
+PODFILE CHECKSUM: 1547c9e73f04e95a86c7c36616d89a54485ee616
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.6.0.beta.2
