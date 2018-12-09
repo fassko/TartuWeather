@@ -24,7 +24,6 @@
 		6341EACA1EF083C100C3E8EA /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
 		6341EACB1EF083C300C3E8EA /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
 		6348B1BC1C4BF55300199EE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6348B1BB1C4BF55300199EE5 /* AppDelegate.swift */; };
-		6348B1BE1C4BF55300199EE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6348B1BD1C4BF55300199EE5 /* ViewController.swift */; };
 		6348B1C11C4BF55300199EE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6348B1BF1C4BF55300199EE5 /* Main.storyboard */; };
 		6348B1C31C4BF55300199EE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6348B1C21C4BF55300199EE5 /* Assets.xcassets */; };
 		6348B1C61C4BF55300199EE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6348B1C41C4BF55300199EE5 /* LaunchScreen.storyboard */; };
@@ -50,6 +49,7 @@
 		63F54EB221BD62DA00A44EF5 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F54EB121BD62DA00A44EF5 /* IntentHandler.swift */; };
 		63F54EB621BD62DA00A44EF5 /* TemperatureIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 63F54EAF21BD62DA00A44EF5 /* TemperatureIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		63F54EBA21BD62FC00A44EF5 /* SiriIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 63F54EA921BD52D700A44EF5 /* SiriIntents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
+		63F54EBD21BD74FD00A44EF5 /* NowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F54EBC21BD74FD00A44EF5 /* NowViewController.swift */; };
 		82ABCB1581A749119EC73A82 /* Pods_TemperatureIntents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC7FB2AA6E693968CC660BC /* Pods_TemperatureIntents.framework */; };
 		9E6558EE96D3548A08344ED1 /* Pods_meteoTartuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242186C8E9332A4E910FA9F7 /* Pods_meteoTartuUITests.framework */; };
 		A872396366D4986C48D34F07 /* Pods_TartuWeatherWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB5E978F34FA69342E6D75B /* Pods_TartuWeatherWidget.framework */; };
@@ -177,7 +177,6 @@
 		6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TartuWeatherViewModel.swift; sourceTree = "<group>"; };
 		6348B1B81C4BF55300199EE5 /* TartuWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TartuWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6348B1BB1C4BF55300199EE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6348B1BD1C4BF55300199EE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6348B1C01C4BF55300199EE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6348B1C21C4BF55300199EE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6348B1C51C4BF55300199EE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -214,6 +213,7 @@
 		63F54EB121BD62DA00A44EF5 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		63F54EB321BD62DA00A44EF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63F54EBB21BD67D700A44EF5 /* TemperatureIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TemperatureIntents.entitlements; sourceTree = "<group>"; };
+		63F54EBC21BD74FD00A44EF5 /* NowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowViewController.swift; sourceTree = "<group>"; };
 		670D3874B6F0015F4DE4A9C5 /* Pods_meteoTartuUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meteoTartuUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE41FE55522524F1DCEFA4D /* Pods-meteoTartuUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meteoTartuUnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-meteoTartuUnitTests/Pods-meteoTartuUnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		895F5E6BA939F2EDF0A21F70 /* Pods-TemperatureIntents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureIntents.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemperatureIntents/Pods-TemperatureIntents.release.xcconfig"; sourceTree = "<group>"; };
@@ -461,7 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */,
-				6348B1BD1C4BF55300199EE5 /* ViewController.swift */,
+				63F54EBC21BD74FD00A44EF5 /* NowViewController.swift */,
 			);
 			name = Now;
 			sourceTree = "<group>";
@@ -1115,7 +1115,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6348B1BE1C4BF55300199EE5 /* ViewController.swift in Sources */,
+				63F54EBD21BD74FD00A44EF5 /* NowViewController.swift in Sources */,
 				632965872040AC4D00F81E83 /* HistoryViewModel.swift in Sources */,
 				6348B1BC1C4BF55300199EE5 /* AppDelegate.swift in Sources */,
 				638F5EB92042C6B7005CE4A5 /* Extensions.swift in Sources */,
