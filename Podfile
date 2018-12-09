@@ -21,6 +21,12 @@ target 'TartuWeatherWidget' do
   pod 'RxCocoa'
 end
 
+target 'TemperatureIntents' do
+  platform :ios, '12.0'
+
+  pod 'TartuWeatherProvider'
+end
+
 target 'meteoTartuUnitTests' do
   platform :ios, '11.0'
 

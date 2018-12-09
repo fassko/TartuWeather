@@ -8,6 +8,7 @@
 
 import UIKit
 import QuartzCore
+import Intents
 
 import RxSwift
 import RxCocoa
@@ -98,6 +99,18 @@ class ViewController: UIViewController {
     refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
     guard let scrollView = view as? UIScrollView else { return }
     scrollView.refreshControl = refreshControl
+    
+    dontateTemperatureIntent()
+  }
+  
+  public func dontateTemperatureIntent() {
+    if #available(iOS 12.0, *) {
+      let intent = GetTemperatureIntent()
+      let interaction = INInteraction(intent: intent, response: nil)
+      interaction.donate(completion: nil)
+      
+    } else {
+    }
   }
   
   // MARK: - Actions
