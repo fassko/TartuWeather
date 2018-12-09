@@ -46,6 +46,11 @@ Build
 fastlane ios release
 ```
 
+### ios github_release
+```
+fastlane ios github_release
+```
+
 ### ios dsyms
 ```
 fastlane ios dsyms

@@ -8,12 +8,13 @@
 
 import UIKit
 import QuartzCore
+import Intents
 
 import RxSwift
 import RxCocoa
 import Lightbox
 
-class ViewController: UIViewController {
+class NowViewController: UIViewController {
 
   // MARK: - Interface
   /// Temperature label
@@ -98,6 +99,18 @@ class ViewController: UIViewController {
     refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
     guard let scrollView = view as? UIScrollView else { return }
     scrollView.refreshControl = refreshControl
+    
+    dontateTemperatureIntent()
+  }
+  
+  public func dontateTemperatureIntent() {
+    if #available(iOS 12.0, *) {
+      let intent = GetTemperatureIntent()
+      let interaction = INInteraction(intent: intent, response: nil)
+      interaction.donate(completion: nil)
+      
+    } else {
+    }
   }
   
   // MARK: - Actions
@@ -121,7 +134,6 @@ class ViewController: UIViewController {
       - imageURL: Image String URL
   */
   fileprivate func getLiveImage(_ imageURL: String) {
-  
     URLSession.shared.dataTask(with: URL(string: imageURL)!) {[weak self] data, _, _ in
       DispatchQueue.main.async {
         if let data = data {
@@ -133,7 +145,7 @@ class ViewController: UIViewController {
           self?.lightboxController?.pageDelegate = nil
         }
       }
-      }.resume()
+    }.resume()
   }
   
   /**
