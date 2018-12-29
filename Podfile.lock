@@ -15,9 +15,9 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
-  - SwiftLint (0.29.1)
+  - SwiftLint (0.29.2)
   - SwiftSoup (1.7.4)
-  - TartuWeatherProvider (0.4.4):
+  - TartuWeatherProvider (0.5.0):
     - SwiftSoup (~> 1.7)
 
 DEPENDENCIES:
@@ -55,9 +55,9 @@ SPEC CHECKSUMS:
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
-  SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
+  SwiftLint: 47df60bdea6e7e902b193b6596db8683aafd86a3
   SwiftSoup: 92f5b348c131aed8af04f4326db1579ab19fa08c
-  TartuWeatherProvider: ed7f5f80c5b61bc10aed8f2f481435a711d65791
+  TartuWeatherProvider: d5288ce059cc89363e98c19ac4c080de26781ab8
 
 PODFILE CHECKSUM: bafe188debdf6fa79e0f47208a0e45d3235e1eac
 

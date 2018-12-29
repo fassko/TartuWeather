@@ -134,7 +134,10 @@ class NowViewController: UIViewController {
       - imageURL: Image String URL
   */
   fileprivate func getLiveImage(_ imageURL: String) {
-    URLSession.shared.dataTask(with: URL(string: imageURL)!) {[weak self] data, _, _ in
+    let request = URLRequest(url: URL(string: imageURL)!,
+                             cachePolicy: .reloadIgnoringLocalCacheData,
+                             timeoutInterval: 60)
+    URLSession.shared.dataTask(with: request) {[weak self] data, _, _ in
       DispatchQueue.main.async {
         if let data = data {
           guard let image = UIImage(data: data) else { return }
