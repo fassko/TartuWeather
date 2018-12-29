@@ -40,9 +40,15 @@ struct HistoryViewModel {
   fileprivate func convertHistoryResult(result: TartuWeatherResult<[QueryData], TartuWeatherError>) {
     switch result {
     case let .success(value):
-      self.chartData.value = value.map({
-        ChartDataItem(($0.measuredDate?.timeIntervalSince1970)!, Double($0.temperature)!)
-      })
+      
+      self.chartData.value = value.compactMap {
+        guard let temperature = Double($0.temperature),
+          let date = $0.measuredDate?.timeIntervalSince1970 else {
+          return nil
+        }
+        
+        return ChartDataItem(date, temperature)
+      }
       
     case let .failure(error):
       print("Can't get history data \(error)")
