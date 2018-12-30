@@ -22,7 +22,7 @@ target 'TartuWeatherWidget' do
 end
 
 target 'TemperatureIntents' do
-  platform :ios, '12.0'
+  platform :ios, '11.0'
 
   pod 'TartuWeatherProvider'
 end

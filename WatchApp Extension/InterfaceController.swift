@@ -69,7 +69,12 @@ class InterfaceController: WKInterfaceController {
       .flatMap({ $0.map { Observable.just($0) } ?? Observable.empty()  })
       .flatMap({ imageURL in
         Observable<UIImage?>.create({ observer in
-          URLSession.shared.dataTask(with: URL(string: imageURL)!) { data, _, error in
+          
+          let request = URLRequest(url: URL(string: imageURL)!,
+                                   cachePolicy: .reloadIgnoringLocalCacheData,
+                                   timeoutInterval: 60.0)
+          
+          URLSession.shared.dataTask(with: request) { data, _, error in
             DispatchQueue.main.async {
               if let error = error {
                 observer.onError(error)
