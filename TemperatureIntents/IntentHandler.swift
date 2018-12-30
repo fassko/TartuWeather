@@ -17,6 +17,7 @@ class IntentHandler: INExtension {
 }
 
 class TemperatureIntentHandler: NSObject, GetTemperatureIntentHandling {
+  @available(iOSApplicationExtension 12.0, *)
   func handle(intent: GetTemperatureIntent, completion: @escaping (GetTemperatureIntentResponse) -> Void) {
     TartuWeatherProvider.getWeatherData { result in
       switch result {
