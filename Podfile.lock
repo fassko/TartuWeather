@@ -24,7 +24,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SwiftLint
-  - TartuWeatherProvider (from `/Users/kristaps/Documents/ios/TartuWeatherProvider`)
+  - TartuWeatherProvider
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -37,10 +37,7 @@ SPEC REPOS:
     - RxSwift
     - SwiftLint
     - SwiftSoup
-
-EXTERNAL SOURCES:
-  TartuWeatherProvider:
-    :path: "/Users/kristaps/Documents/ios/TartuWeatherProvider"
+    - TartuWeatherProvider
 
 SPEC CHECKSUMS:
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
@@ -54,6 +51,6 @@ SPEC CHECKSUMS:
   SwiftSoup: 230991361c5ba249d140161860a3864a28b63860
   TartuWeatherProvider: 9661171a5c0eb720bb6d41232e4d3050ac8f6122
 
-PODFILE CHECKSUM: 486a6f8ced232dc8664c6226527a397520c39810
+PODFILE CHECKSUM: 9356fb8ecc5608b788d72490d5b5df760c9916e2
 
 COCOAPODS: 1.7.5
