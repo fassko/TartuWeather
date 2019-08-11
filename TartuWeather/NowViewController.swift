@@ -86,7 +86,7 @@ class NowViewController: UIViewController {
     guard let scrollView = view as? UIScrollView else { return }
     scrollView.refreshControl = refreshControl
     
-    dontateTemperatureIntent()
+    donateIntents()
   }
   
   @IBAction func refresh(_ sender: Any) {
@@ -97,11 +97,11 @@ class NowViewController: UIViewController {
     tartuWeatherViewModel.updateWeather()
   }
   
-  public func dontateTemperatureIntent() {
+  public func donateIntents() {
     if #available(iOS 12.0, *) {
-      let intent = GetTemperatureIntent()
-      let interaction = INInteraction(intent: intent, response: nil)
-      interaction.donate(completion: nil)
+      
+      GetTemperatureIntent().donate()
+      GetWindIntent().donate()
       
     } else {
     }

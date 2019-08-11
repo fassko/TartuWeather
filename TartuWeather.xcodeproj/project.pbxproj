@@ -35,6 +35,9 @@
 		635860C01E4767D6006E394D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635860BF1E4767D6006E394D /* ExtensionDelegate.swift */; };
 		635860C41E4767D6006E394D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635860C31E4767D6006E394D /* Assets.xcassets */; };
 		635860C81E4767D6006E394D /* WatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 635860AA1E4767D5006E394D /* WatchApp.app */; };
+		6358F8162300888300755FDF /* wind@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6358F8132300888300755FDF /* wind@3x.png */; };
+		6358F8172300888300755FDF /* wind@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6358F8142300888300755FDF /* wind@2x.png */; };
+		6358F8182300888300755FDF /* wind.png in Resources */ = {isa = PBXBuildFile; fileRef = 6358F8152300888300755FDF /* wind.png */; };
 		6359125723005187002A377A /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359125623005187002A377A /* SnapshotHelper.swift */; };
 		638F5EB72042C450005CE4A5 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F5EB62042C44F005CE4A5 /* BalloonMarker.swift */; };
 		638F5EB92042C6B7005CE4A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F5EB82042C6B7005CE4A5 /* Extensions.swift */; };
@@ -195,6 +198,9 @@
 		635860BF1E4767D6006E394D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		635860C31E4767D6006E394D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		635860C51E4767D6006E394D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6358F8132300888300755FDF /* wind@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wind@3x.png"; sourceTree = "<group>"; };
+		6358F8142300888300755FDF /* wind@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wind@2x.png"; sourceTree = "<group>"; };
+		6358F8152300888300755FDF /* wind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wind.png; sourceTree = "<group>"; };
 		6359125623005187002A377A /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		638F5EB62042C44F005CE4A5 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
 		638F5EB82042C6B7005CE4A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -317,6 +323,9 @@
 		63330ECE1DCFB2C4002194A3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6358F8152300888300755FDF /* wind.png */,
+				6358F8142300888300755FDF /* wind@2x.png */,
+				6358F8132300888300755FDF /* wind@3x.png */,
 				63CD39402040A3D2000A7334 /* thermometer.png */,
 				63CD39412040A3D2000A7334 /* thermometer@2x.png */,
 				63CD393F2040A3D2000A7334 /* thermometer@3x.png */,
@@ -792,11 +801,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				633367DD1F6E78D8005AE02E /* MainInterface.storyboard in Resources */,
+				6358F8182300888300755FDF /* wind.png in Resources */,
 				6348B1C61C4BF55300199EE5 /* LaunchScreen.storyboard in Resources */,
 				63CD39432040A3D2000A7334 /* thermometer.png in Resources */,
+				6358F8162300888300755FDF /* wind@3x.png in Resources */,
 				6348B1C31C4BF55300199EE5 /* Assets.xcassets in Resources */,
 				63CD39422040A3D2000A7334 /* thermometer@3x.png in Resources */,
 				63CD39442040A3D2000A7334 /* thermometer@2x.png in Resources */,
+				6358F8172300888300755FDF /* wind@2x.png in Resources */,
 				6348B1C11C4BF55300199EE5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1373,7 +1385,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.10.190811.1700;
+				CURRENT_PROJECT_VERSION = 1.10.190811.1718;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1433,7 +1445,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Kristaps Grinbergs (3SGNZQGS68)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kristaps Grinbergs (3SGNZQGS68)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.10.190811.1700;
+				CURRENT_PROJECT_VERSION = 1.10.190811.1718;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

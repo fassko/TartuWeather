@@ -164,7 +164,7 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>Wind blows with ${speed} in ${direction}</string>
+						<string>Current wind speed is ${speed} ${direction}</string>
 						<key>INIntentResponseCodeFormatStringID</key>
 						<string>u7qkiR</string>
 						<key>INIntentResponseCodeName</key>
