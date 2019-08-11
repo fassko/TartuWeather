@@ -22,7 +22,8 @@ class SiriIntentHandler: NSObject, GetTemperatureIntentHandling, GetWindIntentHa
     TartuWeatherProvider.getWeatherData { result in
       switch result {
       case .success(let weatherData):
-        completion(.success(temperature: weatherData.temperature))
+        let temperature = weatherData.temperature.replacingOccurrences(of: "°C", with: "° Celcius")
+        completion(.success(temperature: temperature))
       case .failure(let error):
         completion(.failure(error: error.localizedDescription))
       }
@@ -36,8 +37,51 @@ class SiriIntentHandler: NSObject, GetTemperatureIntentHandling, GetWindIntentHa
       case .failure(let error):
         completion(.failure(error: error.localizedDescription))
       case .success(let weatherData):
-        completion(.success(speed: weatherData.wind, direction: weatherData.windDirection))
+        let speed = weatherData.wind.replacingOccurrences(of: "m/s", with: "meter per second")
+        let direction = weatherData.windDirection.fullWindDirection
+        completion(.success(speed: speed, direction: direction))
       }
+    }
+  }
+}
+
+extension String {
+  var fullWindDirection: String {
+    switch self {
+    case "N":
+      return "North"
+    case "NNE":
+      return "North-Northeast"
+    case "NE":
+      return "Northeast"
+    case "ENE":
+      return "East-Northeast"
+    case "E":
+      return "East"
+    case "ESE":
+      return "East-Southeast"
+    case "SE":
+      return "Southeast"
+    case "SSE":
+      return "South-Southeast"
+    case "S":
+      return "South"
+    case "SSW":
+      return "South-Southwest"
+    case "SW":
+      return "Southwest"
+    case "WSW":
+      return "West-Southwest"
+    case "W":
+      return "West"
+    case "WNW":
+      return "West-Northwest"
+    case "NW":
+      return "Northwest"
+    case "NNW":
+      return "North-Northwest"
+    default:
+      return ""
     }
   }
 }
