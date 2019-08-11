@@ -1,3 +1,2 @@
-* history graph for today's and yesterday's temperature
-* UI updates
-* bug fixes
+* Siri Shortcuts support
+* fixed some bugs with data loading for Apple Watch
