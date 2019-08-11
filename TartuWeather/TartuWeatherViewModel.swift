@@ -10,24 +10,25 @@ import Foundation
 import UIKit
 
 import TartuWeatherProvider
+import RxCocoa
 import RxSwift
 
 struct TartuWeatherViewModel {
   
   /// Temperature
-  public var temperature = Variable<String?>("")
+  public var temperature = BehaviorRelay<String?>(value: nil)
   
   /// Wind
-  public var wind = Variable<String?>("")
+  public var wind = BehaviorRelay<String?>(value: nil)
  
   /// Measured time
-  public var measuredTime = Variable<String?>("")
+  public var measuredTime = BehaviorRelay<String?>(value: nil)
   
   /// Live image large
-  public var largeImage = Variable<String?>(nil)
+  public var largeImage = BehaviorRelay<String?>(value: nil)
   
   /// Live image small
-  public var smallImage = Variable<String?>(nil)
+  public var smallImage = BehaviorRelay<String?>(value: nil)
   
   init() {
     updateWeather()
@@ -39,20 +40,20 @@ struct TartuWeatherViewModel {
   func updateWeather() {
   
     // Get weather data
-    TartuWeatherProvider.getWeatherData(completion: { result in
+    TartuWeatherProvider.getWeatherData { result in
     
       switch result {
       case .failure(let error):
         debugPrint("Can't get weather data \(String(describing: error))")
         
       case .success(let data):
-        self.temperature.value = data.temperature
-        self.wind.value = "\(data.windDirection) \(data.wind)"
-        self.measuredTime.value = data.measuredTime
+        self.temperature.accept(data.temperature)
+        self.wind.accept("\(data.windDirection) \(data.wind)")
+        self.measuredTime.accept(data.measuredTime)
         
-        self.largeImage.value = data.liveImage.large
-        self.smallImage.value = data.liveImage.small
+        self.largeImage.accept(data.liveImage.large)
+        self.smallImage.accept(data.liveImage.small)
       }
-    })
+    }
   }
 }

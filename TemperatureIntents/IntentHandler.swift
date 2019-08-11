@@ -12,11 +12,11 @@ import TartuWeatherProvider
 
 class IntentHandler: INExtension {
   override func handler(for intent: INIntent) -> Any {
-    return TemperatureIntentHandler()
+    return SiriIntentHandler()
   }
 }
 
-class TemperatureIntentHandler: NSObject, GetTemperatureIntentHandling {
+class SiriIntentHandler: NSObject, GetTemperatureIntentHandling, GetWindIntentHandling {
   @available(iOSApplicationExtension 12.0, *)
   func handle(intent: GetTemperatureIntent, completion: @escaping (GetTemperatureIntentResponse) -> Void) {
     TartuWeatherProvider.getWeatherData { result in
@@ -24,8 +24,19 @@ class TemperatureIntentHandler: NSObject, GetTemperatureIntentHandling {
       case .success(let weatherData):
         completion(.success(temperature: weatherData.temperature))
       case .failure(let error):
-        print("Can't get weather data", error.localizedDescription)
-        completion(GetTemperatureIntentResponse.failure(error: error.localizedDescription))
+        completion(.failure(error: error.localizedDescription))
+      }
+    }
+  }
+  
+  @available(iOSApplicationExtension 12.0, *)
+  func handle(intent: GetWindIntent, completion: @escaping (GetWindIntentResponse) -> Void) {
+    TartuWeatherProvider.getWeatherData { result in
+      switch result {
+      case .failure(let error):
+        completion(.failure(error: error.localizedDescription))
+      case .success(let weatherData):
+        completion(.success(speed: weatherData.wind, direction: weatherData.windDirection))
       }
     }
   }

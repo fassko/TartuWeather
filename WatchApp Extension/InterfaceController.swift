@@ -97,12 +97,12 @@ class InterfaceController: WKInterfaceController {
     tartuWeatherViewModel.updateWeather()
     
     // Update weather data with timer
-    Observable<Int>
-      .interval(RxTimeInterval(30), scheduler: MainScheduler.instance)
-      .subscribe(onNext: {_ in
-        self.tartuWeatherViewModel.updateWeather()
-      })
-      .disposed(by: disposeBag)
+//    Observable<Int>
+//      .interval(RxTimeInterval(30), scheduler: MainScheduler.instance)
+//      .subscribe(onNext: {_ in
+//        self.tartuWeatherViewModel.updateWeather()
+//      })
+//      .disposed(by: disposeBag)
   }
   
   override func didDeactivate() {

@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.9</string>
+	<string>1.10</string>
 	<key>CFBundleVersion</key>
 	<string>1.9.181229.2138</string>
 	<key>NSAppTransportSecurity</key>
@@ -36,6 +36,7 @@
 			<key>IntentsSupported</key>
 			<array>
 				<string>GetTemperatureIntent</string>
+				<string>GetWindIntent</string>
 			</array>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>

@@ -19,7 +19,7 @@ struct HistoryViewModel {
   typealias ChartDataItem = (x: Double, y: Double)
   
   /// Chart data
-  public var chartData = Variable<[ChartDataItem]>([])
+  public var chartData = BehaviorRelay<[ChartDataItem]>(value: [])
   
   /// Dispose bag
   fileprivate let disposeBag = DisposeBag()
@@ -40,15 +40,14 @@ struct HistoryViewModel {
   fileprivate func convertHistoryResult(result: TartuWeatherResult<[QueryData], TartuWeatherError>) {
     switch result {
     case let .success(value):
-      
-      self.chartData.value = value.compactMap {
+      self.chartData.accept(value.compactMap {
         guard let temperature = Double($0.temperature),
           let date = $0.measuredDate?.timeIntervalSince1970 else {
           return nil
         }
         
         return ChartDataItem(date, temperature)
-      }
+      })
       
     case let .failure(error):
       print("Can't get history data \(error)")
