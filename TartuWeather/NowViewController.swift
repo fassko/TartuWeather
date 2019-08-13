@@ -29,9 +29,6 @@ class NowViewController: UIViewController {
   /// Measured time label
   @IBOutlet weak var measuredTimeLabel: UILabel!
   
-  /// Refresh label
-  @IBOutlet weak var refreshButton: UIBarButtonItem!
-  
   /// Share button
   @IBOutlet var shareButton: UIBarButtonItem!
   
@@ -46,6 +43,8 @@ class NowViewController: UIViewController {
   let refreshControl = UIRefreshControl()
   
   private let disposeBag = DisposeBag()
+  
+  private var timer: Timer?
   
   // MARK: - View lifecycle methods
   override func viewDidLoad() {
@@ -76,23 +75,10 @@ class NowViewController: UIViewController {
         self?.tartuWeatherViewModel.updateWeather()
       })
       .disposed(by: disposeBag)
-   
-    // Refresh button
-    let refresh = refreshButton.rx.tap
-    refresh
-      .asObservable()
-      .subscribe(onNext: {[weak self] _ in
-        self?.tartuWeatherViewModel.updateWeather()
-      })
-      .disposed(by: disposeBag)
     
-    // Update weather data with timer
-    Observable<Int>
-      .interval(RxTimeInterval(30), scheduler: MainScheduler.instance)
-      .subscribe(onNext: {[weak self] _ in
-        self?.tartuWeatherViewModel.updateWeather()
-      })
-      .disposed(by: disposeBag)
+    timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) {[weak self] _ in
+      self?.update()
+    }
     
     // Add pull to refresh
     refreshControl.tintColor = UIColor(red: 0.18, green: 0.35, blue: 0.50, alpha: 1.0)
@@ -100,14 +86,22 @@ class NowViewController: UIViewController {
     guard let scrollView = view as? UIScrollView else { return }
     scrollView.refreshControl = refreshControl
     
-    dontateTemperatureIntent()
+    donateIntents()
   }
   
-  public func dontateTemperatureIntent() {
+  @IBAction func refresh(_ sender: Any) {
+    update()
+  }
+  
+  func update() {
+    tartuWeatherViewModel.updateWeather()
+  }
+  
+  public func donateIntents() {
     if #available(iOS 12.0, *) {
-      let intent = GetTemperatureIntent()
-      let interaction = INInteraction(intent: intent, response: nil)
-      interaction.donate(completion: nil)
+      
+      GetTemperatureIntent().donate()
+      GetWindIntent().donate()
       
     } else {
     }

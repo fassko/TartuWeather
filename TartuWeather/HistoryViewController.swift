@@ -39,7 +39,7 @@ class HistoryViewController: UIViewController {
       })
       .subscribe(onNext: { chartData in
         
-        let line1 = LineChartDataSet(values: chartData, label: "Temperature")
+        let line1 = LineChartDataSet(entries: chartData, label: "Temperature")
         line1.axisDependency = .left
         line1.setColor(.black)
         line1.setCircleColor(#colorLiteral(red: 0.175999999, green: 0.3449999988, blue: 0.4979999959, alpha: 1))

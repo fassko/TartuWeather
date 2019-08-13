@@ -18,7 +18,6 @@
 		63296596204165BB00F81E83 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632965862040AC4D00F81E83 /* HistoryViewModel.swift */; };
 		63296597204165C000F81E83 /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
 		63330EB51DCF6FC0002194A3 /* meteoTartuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63330EB41DCF6FC0002194A3 /* meteoTartuUITests.swift */; };
-		63330EBD1DCF7142002194A3 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63330EBC1DCF7142002194A3 /* SnapshotHelper.swift */; };
 		633367DD1F6E78D8005AE02E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6348B1D81C4BF6AA00199EE5 /* MainInterface.storyboard */; };
 		6341EAC71EF07B8800C3E8EA /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
 		6341EACA1EF083C100C3E8EA /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
@@ -36,6 +35,10 @@
 		635860C01E4767D6006E394D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635860BF1E4767D6006E394D /* ExtensionDelegate.swift */; };
 		635860C41E4767D6006E394D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635860C31E4767D6006E394D /* Assets.xcassets */; };
 		635860C81E4767D6006E394D /* WatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 635860AA1E4767D5006E394D /* WatchApp.app */; };
+		6358F8162300888300755FDF /* wind@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6358F8132300888300755FDF /* wind@3x.png */; };
+		6358F8172300888300755FDF /* wind@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6358F8142300888300755FDF /* wind@2x.png */; };
+		6358F8182300888300755FDF /* wind.png in Resources */ = {isa = PBXBuildFile; fileRef = 6358F8152300888300755FDF /* wind.png */; };
+		6359125723005187002A377A /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359125623005187002A377A /* SnapshotHelper.swift */; };
 		638F5EB72042C450005CE4A5 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F5EB62042C44F005CE4A5 /* BalloonMarker.swift */; };
 		638F5EB92042C6B7005CE4A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F5EB82042C6B7005CE4A5 /* Extensions.swift */; };
 		63A8D3C91F6ED7B4007480CC /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635860BD1E4767D6006E394D /* InterfaceController.swift */; };
@@ -173,7 +176,6 @@
 		63330EB21DCF6FBF002194A3 /* meteoTartuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meteoTartuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63330EB41DCF6FC0002194A3 /* meteoTartuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meteoTartuUITests.swift; sourceTree = "<group>"; };
 		63330EB61DCF6FC0002194A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63330EBC1DCF7142002194A3 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TartuWeatherViewModel.swift; sourceTree = "<group>"; };
 		6348B1B81C4BF55300199EE5 /* TartuWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TartuWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6348B1BB1C4BF55300199EE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,10 @@
 		635860BF1E4767D6006E394D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		635860C31E4767D6006E394D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		635860C51E4767D6006E394D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6358F8132300888300755FDF /* wind@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wind@3x.png"; sourceTree = "<group>"; };
+		6358F8142300888300755FDF /* wind@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wind@2x.png"; sourceTree = "<group>"; };
+		6358F8152300888300755FDF /* wind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wind.png; sourceTree = "<group>"; };
+		6359125623005187002A377A /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		638F5EB62042C44F005CE4A5 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
 		638F5EB82042C6B7005CE4A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		63A8D3F61F6EF37D007480CC /* TartuWeatherShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TartuWeatherShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,7 +313,7 @@
 		63330EB31DCF6FC0002194A3 /* meteoTartuUITests */ = {
 			isa = PBXGroup;
 			children = (
-				63330EBC1DCF7142002194A3 /* SnapshotHelper.swift */,
+				6359125623005187002A377A /* SnapshotHelper.swift */,
 				63330EB41DCF6FC0002194A3 /* meteoTartuUITests.swift */,
 				63330EB61DCF6FC0002194A3 /* Info.plist */,
 			);
@@ -317,6 +323,9 @@
 		63330ECE1DCFB2C4002194A3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6358F8152300888300755FDF /* wind.png */,
+				6358F8142300888300755FDF /* wind@2x.png */,
+				6358F8132300888300755FDF /* wind@3x.png */,
 				63CD39402040A3D2000A7334 /* thermometer.png */,
 				63CD39412040A3D2000A7334 /* thermometer@2x.png */,
 				63CD393F2040A3D2000A7334 /* thermometer@3x.png */,
@@ -566,7 +575,6 @@
 				6348B1B61C4BF55300199EE5 /* Resources */,
 				6348B1E21C4BF6AA00199EE5 /* Embed App Extensions */,
 				6348B1E61C4BF6C100199EE5 /* Embed Frameworks */,
-				63330EAD1DCF4ECA002194A3 /* ShellScript */,
 				635860D01E4767D6006E394D /* Embed Watch Content */,
 				63296599204175A500F81E83 /* Swiftlint */,
 				C0390F17D348602F38B9009B /* [CP] Embed Pods Frameworks */,
@@ -681,7 +689,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = fassko;
 				TargetAttributes = {
 					6329658B2041633700F81E83 = {
@@ -752,6 +760,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -792,11 +801,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				633367DD1F6E78D8005AE02E /* MainInterface.storyboard in Resources */,
+				6358F8182300888300755FDF /* wind.png in Resources */,
 				6348B1C61C4BF55300199EE5 /* LaunchScreen.storyboard in Resources */,
 				63CD39432040A3D2000A7334 /* thermometer.png in Resources */,
+				6358F8162300888300755FDF /* wind@3x.png in Resources */,
 				6348B1C31C4BF55300199EE5 /* Assets.xcassets in Resources */,
 				63CD39422040A3D2000A7334 /* thermometer@3x.png in Resources */,
 				63CD39442040A3D2000A7334 /* thermometer@2x.png in Resources */,
+				6358F8172300888300755FDF /* wind@2x.png in Resources */,
 				6348B1C11C4BF55300199EE5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -880,19 +892,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n  \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		63330EAD1DCF4ECA002194A3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 34be06edc6f733a743335744b07a23f6a3e5b344 a9207ff06b3417aa4bf8c6408432761ca87c5b52dca8f2365b133eea61d407cc\n";
-		};
 		7B37385154DA554D663F1778 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -974,16 +973,16 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-meteoTartuUnitTests/Pods-meteoTartuUnitTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic-iOS/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa-iOS/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay-iOS/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift-iOS/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup-iOS/SwiftSoup.framework",
 				"${BUILT_PRODUCTS_DIR}/TartuWeatherProvider-iOS/TartuWeatherProvider.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TartuWeatherProvider.framework",
@@ -1004,8 +1003,8 @@
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Imaginary/Imaginary.framework",
 				"${BUILT_PRODUCTS_DIR}/Lightbox/Lightbox.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic-iOS/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa-iOS/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay-iOS/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift-iOS/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup-iOS/SwiftSoup.framework",
 				"${BUILT_PRODUCTS_DIR}/TartuWeatherProvider-iOS/TartuWeatherProvider.framework",
@@ -1016,8 +1015,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Imaginary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lightbox.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TartuWeatherProvider.framework",
@@ -1052,16 +1051,16 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WatchApp Extension/Pods-WatchApp Extension-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic-watchOS/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa-watchOS/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay-watchOS/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift-watchOS/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup-watchOS/SwiftSoup.framework",
 				"${BUILT_PRODUCTS_DIR}/TartuWeatherProvider-watchOS/TartuWeatherProvider.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TartuWeatherProvider.framework",
@@ -1107,7 +1106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63330EB51DCF6FC0002194A3 /* meteoTartuUITests.swift in Sources */,
-				63330EBD1DCF7142002194A3 /* SnapshotHelper.swift in Sources */,
+				6359125723005187002A377A /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1268,7 +1267,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TartuWeather.app/TartuWeather";
 			};
@@ -1304,7 +1303,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TartuWeather.app/TartuWeather";
 			};
@@ -1327,7 +1326,7 @@
 				PROVISIONING_PROFILE = "947bac6f-af3c-4a28-9196-f81e7581008c";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.fassko.meteoTartuUITests";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = TartuWeather;
 			};
 			name = Debug;
@@ -1349,7 +1348,7 @@
 				PROVISIONING_PROFILE = "947bac6f-af3c-4a28-9196-f81e7581008c";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.fassko.meteoTartuUITests";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = TartuWeather;
 			};
 			name = Release;
@@ -1359,6 +1358,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1385,7 +1385,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.9.181229.2138;
+				CURRENT_PROJECT_VERSION = 1.10.190811.2112;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1408,7 +1408,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1418,6 +1418,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1444,7 +1445,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Kristaps Grinbergs (3SGNZQGS68)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kristaps Grinbergs (3SGNZQGS68)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.9.181229.2138;
+				CURRENT_PROJECT_VERSION = 1.10.190811.2112;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1460,7 +1461,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1488,7 +1489,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4ff1016f-feae-4120-8d98-78baeac805d2";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.fassko.TartuWeather";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1513,7 +1514,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "62333921-9767-4453-84d8-aa577b08da96";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.fassko.TartuWeather";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1534,7 +1535,7 @@
 				PROVISIONING_PROFILE = "a0ba7df5-fd7c-439c-b75e-7d0974d968bf";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.fassko.TartuWeather.TartuWeatherWidget";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1555,7 +1556,7 @@
 				PROVISIONING_PROFILE = "833bcec3-77a3-4af7-bcf0-67b5ca55a532";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.fassko.TartuWeather.TartuWeatherWidget";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1633,7 +1634,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.1;
 			};
@@ -1660,7 +1661,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.1;
 			};
@@ -1697,7 +1698,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.fassko.TartuWeather.TartuWeatherShareExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1733,7 +1734,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.fassko.TartuWeather.TartuWeatherShareExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1766,7 +1767,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.fassko.TartuWeather.TemperatureIntents";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1797,7 +1798,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.fassko.TartuWeather.TemperatureIntents";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

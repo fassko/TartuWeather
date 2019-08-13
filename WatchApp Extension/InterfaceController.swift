@@ -30,6 +30,8 @@ class InterfaceController: WKInterfaceController {
   private var tartuWeatherViewModel = TartuWeatherViewModel()
   
   private let disposeBag = DisposeBag()
+  
+  private var timer: Timer?
 
   override func awake(withContext context: Any?) {
     super.awake(withContext: context)
@@ -96,13 +98,9 @@ class InterfaceController: WKInterfaceController {
     
     tartuWeatherViewModel.updateWeather()
     
-    // Update weather data with timer
-    Observable<Int>
-      .interval(RxTimeInterval(30), scheduler: MainScheduler.instance)
-      .subscribe(onNext: {_ in
-        self.tartuWeatherViewModel.updateWeather()
-      })
-      .disposed(by: disposeBag)
+    timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) {[weak self] _ in
+      self?.tartuWeatherViewModel.updateWeather()
+    }
   }
   
   override func didDeactivate() {

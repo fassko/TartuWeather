@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Intents
 
 extension Double {
 
@@ -21,5 +22,12 @@ extension Double {
   func rounded(toPlaces places: Int) -> Double {
     let divisor = pow(10.0, Double(places))
     return (self * divisor).rounded() / divisor
+  }
+}
+
+extension INIntent {
+  func donate() {
+    let interaction = INInteraction(intent: self, response: nil)
+    interaction.donate(completion: nil)
   }
 }
