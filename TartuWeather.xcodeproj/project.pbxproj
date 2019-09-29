@@ -41,6 +41,7 @@
 		6359125723005187002A377A /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359125623005187002A377A /* SnapshotHelper.swift */; };
 		638F5EB72042C450005CE4A5 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F5EB62042C44F005CE4A5 /* BalloonMarker.swift */; };
 		638F5EB92042C6B7005CE4A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F5EB82042C6B7005CE4A5 /* Extensions.swift */; };
+		638FFD3D234114D10079AA4B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FFD3C234114D10079AA4B /* Constants.swift */; };
 		63A8D3C91F6ED7B4007480CC /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635860BD1E4767D6006E394D /* InterfaceController.swift */; };
 		63A8D3F91F6EF37D007480CC /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A8D3F81F6EF37D007480CC /* ShareViewController.swift */; };
 		63A8D4001F6EF37D007480CC /* TartuWeatherShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 63A8D3F61F6EF37D007480CC /* TartuWeatherShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -204,6 +205,7 @@
 		6359125623005187002A377A /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		638F5EB62042C44F005CE4A5 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
 		638F5EB82042C6B7005CE4A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		638FFD3C234114D10079AA4B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		63A8D3F61F6EF37D007480CC /* TartuWeatherShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TartuWeatherShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A8D3F81F6EF37D007480CC /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		63A8D3FD1F6EF37D007480CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 			children = (
 				6348B1BF1C4BF55300199EE5 /* Main.storyboard */,
 				6348B1C41C4BF55300199EE5 /* LaunchScreen.storyboard */,
+				638FFD3C234114D10079AA4B /* Constants.swift */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -757,10 +760,9 @@
 			};
 			buildConfigurationList = 6348B1B31C4BF55300199EE5 /* Build configuration list for PBXProject "TartuWeather" */;
 			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -1119,6 +1121,7 @@
 				6348B1BC1C4BF55300199EE5 /* AppDelegate.swift in Sources */,
 				638F5EB92042C6B7005CE4A5 /* Extensions.swift in Sources */,
 				63F54EAA21BD52D700A44EF5 /* SiriIntents.intentdefinition in Sources */,
+				638FFD3D234114D10079AA4B /* Constants.swift in Sources */,
 				6341EAC71EF07B8800C3E8EA /* TartuWeatherViewModel.swift in Sources */,
 				63293720203F57CD00B83743 /* HistoryViewController.swift in Sources */,
 				63293724203F6D8D00B83743 /* DateFormatter.swift in Sources */,

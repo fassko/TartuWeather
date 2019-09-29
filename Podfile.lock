@@ -13,31 +13,39 @@ PODS:
   - RxRelay (5.0.0):
     - RxSwift (~> 5)
   - RxSwift (5.0.0)
-  - SwiftLint (0.34.0)
-  - SwiftSoup (2.2.0)
+  - SwiftLint (0.35.0)
+  - SwiftSoup (2.2.1)
   - TartuWeatherProvider (0.5.2):
     - SwiftSoup (~> 2.2)
 
 DEPENDENCIES:
   - Charts
-  - Lightbox
+  - Lightbox (from `https://github.com/fassko/Lightbox`)
   - RxCocoa
   - RxSwift
   - SwiftLint
   - TartuWeatherProvider
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Cache
     - Charts
     - Imaginary
-    - Lightbox
     - RxCocoa
     - RxRelay
     - RxSwift
     - SwiftLint
     - SwiftSoup
     - TartuWeatherProvider
+
+EXTERNAL SOURCES:
+  Lightbox:
+    :git: https://github.com/fassko/Lightbox
+
+CHECKOUT OPTIONS:
+  Lightbox:
+    :commit: b2b00a26165ab9bc66c2a9adf7bef0cfc8249cd9
+    :git: https://github.com/fassko/Lightbox
 
 SPEC CHECKSUMS:
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
@@ -47,10 +55,10 @@ SPEC CHECKSUMS:
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
-  SwiftSoup: 230991361c5ba249d140161860a3864a28b63860
+  SwiftLint: 5553187048b900c91aa03552807681bb6b027846
+  SwiftSoup: a91d3c96ecb6f8f13005552ef60f9075aae4a7f3
   TartuWeatherProvider: 9661171a5c0eb720bb6d41232e4d3050ac8f6122
 
-PODFILE CHECKSUM: 9356fb8ecc5608b788d72490d5b5df760c9916e2
+PODFILE CHECKSUM: 00cd8c5cdd543a81bb3891220b2873d9f6d76f6d
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.1

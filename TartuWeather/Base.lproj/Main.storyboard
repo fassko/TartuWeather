@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="64C-mt-8Z3">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="64C-mt-8Z3">
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,19 +40,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7JP-8P-Vpv" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="80" width="375" height="649"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="83" width="375" height="646"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="TemperatureChart" label="TemperatureChart"/>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="6CQ-T7-Mxq">
-                                <rect key="frame" x="56.333333333333343" y="44" width="262.33333333333326" height="29"/>
+                                <rect key="frame" x="56.333333333333343" y="44" width="262.33333333333326" height="32"/>
                                 <segments>
                                     <segment title="Yesterday"/>
                                     <segment title="Today"/>
                                 </segments>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7JP-8P-Vpv" firstAttribute="bottom" secondItem="xZN-Cx-kly" secondAttribute="bottom" id="1xt-c2-365"/>
                             <constraint firstItem="6CQ-T7-Mxq" firstAttribute="top" secondItem="xZN-Cx-kly" secondAttribute="top" id="8YM-ee-kls">
@@ -85,6 +84,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="blue"/>
                     </tabBar>
                     <connections>
                         <segue destination="YGe-cB-Pur" kind="relationship" relationship="viewControllers" id="fti-5u-UYJ"/>
@@ -113,14 +113,12 @@
                                                 <rect key="frame" x="8" y="11.999999999999998" width="156" height="31.333333333333329"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="wind-label" label="Wind"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tO0-l8-TLO">
                                                 <rect key="frame" x="174" y="11.999999999999998" width="155.66666666666663" height="31.333333333333329"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="temp-label" label="Temperature"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -131,6 +129,7 @@
                                     </stackView>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sxj-Wl-5Ma">
                                         <rect key="frame" x="0.0" y="65" width="337.66666666666669" height="276.66666666666669"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="live-weather" label="Live weather">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -155,13 +154,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="337.66666666666669" height="17"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="measured-time-label" label="Measured Time"/>
                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
-                                                <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© University of Tartu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6F-2A-xHv">
                                                 <rect key="frame" x="0.0" y="22" width="337.66666666666669" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -169,7 +168,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="5Xg-C4-EIk" firstAttribute="centerX" secondItem="jLR-eB-Idc" secondAttribute="centerX" id="0rr-Pb-zMM"/>
                             <constraint firstItem="5Xg-C4-EIk" firstAttribute="centerX" secondItem="n7M-lU-v1W" secondAttribute="centerX" id="9tS-Dh-lFg"/>
@@ -218,5 +217,8 @@
     <resources>
         <image name="History" width="30" height="30"/>
         <image name="Today" width="30" height="30"/>
+        <namedColor name="blue">
+            <color red="0.20699726054798698" green="0.40584512390598931" blue="0.5904611317336862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

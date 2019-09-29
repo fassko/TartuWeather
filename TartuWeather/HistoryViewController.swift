@@ -41,8 +41,8 @@ class HistoryViewController: UIViewController {
         
         let line1 = LineChartDataSet(entries: chartData, label: "Temperature")
         line1.axisDependency = .left
-        line1.setColor(.black)
-        line1.setCircleColor(#colorLiteral(red: 0.175999999, green: 0.3449999988, blue: 0.4979999959, alpha: 1))
+        line1.setColor(Constants.chartLineColor)
+        line1.setCircleColor(Constants.blueColor)
         line1.lineWidth = 2
         line1.circleRadius = 3
         line1.mode = .horizontalBezier
@@ -63,9 +63,9 @@ class HistoryViewController: UIViewController {
     chartView.chartDescription?.enabled = false
     chartView.legend.enabled = false
     
-    let marker = BalloonMarker(color: #colorLiteral(red: 0.9919999838, green: 0.7450000048, blue: 0.1570000052, alpha: 1),
+    let marker = BalloonMarker(color: Constants.blueColor,
                                font: .systemFont(ofSize: 12),
-                               textColor: #colorLiteral(red: 0.175999999, green: 0.3449999988, blue: 0.4979999959, alpha: 1),
+                               textColor: Constants.blueColor,
                                insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
     marker.chartView = chartView
     marker.minimumSize = CGSize(width: 80, height: 40)
@@ -73,6 +73,7 @@ class HistoryViewController: UIViewController {
     
     let xAxis = chartView.xAxis
     xAxis.labelPosition = .topInside
+    xAxis.labelTextColor = Constants.chartLabelColor
     xAxis.labelFont = .systemFont(ofSize: 10, weight: .light)
     xAxis.drawAxisLineEnabled = false
     xAxis.drawGridLinesEnabled = true
@@ -89,6 +90,7 @@ class HistoryViewController: UIViewController {
     
     let leftAxis = chartView.leftAxis
     leftAxis.labelFont = .systemFont(ofSize: 10)
+    leftAxis.labelTextColor = Constants.chartLabelColor
     leftAxis.labelCount = 10
     leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: leftAxisFormatter)
     leftAxis.labelPosition = .outsideChart

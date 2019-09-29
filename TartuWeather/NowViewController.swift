@@ -116,8 +116,9 @@ class NowViewController: UIViewController {
    
   **/
   @IBAction func showImage(_ sender: UITapGestureRecognizer) {
-    guard let lightbox = lightboxController else { return }
-    present(lightbox, animated: true, completion: nil)
+    guard let lightboxController = lightboxController else { return }
+    lightboxController.modalPresentationStyle = .fullScreen
+    present(lightboxController, animated: true, completion: nil)
   }
   
   // MARK: - Additional methods
