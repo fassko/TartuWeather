@@ -4,19 +4,14 @@ target 'TartuWeather' do
   platform :ios, '11.0'
 
   pod 'TartuWeatherProvider'
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'Lightbox', :git => 'https://github.com/fassko/Lightbox'
-  pod 'Charts'
-  pod 'SwiftLint'
+  # pod 'Lightbox', :git => 'https://github.com/fassko/Lightbox'
+  # pod 'Charts', :git => 'https://github.com/danielgindi/Charts'
 end
 
 target 'TartuWeatherWidget' do
   platform :ios, '11.0'
 
   pod 'TartuWeatherProvider'
-  pod 'RxSwift'
-  pod 'RxCocoa'
 end
 
 target 'TemperatureIntents' do
@@ -29,8 +24,6 @@ target 'meteoTartuUnitTests' do
   platform :ios, '11.0'
 
   pod 'TartuWeatherProvider'
-  pod 'RxSwift'
-  pod 'RxCocoa'
 end
 
 target 'meteoTartuUITests' do
@@ -43,6 +36,4 @@ target 'WatchApp Extension' do
   platform :watchos, '3.0'
 
   pod 'TartuWeatherProvider'
-  pod 'RxSwift'
-  pod 'RxCocoa'
 end

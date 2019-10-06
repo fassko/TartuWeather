@@ -8,13 +8,9 @@
 
 import XCTest
 
-import RxSwift
-import RxCocoa
 import TartuWeatherProvider
 
 class MeteoTartuUnitTests: XCTestCase {
-
-  let disposeBag = DisposeBag()
 
   func testCurrentWeatherData() {
     let viewModel = TartuWeatherViewModel()
@@ -27,22 +23,22 @@ class MeteoTartuUnitTests: XCTestCase {
     
     let expectation = self.expectation(description: "currentData")
     
-    viewModel.smallImage.asObservable()
-      .skipWhile({
-        $0 == nil
-      })
-      .take(1)
-      .subscribe(onNext: { _ in
-        temperature = viewModel.temperature.value
-        wind = viewModel.wind.value
-        
-        measuredTime = viewModel.measuredTime.value
-        smallImage = viewModel.smallImage.value
-        largeImage = viewModel.largeImage.value
-        
-        expectation.fulfill()
-      })
-      .disposed(by: disposeBag)
+//    viewModel.smallImage.asObservable()
+//      .skipWhile({
+//        $0 == nil
+//      })
+//      .take(1)
+//      .subscribe(onNext: { _ in
+//        temperature = viewModel.temperature.value
+//        wind = viewModel.wind.value
+//
+//        measuredTime = viewModel.measuredTime.value
+//        smallImage = viewModel.smallImage.value
+//        largeImage = viewModel.largeImage.value
+//
+//        expectation.fulfill()
+//      })
+//      .disposed(by: disposeBag)
     
     waitForExpectations(timeout: 5, handler: nil)
     
@@ -69,14 +65,14 @@ class MeteoTartuUnitTests: XCTestCase {
     
     historyViewModel.updateChartData(type)
     
-    historyViewModel.chartData
-      .asObservable()
-      .skipWhile({ $0.isEmpty })
-      .subscribe(onNext: { data in
-        chartData = data
-        expectation.fulfill()
-      })
-      .disposed(by: disposeBag)
+//    historyViewModel.chartData
+//      .asObservable()
+//      .skipWhile({ $0.isEmpty })
+//      .subscribe(onNext: { data in
+//        chartData = data
+//        expectation.fulfill()
+//      })
+//      .disposed(by: disposeBag)
     
     waitForExpectations(timeout: 5, handler: nil)
     

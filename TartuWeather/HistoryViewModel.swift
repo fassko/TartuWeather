@@ -8,8 +8,6 @@
 
 import Foundation
 
-import RxSwift
-import RxCocoa
 import TartuWeatherProvider
 
 /// History screen viewModel
@@ -19,10 +17,10 @@ struct HistoryViewModel {
   typealias ChartDataItem = (x: Double, y: Double)
   
   /// Chart data
-  public var chartData = BehaviorRelay<[ChartDataItem]>(value: [])
+//  public var chartData = BehaviorRelay<[ChartDataItem]>(value: [])
   
   /// Dispose bag
-  fileprivate let disposeBag = DisposeBag()
+//  fileprivate let disposeBag = DisposeBag()
   
   /// Update chart data
   func updateChartData(_ dataType: QueryDataType) {
@@ -38,19 +36,19 @@ struct HistoryViewModel {
       - result: History data result
   */
   fileprivate func convertHistoryResult(result: TartuWeatherResult<[QueryData], TartuWeatherError>) {
-    switch result {
-    case let .success(value):
-      self.chartData.accept(value.compactMap {
-        guard let temperature = Double($0.temperature),
-          let date = $0.measuredDate?.timeIntervalSince1970 else {
-          return nil
-        }
-        
-        return ChartDataItem(date, temperature)
-      })
-      
-    case let .failure(error):
-      print("Can't get history data \(error)")
-    }
+//    switch result {
+//    case let .success(value):
+//      self.chartData.accept(value.compactMap {
+//        guard let temperature = Double($0.temperature),
+//          let date = $0.measuredDate?.timeIntervalSince1970 else {
+//          return nil
+//        }
+//        
+//        return ChartDataItem(date, temperature)
+//      })
+//      
+//    case let .failure(error):
+//      print("Can't get history data \(error)")
+//    }
   }
 }
