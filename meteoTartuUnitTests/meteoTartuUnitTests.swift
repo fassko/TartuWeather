@@ -63,7 +63,7 @@ class MeteoTartuUnitTests: XCTestCase {
     
     let expectation = self.expectation(description: type.rawValue)
     
-    historyViewModel.updateChartData(type)
+//    historyViewModel.updateChartData(type)
     
 //    historyViewModel.chartData
 //      .asObservable()
