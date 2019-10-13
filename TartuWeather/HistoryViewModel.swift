@@ -8,47 +8,34 @@
 
 import Foundation
 
+import Charts
 import TartuWeatherProvider
 
-/// History screen viewModel
 struct HistoryViewModel {
   
-  /// Chart data item
   typealias ChartDataItem = (x: Double, y: Double)
   
-  /// Chart data
-//  public var chartData = BehaviorRelay<[ChartDataItem]>(value: [])
-  
-  /// Dispose bag
-//  fileprivate let disposeBag = DisposeBag()
-  
-  /// Update chart data
-  func updateChartData(_ dataType: QueryDataType) {
-    TartuWeatherProvider.getArchiveData(dataType) {
-      self.convertHistoryResult(result: $0)
+  func getChartData(_ dataType: QueryDataType, _ completion: @escaping ([ChartDataItem]) -> Void) {
+    TartuWeatherProvider.getArchiveData(dataType) { result in
+      switch result {
+      case let .success(value):
+        var chartData = [ChartDataItem]()
+        chartData = value.compactMap {
+          guard let temperature = Double($0.temperature),
+            let date = $0.measuredDate?.timeIntervalSince1970 else {
+            return nil
+          }
+          
+          return ChartDataItem(date, temperature)
+        }
+        
+        if !chartData.isEmpty {
+          completion(chartData)
+        }
+        
+      case let .failure(error):
+        print("Can't get history data \(error)")
+      }
     }
-  }
-  
-  /**
-    Convert history data result
-   
-    - Parameters:
-      - result: History data result
-  */
-  fileprivate func convertHistoryResult(result: TartuWeatherResult<[QueryData], TartuWeatherError>) {
-//    switch result {
-//    case let .success(value):
-//      self.chartData.accept(value.compactMap {
-//        guard let temperature = Double($0.temperature),
-//          let date = $0.measuredDate?.timeIntervalSince1970 else {
-//          return nil
-//        }
-//        
-//        return ChartDataItem(date, temperature)
-//      })
-//      
-//    case let .failure(error):
-//      print("Can't get history data \(error)")
-//    }
   }
 }

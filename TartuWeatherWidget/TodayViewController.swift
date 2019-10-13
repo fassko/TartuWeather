@@ -9,7 +9,6 @@
 import UIKit
 import NotificationCenter
 
-
 class TodayViewController: UIViewController, NCWidgetProviding {
   
   /// Temperature label
@@ -26,11 +25,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Set up labels bindings
-//    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).disposed(by: disposeBag)
-//    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).disposed(by: disposeBag)
-//    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).disposed(by: disposeBag)
   }
 
   func widgetPerformUpdate(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
@@ -39,15 +33,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     // If an error is encountered, use NCUpdateResult.Failed
     // If there's no update required, use NCUpdateResult.NoData
     // If there's an update, use NCUpdateResult.NewData
-    
-//    tartuWeatherViewModel.updateWeather()
-//    
-//    tartuWeatherViewModel.temperature
-//      .asObservable()
-//      .subscribe(onNext: {_ in
-//        completionHandler(NCUpdateResult.newData)
-//      })
-//      .disposed(by: disposeBag)
   }
   
   @IBAction func openApp(_ sender: AnyObject) {

@@ -4,8 +4,6 @@ target 'TartuWeather' do
   platform :ios, '11.0'
 
   pod 'TartuWeatherProvider'
-  # pod 'Lightbox', :git => 'https://github.com/fassko/Lightbox'
-  # pod 'Charts', :git => 'https://github.com/danielgindi/Charts'
 end
 
 target 'TartuWeatherWidget' do
@@ -36,4 +34,14 @@ target 'WatchApp Extension' do
   platform :watchos, '3.0'
 
   pod 'TartuWeatherProvider'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    next unless target.name.start_with?('SwiftSoup')
+    target.build_configurations.each do |config|
+      next unless config.name.start_with?('Release')
+      config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Onone'
+    end
+  end
 end

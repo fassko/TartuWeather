@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 import Intents
 
-//import Lightbox
+import Lightbox
 
 class NowViewController: UIViewController {
 
@@ -35,11 +35,10 @@ class NowViewController: UIViewController {
   private var tartuWeatherViewModel = TartuWeatherViewModel()
   
   /// Live image
-//  var lightboxController: LightboxController?
+  var lightboxController: LightboxController?
   
   /// Pull to refresh control
   let refreshControl = UIRefreshControl()
-  
   
   private var timer: Timer?
   
@@ -49,8 +48,13 @@ class NowViewController: UIViewController {
     
     shareButton.isEnabled = false
     
-    NotificationCenter.default.addObserver(self, selector: #selector(update), name: NSNotification.Name.NSExtensionHostDidBecomeActive, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(update), name: NSNotification.Name.NSExtensionHostWillEnterForeground, object: nil)
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(update),
+                                           name: NSNotification.Name.NSExtensionHostDidBecomeActive, object: nil)
+    
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(update),
+                                           name: NSNotification.Name.NSExtensionHostWillEnterForeground, object: nil)
     
     timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) {[weak self] _ in
       self?.update()
@@ -102,9 +106,9 @@ class NowViewController: UIViewController {
    
   **/
   @IBAction func showImage(_ sender: UITapGestureRecognizer) {
-//    guard let lightboxController = lightboxController else { return }
-//    lightboxController.modalPresentationStyle = .fullScreen
-//    present(lightboxController, animated: true, completion: nil)
+    guard let lightboxController = lightboxController else { return }
+    lightboxController.modalPresentationStyle = .fullScreen
+    present(lightboxController, animated: true, completion: nil)
   }
   
   // MARK: - Additional methods
@@ -124,9 +128,9 @@ class NowViewController: UIViewController {
           guard let image = UIImage(data: data) else { return }
           self?.currentImage.image = image
         
-//          self?.lightboxController = LightboxController(images: [LightboxImage(image: image)])
-//          self?.lightboxController?.dynamicBackground = true
-//          self?.lightboxController?.pageDelegate = nil
+          self?.lightboxController = LightboxController(images: [LightboxImage(image: image)])
+          self?.lightboxController?.dynamicBackground = true
+          self?.lightboxController?.pageDelegate = nil
         }
       }
     }.resume()

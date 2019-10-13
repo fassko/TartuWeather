@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Cache",
+        "repositoryURL": "https://github.com/fassko/Cache",
+        "state": {
+          "branch": "master",
+          "revision": "fa7f1aadd88428d05ff3bfcf7096a10a3f888a18",
+          "version": null
+        }
+      },
+      {
+        "package": "Charts",
+        "repositoryURL": "https://github.com/danielgindi/Charts",
+        "state": {
+          "branch": null,
+          "revision": "dbf7fa2891270f88aeafc872ea0beddb344af94b",
+          "version": "3.4.0"
+        }
+      },
+      {
+        "package": "Imaginary",
+        "repositoryURL": "https://github.com/fassko/Imaginary",
+        "state": {
+          "branch": "master",
+          "revision": "2847cd255160dabf4317d08843ab6ed8d16f2a67",
+          "version": null
+        }
+      },
+      {
+        "package": "Lightbox",
+        "repositoryURL": "https://github.com/fassko/Lightbox.git",
+        "state": {
+          "branch": "master",
+          "revision": "b2b00a26165ab9bc66c2a9adf7bef0cfc8249cd9",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

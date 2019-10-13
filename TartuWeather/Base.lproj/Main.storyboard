@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="64C-mt-8Z3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="64C-mt-8Z3">
     <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +18,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="okf-LT-hAN">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.1764705926" green="0.34509804840000002" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" name="blue"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
@@ -39,7 +39,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7JP-8P-Vpv">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7JP-8P-Vpv" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="83" width="375" height="646"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="TemperatureChart" label="TemperatureChart"/>
@@ -50,6 +50,9 @@
                                     <segment title="Yesterday"/>
                                     <segment title="Today"/>
                                 </segments>
+                                <connections>
+                                    <action selector="historyTypeChanged:" destination="7oQ-2t-r5k" eventType="valueChanged" id="d6U-z9-bqS"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -68,7 +71,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="History" id="9Ha-uv-7PJ"/>
                     <connections>
-                        <outlet property="chartView" destination="7JP-8P-Vpv" id="Qiz-LV-g58"/>
+                        <outlet property="chartView" destination="7JP-8P-Vpv" id="Hbu-kh-BST"/>
                         <outlet property="dataTypeSegmentedControl" destination="6CQ-T7-Mxq" id="Zk4-02-BaU"/>
                     </connections>
                 </viewController>
@@ -218,7 +221,7 @@
         <image name="History" width="30" height="30"/>
         <image name="Today" width="30" height="30"/>
         <namedColor name="blue">
-            <color red="0.2070000022649765" green="0.40599998831748962" blue="0.5899999737739563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.13909984675021608" green="0.27973815482696357" blue="0.40676314001761116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

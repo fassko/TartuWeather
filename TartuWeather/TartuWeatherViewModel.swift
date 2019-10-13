@@ -19,25 +19,6 @@ struct WeatherData {
 }
 
 struct TartuWeatherViewModel {
-  
-//  /// Temperature
-//  public var temperature = BehaviorRelay<String?>(value: nil)
-//
-//  /// Wind
-//  public var wind = BehaviorRelay<String?>(value: nil)
-//
-//  /// Measured time
-//  public var measuredTime = BehaviorRelay<String?>(value: nil)
-//
-//  /// Live image large
-//  public var largeImage = BehaviorRelay<String?>(value: nil)
-//
-//  /// Live image small
-//  public var smallImage = BehaviorRelay<String?>(value: nil)
-  
-  /**
-    Update weather from API
-  */
   func getWeatherData(_ callback: @escaping (WeatherData) -> Void) {
   
     // Get weather data
