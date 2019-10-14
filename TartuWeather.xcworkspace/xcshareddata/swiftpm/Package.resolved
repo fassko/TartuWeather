@@ -29,6 +29,15 @@
         }
       },
       {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher",
+        "state": {
+          "branch": null,
+          "revision": "9c039c8d8d2aa349b326c1059702d9f1b83bdb82",
+          "version": "5.8.3"
+        }
+      },
+      {
         "package": "Lightbox",
         "repositoryURL": "https://github.com/fassko/Lightbox.git",
         "state": {
