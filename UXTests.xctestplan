@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "6C2DC6BF-39C6-4553-8481-E79E3AF94ED5",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:TartuWeather.xcodeproj",
+      "identifier" : "6348B1B71C4BF55300199EE5",
+      "name" : "TartuWeather"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:TartuWeather.xcodeproj",
+        "identifier" : "63330EB11DCF6FBF002194A3",
+        "name" : "meteoTartuUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:TartuWeather.xcodeproj",
+        "identifier" : "6329658B2041633700F81E83",
+        "name" : "meteoTartuUnitTests"
+      }
+    }
+  ],
+  "version" : 1
+}

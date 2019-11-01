@@ -199,6 +199,8 @@
 		6358F8142300888300755FDF /* wind@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wind@2x.png"; sourceTree = "<group>"; };
 		6358F8152300888300755FDF /* wind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wind.png; sourceTree = "<group>"; };
 		6359125623005187002A377A /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		6386C76C236CC09D000FC508 /* TartuWeather.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = TartuWeather.xctestplan; sourceTree = SOURCE_ROOT; };
+		6386C76D236CC0B0000FC508 /* UXTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = UXTests.xctestplan; sourceTree = SOURCE_ROOT; };
 		638F5EB62042C44F005CE4A5 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
 		638F5EB82042C6B7005CE4A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		638FFD3C234114D10079AA4B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -347,6 +349,8 @@
 		6348B1AF1C4BF55300199EE5 = {
 			isa = PBXGroup;
 			children = (
+				6386C76C236CC09D000FC508 /* TartuWeather.xctestplan */,
+				6386C76D236CC0B0000FC508 /* UXTests.xctestplan */,
 				6348B1BA1C4BF55300199EE5 /* TartuWeather */,
 				6348B1D51C4BF6AA00199EE5 /* TartuWeatherWidget */,
 				6329658D2041633700F81E83 /* meteoTartuUnitTests */,
@@ -1161,7 +1165,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.11.191101.2051;
+				CURRENT_PROJECT_VERSION = 1.11.191101.2127;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1221,7 +1225,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Kristaps Grinbergs (3SGNZQGS68)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kristaps Grinbergs (3SGNZQGS68)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.11.191101.2051;
+				CURRENT_PROJECT_VERSION = 1.11.191101.2127;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
