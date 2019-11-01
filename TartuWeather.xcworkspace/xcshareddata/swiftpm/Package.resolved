@@ -45,6 +45,24 @@
           "revision": "b2b00a26165ab9bc66c2a9adf7bef0cfc8249cd9",
           "version": null
         }
+      },
+      {
+        "package": "SwiftSoup",
+        "repositoryURL": "https://github.com/scinfu/SwiftSoup.git",
+        "state": {
+          "branch": null,
+          "revision": "11da8c685ddde2d519fad04a7daf8485bbbc773e",
+          "version": "1.7.5"
+        }
+      },
+      {
+        "package": "TartuWeatherProvider",
+        "repositoryURL": "https://github.com/fassko/TartuWeatherProvider",
+        "state": {
+          "branch": "master",
+          "revision": "315c3e0654adb8fff8e20f771311aa1ace74b4df",
+          "version": null
+        }
       }
     ]
   },

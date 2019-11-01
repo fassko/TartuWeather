@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00124065721674136C82FFB1 /* Pods_TartuWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADE16967764ED67964A811D /* Pods_TartuWeather.framework */; };
-		4A3BF93DB3E2A8E0DC852C6C /* Pods_WatchApp_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46013DEC69DD63D55FDDB5EF /* Pods_WatchApp_Extension.framework */; };
 		6302763C1E787CE000A922B8 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6348B1D31C4BF6AA00199EE5 /* NotificationCenter.framework */; };
 		6302763D1E787ED700A922B8 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6348B1D31C4BF6AA00199EE5 /* NotificationCenter.framework */; };
 		630541D223536F7F00D673E6 /* Lightbox in Frameworks */ = {isa = PBXBuildFile; productRef = 630541D123536F7F00D673E6 /* Lightbox */; };
@@ -19,11 +17,16 @@
 		6329658F2041633700F81E83 /* meteoTartuUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6329658E2041633700F81E83 /* meteoTartuUnitTests.swift */; };
 		63296596204165BB00F81E83 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632965862040AC4D00F81E83 /* HistoryViewModel.swift */; };
 		63296597204165C000F81E83 /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
+		632E9F70235648BD00361142 /* TartuWeatherProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 632E9F6F235648BD00361142 /* TartuWeatherProvider */; };
 		63330EB51DCF6FC0002194A3 /* meteoTartuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63330EB41DCF6FC0002194A3 /* meteoTartuUITests.swift */; };
 		633367DD1F6E78D8005AE02E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6348B1D81C4BF6AA00199EE5 /* MainInterface.storyboard */; };
 		6341EAC71EF07B8800C3E8EA /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
 		6341EACA1EF083C100C3E8EA /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
 		6341EACB1EF083C300C3E8EA /* TartuWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341EAC61EF07B8800C3E8EA /* TartuWeatherViewModel.swift */; };
+		634266782356493300700E2C /* TartuWeatherProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 634266772356493300700E2C /* TartuWeatherProvider */; };
+		6342667A2356493A00700E2C /* TartuWeatherProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 634266792356493A00700E2C /* TartuWeatherProvider */; };
+		6342667C2356494100700E2C /* TartuWeatherProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 6342667B2356494100700E2C /* TartuWeatherProvider */; };
+		6342667E2356494900700E2C /* TartuWeatherProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 6342667D2356494900700E2C /* TartuWeatherProvider */; };
 		6348B1BC1C4BF55300199EE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6348B1BB1C4BF55300199EE5 /* AppDelegate.swift */; };
 		6348B1C11C4BF55300199EE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6348B1BF1C4BF55300199EE5 /* Main.storyboard */; };
 		6348B1C31C4BF55300199EE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6348B1C21C4BF55300199EE5 /* Assets.xcassets */; };
@@ -58,10 +61,6 @@
 		63F54EB621BD62DA00A44EF5 /* TemperatureIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 63F54EAF21BD62DA00A44EF5 /* TemperatureIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		63F54EBA21BD62FC00A44EF5 /* SiriIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 63F54EA921BD52D700A44EF5 /* SiriIntents.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
 		63F54EBD21BD74FD00A44EF5 /* NowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F54EBC21BD74FD00A44EF5 /* NowViewController.swift */; };
-		82ABCB1581A749119EC73A82 /* Pods_TemperatureIntents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC7FB2AA6E693968CC660BC /* Pods_TemperatureIntents.framework */; };
-		9E6558EE96D3548A08344ED1 /* Pods_meteoTartuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242186C8E9332A4E910FA9F7 /* Pods_meteoTartuUITests.framework */; };
-		A872396366D4986C48D34F07 /* Pods_TartuWeatherWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB5E978F34FA69342E6D75B /* Pods_TartuWeatherWidget.framework */; };
-		DC36EA939CE978A2A079712F /* Pods_meteoTartuUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 670D3874B6F0015F4DE4A9C5 /* Pods_meteoTartuUnitTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,13 +164,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		02C65037D4CBC3430FABD890 /* Pods-meteoTartuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meteoTartuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-meteoTartuUITests/Pods-meteoTartuUITests.release.xcconfig"; sourceTree = "<group>"; };
-		1282C705BC487B2A6C4D250D /* Pods-TartuWeatherWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TartuWeatherWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TartuWeatherWidget/Pods-TartuWeatherWidget.release.xcconfig"; sourceTree = "<group>"; };
-		242186C8E9332A4E910FA9F7 /* Pods_meteoTartuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meteoTartuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FB5E978F34FA69342E6D75B /* Pods_TartuWeatherWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TartuWeatherWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		43D0E7A0297D05BCF1793DAE /* Pods-TartuWeatherWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TartuWeatherWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TartuWeatherWidget/Pods-TartuWeatherWidget.debug.xcconfig"; sourceTree = "<group>"; };
-		46013DEC69DD63D55FDDB5EF /* Pods_WatchApp_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatchApp_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E6AFCD1A8E5397053E6BCC8 /* Pods-meteoTartuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meteoTartuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meteoTartuUITests/Pods-meteoTartuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6329371F203F57CD00B83743 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		63293723203F6D8D00B83743 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		632965862040AC4D00F81E83 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
@@ -226,17 +218,6 @@
 		63F54EB321BD62DA00A44EF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63F54EBB21BD67D700A44EF5 /* TemperatureIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TemperatureIntents.entitlements; sourceTree = "<group>"; };
 		63F54EBC21BD74FD00A44EF5 /* NowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowViewController.swift; sourceTree = "<group>"; };
-		670D3874B6F0015F4DE4A9C5 /* Pods_meteoTartuUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meteoTartuUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7BE41FE55522524F1DCEFA4D /* Pods-meteoTartuUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meteoTartuUnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-meteoTartuUnitTests/Pods-meteoTartuUnitTests.release.xcconfig"; sourceTree = "<group>"; };
-		895F5E6BA939F2EDF0A21F70 /* Pods-TemperatureIntents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureIntents.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemperatureIntents/Pods-TemperatureIntents.release.xcconfig"; sourceTree = "<group>"; };
-		8E9FC9064FEC8D0E2AB89EAD /* Pods-TemperatureIntents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureIntents.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TemperatureIntents/Pods-TemperatureIntents.debug.xcconfig"; sourceTree = "<group>"; };
-		A3ABDA9AEC5AA00D36D4E6AD /* Pods-WatchApp Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchApp Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatchApp Extension/Pods-WatchApp Extension.release.xcconfig"; sourceTree = "<group>"; };
-		BCDF5EABC687CD3E54E0AE34 /* Pods-TartuWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TartuWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-TartuWeather/Pods-TartuWeather.release.xcconfig"; sourceTree = "<group>"; };
-		C86292C2FDEB848B1A590E00 /* Pods-meteoTartuUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meteoTartuUnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meteoTartuUnitTests/Pods-meteoTartuUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D1C5BD9231F7CA3A2C872582 /* Pods-WatchApp Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchApp Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatchApp Extension/Pods-WatchApp Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		D4107322334447F608ECFD12 /* Pods-TartuWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TartuWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TartuWeather/Pods-TartuWeather.debug.xcconfig"; sourceTree = "<group>"; };
-		DCC7FB2AA6E693968CC660BC /* Pods_TemperatureIntents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TemperatureIntents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EADE16967764ED67964A811D /* Pods_TartuWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TartuWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,7 +225,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC36EA939CE978A2A079712F /* Pods_meteoTartuUnitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +232,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E6558EE96D3548A08344ED1 /* Pods_meteoTartuUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6302763C1E787CE000A922B8 /* NotificationCenter.framework in Frameworks */,
-				00124065721674136C82FFB1 /* Pods_TartuWeather.framework in Frameworks */,
+				632E9F70235648BD00361142 /* TartuWeatherProvider in Frameworks */,
 				630541D223536F7F00D673E6 /* Lightbox in Frameworks */,
 				630541D5235378BC00D673E6 /* Charts in Frameworks */,
 				637A05672354E60200BBDEBA /* Kingfisher in Frameworks */,
@@ -273,7 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6302763D1E787ED700A922B8 /* NotificationCenter.framework in Frameworks */,
-				A872396366D4986C48D34F07 /* Pods_TartuWeatherWidget.framework in Frameworks */,
+				6342667C2356494100700E2C /* TartuWeatherProvider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				637A05692354E61500BBDEBA /* Kingfisher in Frameworks */,
-				4A3BF93DB3E2A8E0DC852C6C /* Pods_WatchApp_Extension.framework in Frameworks */,
+				6342667E2356494900700E2C /* TartuWeatherProvider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +269,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6342667A2356493A00700E2C /* TartuWeatherProvider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +277,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82ABCB1581A749119EC73A82 /* Pods_TemperatureIntents.framework in Frameworks */,
+				634266782356493300700E2C /* TartuWeatherProvider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +357,6 @@
 				63F54EB021BD62DA00A44EF5 /* TemperatureIntents */,
 				6348B1D21C4BF6AA00199EE5 /* Frameworks */,
 				6348B1B91C4BF55300199EE5 /* Products */,
-				676DEBDDB497052419B850F6 /* Pods */,
 				63F54E8121BD4BD600A44EF5 /* Recovered References */,
 			);
 			sourceTree = "<group>";
@@ -415,13 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				6348B1D31C4BF6AA00199EE5 /* NotificationCenter.framework */,
-				EADE16967764ED67964A811D /* Pods_TartuWeather.framework */,
-				3FB5E978F34FA69342E6D75B /* Pods_TartuWeatherWidget.framework */,
-				46013DEC69DD63D55FDDB5EF /* Pods_WatchApp_Extension.framework */,
-				242186C8E9332A4E910FA9F7 /* Pods_meteoTartuUITests.framework */,
-				670D3874B6F0015F4DE4A9C5 /* Pods_meteoTartuUnitTests.framework */,
 				63F54E9321BD514800A44EF5 /* IntentsUI.framework */,
-				DCC7FB2AA6E693968CC660BC /* Pods_TemperatureIntents.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -514,25 +487,6 @@
 			path = TemperatureIntents;
 			sourceTree = "<group>";
 		};
-		676DEBDDB497052419B850F6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D4107322334447F608ECFD12 /* Pods-TartuWeather.debug.xcconfig */,
-				BCDF5EABC687CD3E54E0AE34 /* Pods-TartuWeather.release.xcconfig */,
-				43D0E7A0297D05BCF1793DAE /* Pods-TartuWeatherWidget.debug.xcconfig */,
-				1282C705BC487B2A6C4D250D /* Pods-TartuWeatherWidget.release.xcconfig */,
-				D1C5BD9231F7CA3A2C872582 /* Pods-WatchApp Extension.debug.xcconfig */,
-				A3ABDA9AEC5AA00D36D4E6AD /* Pods-WatchApp Extension.release.xcconfig */,
-				5E6AFCD1A8E5397053E6BCC8 /* Pods-meteoTartuUITests.debug.xcconfig */,
-				02C65037D4CBC3430FABD890 /* Pods-meteoTartuUITests.release.xcconfig */,
-				C86292C2FDEB848B1A590E00 /* Pods-meteoTartuUnitTests.debug.xcconfig */,
-				7BE41FE55522524F1DCEFA4D /* Pods-meteoTartuUnitTests.release.xcconfig */,
-				8E9FC9064FEC8D0E2AB89EAD /* Pods-TemperatureIntents.debug.xcconfig */,
-				895F5E6BA939F2EDF0A21F70 /* Pods-TemperatureIntents.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -540,11 +494,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 632965952041633700F81E83 /* Build configuration list for PBXNativeTarget "meteoTartuUnitTests" */;
 			buildPhases = (
-				B3AE90E34CE9DC1ED2CDED07 /* [CP] Check Pods Manifest.lock */,
 				632965882041633700F81E83 /* Sources */,
 				632965892041633700F81E83 /* Frameworks */,
 				6329658A2041633700F81E83 /* Resources */,
-				BAB4C20D0D8C94584627FCD9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -560,11 +512,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63330EBB1DCF6FC0002194A3 /* Build configuration list for PBXNativeTarget "meteoTartuUITests" */;
 			buildPhases = (
-				C52BE6966819453BCB1B64A0 /* [CP] Check Pods Manifest.lock */,
 				63330EAE1DCF6FBF002194A3 /* Sources */,
 				63330EAF1DCF6FBF002194A3 /* Frameworks */,
 				63330EB01DCF6FBF002194A3 /* Resources */,
-				7B37385154DA554D663F1778 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -580,7 +530,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6348B1CA1C4BF55300199EE5 /* Build configuration list for PBXNativeTarget "TartuWeather" */;
 			buildPhases = (
-				F34298B09FB9505E7073D0CE /* [CP] Check Pods Manifest.lock */,
 				6348B1B41C4BF55300199EE5 /* Sources */,
 				6348B1B51C4BF55300199EE5 /* Frameworks */,
 				6348B1B61C4BF55300199EE5 /* Resources */,
@@ -588,7 +537,6 @@
 				6348B1E61C4BF6C100199EE5 /* Embed Frameworks */,
 				635860D01E4767D6006E394D /* Embed Watch Content */,
 				63296599204175A500F81E83 /* Swiftlint */,
-				C0390F17D348602F38B9009B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -603,6 +551,7 @@
 				630541D123536F7F00D673E6 /* Lightbox */,
 				630541D4235378BC00D673E6 /* Charts */,
 				637A05662354E60200BBDEBA /* Kingfisher */,
+				632E9F6F235648BD00361142 /* TartuWeatherProvider */,
 			);
 			productName = TartuWeather;
 			productReference = 6348B1B81C4BF55300199EE5 /* TartuWeather.app */;
@@ -612,7 +561,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6348B1E11C4BF6AA00199EE5 /* Build configuration list for PBXNativeTarget "TartuWeatherWidget" */;
 			buildPhases = (
-				9A36F5C8F553885A2C769F26 /* [CP] Check Pods Manifest.lock */,
 				6348B1CD1C4BF6AA00199EE5 /* Sources */,
 				6348B1CE1C4BF6AA00199EE5 /* Frameworks */,
 				6348B1CF1C4BF6AA00199EE5 /* Resources */,
@@ -622,6 +570,9 @@
 			dependencies = (
 			);
 			name = TartuWeatherWidget;
+			packageProductDependencies = (
+				6342667B2356494100700E2C /* TartuWeatherProvider */,
+			);
 			productName = TartuWeatherWidget;
 			productReference = 6348B1D11C4BF6AA00199EE5 /* TartuWeatherWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -648,11 +599,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 635860CD1E4767D6006E394D /* Build configuration list for PBXNativeTarget "WatchApp Extension" */;
 			buildPhases = (
-				B6093A8D5C2D40A3F2BB7AEA /* [CP] Check Pods Manifest.lock */,
 				635860B21E4767D6006E394D /* Sources */,
 				635860B31E4767D6006E394D /* Frameworks */,
 				635860B41E4767D6006E394D /* Resources */,
-				E14F41356840C8970EC06DFA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -661,6 +610,7 @@
 			name = "WatchApp Extension";
 			packageProductDependencies = (
 				637A05682354E61500BBDEBA /* Kingfisher */,
+				6342667D2356494900700E2C /* TartuWeatherProvider */,
 			);
 			productName = "WatchApp Extension";
 			productReference = 635860B61E4767D6006E394D /* WatchApp Extension.appex */;
@@ -679,6 +629,9 @@
 			dependencies = (
 			);
 			name = TartuWeatherShareExtension;
+			packageProductDependencies = (
+				634266792356493A00700E2C /* TartuWeatherProvider */,
+			);
 			productName = TartuWeatherShareExtension;
 			productReference = 63A8D3F61F6EF37D007480CC /* TartuWeatherShareExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -687,7 +640,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63F54EB721BD62DA00A44EF5 /* Build configuration list for PBXNativeTarget "TemperatureIntents" */;
 			buildPhases = (
-				5BB847CCBE6F9256A8FE6E0D /* [CP] Check Pods Manifest.lock */,
 				63F54EAB21BD62DA00A44EF5 /* Sources */,
 				63F54EAC21BD62DA00A44EF5 /* Frameworks */,
 				63F54EAD21BD62DA00A44EF5 /* Resources */,
@@ -697,6 +649,9 @@
 			dependencies = (
 			);
 			name = TemperatureIntents;
+			packageProductDependencies = (
+				634266772356493300700E2C /* TartuWeatherProvider */,
+			);
 			productName = TemperatureIntents;
 			productReference = 63F54EAF21BD62DA00A44EF5 /* TemperatureIntents.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -787,6 +742,7 @@
 				630541D023536F7F00D673E6 /* XCRemoteSwiftPackageReference "Lightbox" */,
 				630541D3235378BC00D673E6 /* XCRemoteSwiftPackageReference "Charts" */,
 				637A05652354E60200BBDEBA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				632E9F6E235648BD00361142 /* XCRemoteSwiftPackageReference "TartuWeatherProvider" */,
 			);
 			productRefGroup = 6348B1B91C4BF55300199EE5 /* Products */;
 			projectDirPath = "";
@@ -879,28 +835,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5BB847CCBE6F9256A8FE6E0D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TemperatureIntents-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		63296599204175A500F81E83 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -914,164 +848,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which \"swiftlint\" >/dev/null; then\n  \"swiftlint\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		7B37385154DA554D663F1778 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-meteoTartuUITests/Pods-meteoTartuUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-meteoTartuUITests/Pods-meteoTartuUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-meteoTartuUITests/Pods-meteoTartuUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9A36F5C8F553885A2C769F26 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TartuWeatherWidget-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B3AE90E34CE9DC1ED2CDED07 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-meteoTartuUnitTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B6093A8D5C2D40A3F2BB7AEA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WatchApp Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BAB4C20D0D8C94584627FCD9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-meteoTartuUnitTests/Pods-meteoTartuUnitTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-meteoTartuUnitTests/Pods-meteoTartuUnitTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-meteoTartuUnitTests/Pods-meteoTartuUnitTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C0390F17D348602F38B9009B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TartuWeather/Pods-TartuWeather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TartuWeather/Pods-TartuWeather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TartuWeather/Pods-TartuWeather-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C52BE6966819453BCB1B64A0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-meteoTartuUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E14F41356840C8970EC06DFA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WatchApp Extension/Pods-WatchApp Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WatchApp Extension/Pods-WatchApp Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WatchApp Extension/Pods-WatchApp Extension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F34298B09FB9505E7073D0CE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TartuWeather-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1226,7 +1002,6 @@
 /* Begin XCBuildConfiguration section */
 		632965932041633700F81E83 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C86292C2FDEB848B1A590E00 /* Pods-meteoTartuUnitTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1265,7 +1040,6 @@
 		};
 		632965942041633700F81E83 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BE41FE55522524F1DCEFA4D /* Pods-meteoTartuUnitTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1306,7 +1080,6 @@
 		};
 		63330EB91DCF6FC0002194A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E6AFCD1A8E5397053E6BCC8 /* Pods-meteoTartuUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1332,7 +1105,6 @@
 		};
 		63330EBA1DCF6FC0002194A3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02C65037D4CBC3430FABD890 /* Pods-meteoTartuUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1389,7 +1161,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.11.191013.1832;
+				CURRENT_PROJECT_VERSION = 1.11.191101.2051;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1449,7 +1221,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Kristaps Grinbergs (3SGNZQGS68)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kristaps Grinbergs (3SGNZQGS68)";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.11.191013.1832;
+				CURRENT_PROJECT_VERSION = 1.11.191101.2051;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1473,7 +1245,6 @@
 		};
 		6348B1CB1C4BF55300199EE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4107322334447F608ECFD12 /* Pods-TartuWeather.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1503,7 +1274,6 @@
 		};
 		6348B1CC1C4BF55300199EE5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCDF5EABC687CD3E54E0AE34 /* Pods-TartuWeather.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1532,7 +1302,6 @@
 		};
 		6348B1DF1C4BF6AA00199EE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43D0E7A0297D05BCF1793DAE /* Pods-TartuWeatherWidget.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1558,7 +1327,6 @@
 		};
 		6348B1E01C4BF6AA00199EE5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1282C705BC487B2A6C4D250D /* Pods-TartuWeatherWidget.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -1640,7 +1408,6 @@
 		};
 		635860CB1E4767D6006E394D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1C5BD9231F7CA3A2C872582 /* Pods-WatchApp Extension.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = "";
@@ -1671,7 +1438,6 @@
 		};
 		635860CC1E4767D6006E394D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3ABDA9AEC5AA00D36D4E6AD /* Pods-WatchApp Extension.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = "";
@@ -1784,7 +1550,6 @@
 		};
 		63F54EB821BD62DA00A44EF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E9FC9064FEC8D0E2AB89EAD /* Pods-TemperatureIntents.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1822,7 +1587,6 @@
 		};
 		63F54EB921BD62DA00A44EF5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 895F5E6BA939F2EDF0A21F70 /* Pods-TemperatureIntents.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1959,6 +1723,14 @@
 				minimumVersion = 3.4.0;
 			};
 		};
+		632E9F6E235648BD00361142 /* XCRemoteSwiftPackageReference "TartuWeatherProvider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fassko/TartuWeatherProvider";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		637A05652354E60200BBDEBA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -1979,6 +1751,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 630541D3235378BC00D673E6 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
+		};
+		632E9F6F235648BD00361142 /* TartuWeatherProvider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 632E9F6E235648BD00361142 /* XCRemoteSwiftPackageReference "TartuWeatherProvider" */;
+			productName = TartuWeatherProvider;
+		};
+		634266772356493300700E2C /* TartuWeatherProvider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 632E9F6E235648BD00361142 /* XCRemoteSwiftPackageReference "TartuWeatherProvider" */;
+			productName = TartuWeatherProvider;
+		};
+		634266792356493A00700E2C /* TartuWeatherProvider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 632E9F6E235648BD00361142 /* XCRemoteSwiftPackageReference "TartuWeatherProvider" */;
+			productName = TartuWeatherProvider;
+		};
+		6342667B2356494100700E2C /* TartuWeatherProvider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 632E9F6E235648BD00361142 /* XCRemoteSwiftPackageReference "TartuWeatherProvider" */;
+			productName = TartuWeatherProvider;
+		};
+		6342667D2356494900700E2C /* TartuWeatherProvider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 632E9F6E235648BD00361142 /* XCRemoteSwiftPackageReference "TartuWeatherProvider" */;
+			productName = TartuWeatherProvider;
 		};
 		637A05662354E60200BBDEBA /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

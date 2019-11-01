@@ -1,20 +1,23 @@
 PODS:
   - SwiftSoup (2.2.1)
-  - TartuWeatherProvider (0.5.2):
+  - TartuWeatherProvider (0.6.0):
     - SwiftSoup (~> 2.2)
 
 DEPENDENCIES:
-  - TartuWeatherProvider
+  - TartuWeatherProvider (from `/Users/kristaps/Documents/ios/TartuWeatherProvider`)
 
 SPEC REPOS:
   trunk:
     - SwiftSoup
-    - TartuWeatherProvider
+
+EXTERNAL SOURCES:
+  TartuWeatherProvider:
+    :path: "/Users/kristaps/Documents/ios/TartuWeatherProvider"
 
 SPEC CHECKSUMS:
   SwiftSoup: a91d3c96ecb6f8f13005552ef60f9075aae4a7f3
-  TartuWeatherProvider: 9661171a5c0eb720bb6d41232e4d3050ac8f6122
+  TartuWeatherProvider: 49898ca4895fb8b33367732ad3909c9692339416
 
-PODFILE CHECKSUM: fb2a2f1206d7b13afba15ac129eb9244514c5578
+PODFILE CHECKSUM: 77d127b584bc93a1ed5624eef757d018e4758606
 
 COCOAPODS: 1.8.3
