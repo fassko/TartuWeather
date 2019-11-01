@@ -9,9 +9,6 @@
 import UIKit
 import NotificationCenter
 
-import RxSwift
-import RxCocoa
-
 class TodayViewController: UIViewController, NCWidgetProviding {
   
   /// Temperature label
@@ -26,32 +23,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   /// View model
   private var tartuWeatherViewModel: TartuWeatherViewModel = TartuWeatherViewModel()
   
-  private let disposeBag = DisposeBag()
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Set up labels bindings
-    tartuWeatherViewModel.temperature.asObservable().bind(to: temperatureLabel.rx.text).disposed(by: disposeBag)
-    tartuWeatherViewModel.wind.asObservable().bind(to: windLabel.rx.text).disposed(by: disposeBag)
-    tartuWeatherViewModel.measuredTime.asObservable().bind(to: measuredTimeLabel.rx.text).disposed(by: disposeBag)
   }
 
   func widgetPerformUpdate(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
-    // Perform any setup necessary in order to update the view.
-
-    // If an error is encountered, use NCUpdateResult.Failed
-    // If there's no update required, use NCUpdateResult.NoData
-    // If there's an update, use NCUpdateResult.NewData
+    tartuWeatherViewModel.getWeatherData {[weak self] in
+      self?.temperatureLabel.text = $0.temperature
+      self?.windLabel.text = $0.wind
+      self?.measuredTimeLabel.text = $0.measuredTime
+      completionHandler(.newData)
+    }
     
-    tartuWeatherViewModel.updateWeather()
-    
-    tartuWeatherViewModel.temperature
-      .asObservable()
-      .subscribe(onNext: {_ in
-        completionHandler(NCUpdateResult.newData)
-      })
-      .disposed(by: disposeBag)
   }
   
   @IBAction func openApp(_ sender: AnyObject) {

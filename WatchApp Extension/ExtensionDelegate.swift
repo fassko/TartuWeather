@@ -14,16 +14,16 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     for task in backgroundTasks {
       switch task {
       case let backgroundTask as WKApplicationRefreshBackgroundTask:
-        backgroundTask.setTaskCompleted()
+        backgroundTask.setTaskCompletedWithSnapshot(true)
       case let snapshotTask as WKSnapshotRefreshBackgroundTask:
         snapshotTask.setTaskCompleted(restoredDefaultState: true,
                                       estimatedSnapshotExpiration: Date.distantFuture, userInfo: nil)
       case let connectivityTask as WKWatchConnectivityRefreshBackgroundTask:
-        connectivityTask.setTaskCompleted()
+        connectivityTask.setTaskCompletedWithSnapshot(true)
       case let urlSessionTask as WKURLSessionRefreshBackgroundTask:
-        urlSessionTask.setTaskCompleted()
+        urlSessionTask.setTaskCompletedWithSnapshot(true)
       default:
-        task.setTaskCompleted()
+        task.setTaskCompletedWithSnapshot(true)
       }
     }
   }

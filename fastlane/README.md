@@ -21,21 +21,6 @@ or alternatively using `brew cask install fastlane`
 fastlane ios certificates
 ```
 Certs
-### ios ci_build
-```
-fastlane ios ci_build
-```
-CI build
-### ios circleci
-```
-fastlane ios circleci
-```
-Circle CI lane
-### ios travis
-```
-fastlane ios travis
-```
-Travis lane
 ### ios build
 ```
 fastlane ios build

@@ -8,49 +8,26 @@
 
 import XCTest
 
-import RxSwift
-import RxCocoa
 import TartuWeatherProvider
 
 class MeteoTartuUnitTests: XCTestCase {
 
-  let disposeBag = DisposeBag()
-
   func testCurrentWeatherData() {
     let viewModel = TartuWeatherViewModel()
-
-    var temperature: String?
-    var wind: String?
-    var measuredTime: String?
-    var smallImage: String?
-    var largeImage: String?
     
     let expectation = self.expectation(description: "currentData")
     
-    viewModel.smallImage.asObservable()
-      .skipWhile({
-        $0 == nil
-      })
-      .take(1)
-      .subscribe(onNext: { _ in
-        temperature = viewModel.temperature.value
-        wind = viewModel.wind.value
-        
-        measuredTime = viewModel.measuredTime.value
-        smallImage = viewModel.smallImage.value
-        largeImage = viewModel.largeImage.value
-        
-        expectation.fulfill()
-      })
-      .disposed(by: disposeBag)
+    viewModel.getWeatherData { weatherData in
+      XCTAssertNotNil(weatherData.temperature)
+      XCTAssertNotNil(weatherData.wind)
+      XCTAssertNotNil(weatherData.measuredTime)
+      XCTAssertNotNil(weatherData.smallImage)
+      XCTAssertNotNil(weatherData.largeImage)
+      
+      expectation.fulfill()
+    }
     
     waitForExpectations(timeout: 5, handler: nil)
-    
-    XCTAssertNotNil(temperature)
-    XCTAssertNotNil(wind)
-    XCTAssertNotNil(measuredTime)
-    XCTAssertNotNil(smallImage)
-    XCTAssertNotNil(largeImage)
   }
   
   func testHistoryToday() {
@@ -63,31 +40,22 @@ class MeteoTartuUnitTests: XCTestCase {
   
   func runTestWithHistoryType(_ type: QueryDataType) {
     let historyViewModel = HistoryViewModel()
-    var chartData: [HistoryViewModel.ChartDataItem]?
     
     let expectation = self.expectation(description: type.rawValue)
     
-    historyViewModel.updateChartData(type)
-    
-    historyViewModel.chartData
-      .asObservable()
-      .skipWhile({ $0.isEmpty })
-      .subscribe(onNext: { data in
-        chartData = data
-        expectation.fulfill()
-      })
-      .disposed(by: disposeBag)
-    
-    waitForExpectations(timeout: 5, handler: nil)
-    
-    XCTAssertNotNil(chartData)
-    
-    guard let firstItem = chartData?.first else {
-      XCTFail("Failed to get first history item")
-      return
+    historyViewModel.getChartData(type) { chartData in
+      XCTAssertNotNil(chartData)
+      
+      guard let firstItem = chartData.first else {
+        XCTFail("Failed to get first history item")
+        return
+      }
+      
+      XCTAssertNotNil(firstItem)
+      
+      expectation.fulfill()
     }
-    
-    XCTAssertNotNil(firstItem)
+    waitForExpectations(timeout: 5, handler: nil)
   }
     
 }

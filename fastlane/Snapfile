@@ -3,8 +3,8 @@ devices([
   "iPhone 5s",
   "iPhone 8",
   "iPhone 8 Plus",
-  "iPhone Xs",
-  "iPhone Xs Max"
+  "iPhone 11 Pro",
+  "iPhone 11 Pro Max"
 ])
 
 languages([

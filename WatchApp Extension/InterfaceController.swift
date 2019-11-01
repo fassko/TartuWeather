@@ -9,8 +9,7 @@
 import WatchKit
 import Foundation
 
-import RxSwift
-import RxCocoa
+import Kingfisher
 
 class InterfaceController: WKInterfaceController {
   
@@ -29,8 +28,6 @@ class InterfaceController: WKInterfaceController {
   /// View model
   private var tartuWeatherViewModel = TartuWeatherViewModel()
   
-  private let disposeBag = DisposeBag()
-  
   private var timer: Timer?
 
   override func awake(withContext context: Any?) {
@@ -39,67 +36,25 @@ class InterfaceController: WKInterfaceController {
     // Configure interface objects here.
   }
   
+  fileprivate func updateData() {
+    tartuWeatherViewModel.getWeatherData {[weak self] weatherData in
+      self?.tempLabel.setText(weatherData.temperature)
+      self?.windLabel.setText(weatherData.wind)
+      self?.measuredLabel.setText(weatherData.measuredTime)
+      
+      let url = URL(string: weatherData.smallImage)!
+      self?.currentImage.kf.setImage(with: url, options: [.forceRefresh])
+    }
+  }
+  
   override func willActivate() {
     // This method is called when watch view controller is about to be visible to user
     super.willActivate()
     
-    // Set up labels bindings
-    tartuWeatherViewModel.temperature
-      .asObservable()
-      .subscribe(onNext: {temp in
-        self.tempLabel.setText(temp)
-      })
-      .disposed(by: disposeBag)
-    
-    tartuWeatherViewModel.wind
-      .asObservable()
-      .subscribe(onNext: {wind in
-        self.windLabel.setText(wind)
-      })
-      .disposed(by: disposeBag)
-    
-    tartuWeatherViewModel.measuredTime
-      .asObservable()
-      .subscribe(onNext: {time in
-        self.measuredLabel.setText(time)
-      })
-      .disposed(by: disposeBag)
-    
-    // Set up live image binding
-    tartuWeatherViewModel.smallImage
-      .asObservable()
-      .flatMap({ $0.map { Observable.just($0) } ?? Observable.empty()  })
-      .flatMap({ imageURL in
-        Observable<UIImage?>.create({ observer in
-          
-          let request = URLRequest(url: URL(string: imageURL)!,
-                                   cachePolicy: .reloadIgnoringLocalCacheData,
-                                   timeoutInterval: 60.0)
-          
-          URLSession.shared.dataTask(with: request) { data, _, error in
-            DispatchQueue.main.async {
-              if let error = error {
-                observer.onError(error)
-              } else if let data = data {
-                let image = UIImage(data: data)
-                observer.onNext(image)
-              }
-              observer.onCompleted()
-            }
-          }.resume()
-  
-          return Disposables.create()
-        })
-      })
-      .subscribe(onNext: { image in
-        self.currentImage.setImage(image)
-      })
-      .disposed(by: disposeBag)
-    
-    tartuWeatherViewModel.updateWeather()
+    updateData()
     
     timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) {[weak self] _ in
-      self?.tartuWeatherViewModel.updateWeather()
+      self?.updateData()
     }
   }
   
@@ -124,7 +79,7 @@ class InterfaceController: WKInterfaceController {
   **/
   fileprivate func reload() {
     WKInterfaceDevice().play(.notification)
-    tartuWeatherViewModel.updateWeather()
+    updateData()
   }
   
 }

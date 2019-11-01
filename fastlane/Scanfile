@@ -1,0 +1,4 @@
+workspace("TartuWeather.xcworkspace")
+scheme("TartuWeather")
+clean(true)
+device("iPhone 11 Pro")

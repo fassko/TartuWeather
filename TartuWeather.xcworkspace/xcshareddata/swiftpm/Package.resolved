@@ -1,0 +1,70 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Cache",
+        "repositoryURL": "https://github.com/fassko/Cache",
+        "state": {
+          "branch": "master",
+          "revision": "fa7f1aadd88428d05ff3bfcf7096a10a3f888a18",
+          "version": null
+        }
+      },
+      {
+        "package": "Charts",
+        "repositoryURL": "https://github.com/danielgindi/Charts",
+        "state": {
+          "branch": null,
+          "revision": "dbf7fa2891270f88aeafc872ea0beddb344af94b",
+          "version": "3.4.0"
+        }
+      },
+      {
+        "package": "Imaginary",
+        "repositoryURL": "https://github.com/fassko/Imaginary",
+        "state": {
+          "branch": "master",
+          "revision": "2847cd255160dabf4317d08843ab6ed8d16f2a67",
+          "version": null
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher",
+        "state": {
+          "branch": null,
+          "revision": "9c039c8d8d2aa349b326c1059702d9f1b83bdb82",
+          "version": "5.8.3"
+        }
+      },
+      {
+        "package": "Lightbox",
+        "repositoryURL": "https://github.com/fassko/Lightbox.git",
+        "state": {
+          "branch": "master",
+          "revision": "b2b00a26165ab9bc66c2a9adf7bef0cfc8249cd9",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftSoup",
+        "repositoryURL": "https://github.com/scinfu/SwiftSoup.git",
+        "state": {
+          "branch": null,
+          "revision": "11da8c685ddde2d519fad04a7daf8485bbbc773e",
+          "version": "1.7.5"
+        }
+      },
+      {
+        "package": "TartuWeatherProvider",
+        "repositoryURL": "https://github.com/fassko/TartuWeatherProvider",
+        "state": {
+          "branch": "master",
+          "revision": "315c3e0654adb8fff8e20f771311aa1ace74b4df",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
