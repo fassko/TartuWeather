@@ -38,8 +38,11 @@
       </MacroExpansion>
       <TestPlans>
          <TestPlanReference
-            reference = "container:TartuWeather.xctestplan"
+            reference = "container:meteoTartuUITests/UXTests.xctestplan"
             default = "YES">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:meteoTartuUnitTests/TartuWeather.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>

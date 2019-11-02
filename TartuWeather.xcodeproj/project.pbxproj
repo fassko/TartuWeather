@@ -44,6 +44,8 @@
 		6358F8172300888300755FDF /* wind@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6358F8142300888300755FDF /* wind@2x.png */; };
 		6358F8182300888300755FDF /* wind.png in Resources */ = {isa = PBXBuildFile; fileRef = 6358F8152300888300755FDF /* wind.png */; };
 		6359125723005187002A377A /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6359125623005187002A377A /* SnapshotHelper.swift */; };
+		637094F7236D76120056EFAC /* UXTests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 637094F6236D76120056EFAC /* UXTests.xctestplan */; };
+		637094F9236D761F0056EFAC /* TartuWeather.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 637094F8236D761F0056EFAC /* TartuWeather.xctestplan */; };
 		637A05672354E60200BBDEBA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 637A05662354E60200BBDEBA /* Kingfisher */; };
 		637A05692354E61500BBDEBA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 637A05682354E61500BBDEBA /* Kingfisher */; };
 		638F5EB72042C450005CE4A5 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F5EB62042C44F005CE4A5 /* BalloonMarker.swift */; };
@@ -201,8 +203,8 @@
 		6358F8142300888300755FDF /* wind@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wind@2x.png"; sourceTree = "<group>"; };
 		6358F8152300888300755FDF /* wind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wind.png; sourceTree = "<group>"; };
 		6359125623005187002A377A /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
-		6386C76C236CC09D000FC508 /* TartuWeather.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TartuWeather.xctestplan; sourceTree = SOURCE_ROOT; };
-		6386C76D236CC0B0000FC508 /* UXTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UXTests.xctestplan; sourceTree = SOURCE_ROOT; };
+		637094F6236D76120056EFAC /* UXTests.xctestplan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UXTests.xctestplan; sourceTree = "<group>"; };
+		637094F8236D761F0056EFAC /* TartuWeather.xctestplan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TartuWeather.xctestplan; sourceTree = "<group>"; };
 		638F5EB62042C44F005CE4A5 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
 		638F5EB82042C6B7005CE4A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		638FFD3C234114D10079AA4B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 		6329658D2041633700F81E83 /* meteoTartuUnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				637094F8236D761F0056EFAC /* TartuWeather.xctestplan */,
 				6329658E2041633700F81E83 /* meteoTartuUnitTests.swift */,
 				632965902041633700F81E83 /* Info.plist */,
 			);
@@ -310,6 +313,7 @@
 		63330EB31DCF6FC0002194A3 /* meteoTartuUITests */ = {
 			isa = PBXGroup;
 			children = (
+				637094F6236D76120056EFAC /* UXTests.xctestplan */,
 				6359125623005187002A377A /* SnapshotHelper.swift */,
 				63330EB41DCF6FC0002194A3 /* meteoTartuUITests.swift */,
 				63330EB61DCF6FC0002194A3 /* Info.plist */,
@@ -354,8 +358,6 @@
 		6348B1AF1C4BF55300199EE5 = {
 			isa = PBXGroup;
 			children = (
-				6386C76C236CC09D000FC508 /* TartuWeather.xctestplan */,
-				6386C76D236CC0B0000FC508 /* UXTests.xctestplan */,
 				6348B1BA1C4BF55300199EE5 /* TartuWeather */,
 				6348B1D51C4BF6AA00199EE5 /* TartuWeatherWidget */,
 				6329658D2041633700F81E83 /* meteoTartuUnitTests */,
@@ -778,6 +780,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				637094F9236D761F0056EFAC /* TartuWeather.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,6 +788,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				637094F7236D76120056EFAC /* UXTests.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

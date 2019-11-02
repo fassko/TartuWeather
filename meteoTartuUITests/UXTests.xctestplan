@@ -1,7 +1,7 @@
 {
   "configurations" : [
     {
-      "id" : "2B900DFE-61CE-4D2A-9055-AF5294D14FBD",
+      "id" : "6C2DC6BF-39C6-4553-8481-E79E3AF94ED5",
       "name" : "Configuration 1",
       "options" : {
 
@@ -23,14 +23,6 @@
         "containerPath" : "container:TartuWeather.xcodeproj",
         "identifier" : "63330EB11DCF6FBF002194A3",
         "name" : "meteoTartuUITests"
-      }
-    },
-    {
-      "parallelizable" : true,
-      "target" : {
-        "containerPath" : "container:TartuWeather.xcodeproj",
-        "identifier" : "6329658B2041633700F81E83",
-        "name" : "meteoTartuUnitTests"
       }
     }
   ],
