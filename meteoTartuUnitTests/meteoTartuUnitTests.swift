@@ -8,6 +8,7 @@
 
 import XCTest
 
+@testable import TartuWeather
 import TartuWeatherProvider
 
 class MeteoTartuUnitTests: XCTestCase {
