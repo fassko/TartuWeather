@@ -10,6 +10,7 @@
   ],
   "defaultOptions" : {
     "codeCoverage" : false,
+    "mainThreadCheckerEnabled" : false,
     "targetForVariableExpansion" : {
       "containerPath" : "container:TartuWeather.xcodeproj",
       "identifier" : "6348B1B71C4BF55300199EE5",
