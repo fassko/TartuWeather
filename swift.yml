@@ -1,0 +1,17 @@
+name: Swift
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      
+    - name: Set Xcode version
+      run: sudo xcode-select -s /Applications/Xcode_11.2.app
+    
+    - name: Run tests
+      run: set -o pipefail && xcodebuild -project TartuWeather.xcodeproj -scheme TartuWeather -destination 'platform=iOS Simulator,name=iPhone 11 Pro' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO clean build test | xcpretty --color
