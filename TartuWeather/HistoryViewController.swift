@@ -32,7 +32,7 @@ class HistoryViewController: UIViewController {
     
     let marker = BalloonMarker(color: Constants.blueColor,
                                font: .systemFont(ofSize: 12),
-                               textColor: Constants.blueColor,
+                               textColor: Constants.chartLabelColor,
                                insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
     marker.chartView = chartView
     marker.minimumSize = CGSize(width: 80, height: 40)
